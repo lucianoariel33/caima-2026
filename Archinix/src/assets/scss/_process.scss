@@ -1,0 +1,151 @@
+/* 22. Process CSS  */
+@use "./variables" as *;
+
+.single-process-item {
+  border: 1px solid #ddd;
+  padding: 30px;
+
+  h4 {
+    margin-top: 30px;
+  }
+}
+
+.process-up {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    font-size: 40px;
+  }
+
+  i {
+    font-size: 25px;
+  }
+}
+
+.process-down {
+  padding-top: 80px;
+
+  @media #{$xs} {
+    padding-top: 40px;
+  }
+}
+
+.right-content span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #171717;
+  margin-right: 15px;
+}
+
+// Swiper Pagination
+.process-wrapper.swiper {
+  padding-bottom: 60px;
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto !important;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+
+    .swiper-pagination-bullet {
+      width: 40px;
+      height: 8px;
+      background: #ddd;
+      border-radius: 0;
+      opacity: 1;
+      margin: 0 !important;
+      transition: 0.3s;
+
+      &.swiper-pagination-bullet-active {
+        background: #000;
+      }
+    }
+  }
+}
+
+// Process # 02
+
+.single-process-wrap {
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+  margin-bottom: 40px;
+
+  @media #{$xs} {
+    margin-bottom: 60px;
+  }
+
+  .process-num {
+    position: absolute;
+    top: -50px;
+    left: -0px;
+    z-index: -1;
+
+    span {
+      font-size: 100px;
+      font-weight: 700;
+      color: #f0f0f0;
+      line-height: 1;
+
+      @media #{$xs} {
+        font-size: 100px;
+      }
+    }
+  }
+
+  h4 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 90%;
+  }
+}
+
+// Process # 03
+
+.process-section .cp-custom-accordion {
+  @media #{$xs} {
+    margin-top: 0;
+  }
+}
+
+.process-section .cp-custom-accordion .accordion-items {
+  @media #{$xs} {
+    margin-top: 0;
+  }
+}
+
+.process-section .cp-custom-accordion .accordion-buttons {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
+
+.process-section .cp-custom-accordion .accordion-buttons {
+  padding-left: 30px;
+  padding-right: 50px;
+}
+
+.process-section .cp-custom-accordion .accordion-body {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.process-section.section-padding.pt-0.pb-100 {
+  @media #{$xs} {
+    padding-bottom: 60px;
+  }
+}

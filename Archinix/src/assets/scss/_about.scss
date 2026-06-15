@@ -1,0 +1,60 @@
+/* 19. About CSS  */
+
+// About
+@use "./variables" as *;
+.about-img-wrapper {
+  padding-left: 60px;
+  @media #{$md} {
+    padding-left: 0;
+    margin-top: 60px;
+  }
+  @media #{$xs} {
+    padding-left: 0;
+    margin-top: 60px;
+  }
+}
+
+// About Page
+
+#about-page {
+  .about-content-wrap {
+    padding-right: 60px;
+
+    @media #{$md} {
+      padding-right: 0;
+    }
+
+    @media #{$xs} {
+      padding-right: 0;
+      margin-top: 20px;
+    }
+  }
+
+  .about-content-wrap h5 {
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .about-img-wrap {
+    @media #{$md} {
+      margin-top: 30px;
+    }
+  }
+
+  .about-img-wrap img {
+    filter: grayscale(1);
+  }
+
+  .about-content-wrap.obverse {
+    padding: 80px 80px 0 80px;
+
+    @media #{$md} {
+      padding: 0;
+      padding-left: 10px;
+    }
+  }
+
+  .about-content-wrap.reverse {
+    padding: 120px 130px 0 0;
+  }
+}

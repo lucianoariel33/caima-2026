@@ -1,0 +1,43 @@
+.progress-wrap {
+  position: fixed;
+  right: 50px;
+  bottom: 80px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  border: 2px solid #000;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .progress-wrap {
+    right: 20px;
+    bottom: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .progress-wrap {
+    right: 20px;
+    bottom: 100px;
+  }
+}
+
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

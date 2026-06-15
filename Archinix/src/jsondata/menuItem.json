@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Home",
+        "to": "/",
+        "submenu": [
+            {
+                "name": "Home - One",
+                "to": "/home-one"
+            },
+            {
+                "name": "Home - Two",
+                "to": "/home-two"
+            },
+            {
+                "name": "Home - Three",
+                "to": "/home-three"
+            }
+        ]
+    },
+    {
+        "name": "Pages",
+        "to": "#",
+        "submenu": [
+            {
+                "name": "About",
+                "to": "/about"
+            },
+            {
+                "name": "Services",
+                "to": "/services"
+            },
+            {
+                "name": "Our Team",
+                "to": "/teams"
+            },
+            {
+                "name": "Pricing",
+                "to": "/pricing"
+            },
+            {
+                "name": "Testimonials",
+                "to": "/testimonial"
+            },
+            {
+                "name": "Our Process",
+                "to": "/process"
+            },
+            {
+                "name": "FAQs",
+                "to": "/faq"
+            }
+        ]
+    },
+    {
+        "name": "Projects",
+        "to": "#",
+        "submenu": [
+            {
+                "name": "Standard",
+                "to": "/project-standard"
+            },
+            {
+                "name": "Metro Fullwidth",
+                "to": "/project-metro"
+            },
+            {
+                "name": "Grid",
+                "to": "/project-grid"
+            },
+            {
+                "name": "List",
+                "to": "/project-list"
+            },
+            {
+                "name": "Masonry",
+                "to": "/project-masonry"
+            },
+            {
+                "name": "Slider",
+                "to": "/project-slider"
+            }
+        ]
+    },
+    {
+        "name": "Blog",
+        "to": "/blogs"
+    },
+    {
+        "name": "Contact",
+        "to": "/contact"
+    }
+]

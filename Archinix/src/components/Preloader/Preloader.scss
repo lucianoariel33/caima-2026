@@ -1,0 +1,82 @@
+@use "../../assets/scss/variables" as *;
+
+.preloader-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+
+    [data-theme="dark"] & {
+        background: #111111;
+    }
+
+    .preloader-inner {
+        text-align: center;
+        width: 300px;
+    }
+
+    .logo-container {
+        margin-bottom: 30px;
+
+        .preloader-logo {
+            width: 150px;
+            height: auto;
+            filter: grayscale(1);
+
+            [data-theme="dark"] & {
+                filter: invert(1) grayscale(1);
+            }
+        }
+    }
+
+    .progress-container {
+        width: 100%;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.05);
+        margin-bottom: 15px;
+        overflow: hidden;
+        position: relative;
+
+        [data-theme="dark"] & {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1d1e21;
+            transform-origin: left;
+
+            [data-theme="dark"] & {
+                background: #ffffff;
+            }
+        }
+    }
+
+    .percentage-wrap {
+        font-family: var(--title-font);
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        color: #1d1e21;
+        text-transform: uppercase;
+
+        [data-theme="dark"] & {
+            color: #ffffff;
+        }
+
+        .symbol {
+            margin-left: 2px;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "number": "01",
+        "title": "Initial Consultation",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vitae in quam, sed neque ex necessitatibus ipsam, atque vel quod temporibus expedita."
+    },
+    {
+        "id": 2,
+        "number": "02",
+        "title": "Design Concept",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vitae in quam, sed neque ex necessitatibus ipsam, atque vel quod temporibus expedita."
+    },
+    {
+        "id": 3,
+        "number": "03",
+        "title": "Construction",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vitae in quam, sed neque ex necessitatibus ipsam, atque vel quod temporibus expedita."
+    },
+    {
+        "id": 4,
+        "number": "04",
+        "title": "Final Work-Through",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vitae in quam, sed neque ex necessitatibus ipsam, atque vel quod temporibus expedita."
+    },
+    {
+        "id": 5,
+        "number": "05",
+        "title": "Follow Up",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, vitae in quam, sed neque ex necessitatibus ipsam, atque vel quod temporibus expedita."
+    }
+]

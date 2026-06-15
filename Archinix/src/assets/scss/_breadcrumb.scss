@@ -1,0 +1,122 @@
+/* 32. Breadcrumb 
+-----------------*/
+
+// breadcrumb bg
+@use "./variables" as *;
+.breadcrumb-bg {
+  background-image: url(../img/breadcrumb/service-bg.jpg);
+}
+
+.breadcrumb-bg.about-bg {
+  background-image: url(../img/breadcrumb/about-bg.jpg);
+}
+
+.breadcrumb-bg.service-bg {
+  background-image: url(../img/breadcrumb/service-bg.jpg);
+}
+
+.breadcrumb-bg.team-bg {
+  background-image: url(../img/breadcrumb/team-bg.jpeg);
+}
+
+.breadcrumb-bg.price-bg {
+  background-image: url(../img/breadcrumb/price-bg.jpg);
+}
+
+.breadcrumb-bg.testimonial-bg {
+  background-image: url(../img/breadcrumb/testimonial-bg.jpg);
+}
+
+.breadcrumb-bg.process-bg {
+  background-image: url(../img/breadcrumb/process-bg.jpg);
+}
+
+.breadcrumb-bg.project-bg {
+  background-image: url(../img/breadcrumb/project-bg.jpg);
+}
+
+.breadcrumb-bg.blog-bg {
+  background-image: url(../img/breadcrumb/blog-bg.jpg);
+}
+
+.breadcrumb-bg.contact-bg {
+  background-image: url(../img/breadcrumb/contact-bg.jpg);
+}
+
+.breadcrumb-bg {
+  background-image: url(../img/breadcrumb/contact-bg.jpg);
+  height: 480px;
+  background-size: cover;
+  background-position: center bottom;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  .breadcrumb-title {
+    position: relative;
+    z-index: 999;
+  }
+
+  & .breadcrumb-title h1 {
+    font-size: 65px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: #fff;
+    margin: 0;
+
+    @media #{$md} {
+      font-size: 50px;
+    }
+
+    @media #{$sm} {
+      font-size: 40px;
+    }
+
+    @media #{$xs} {
+      font-size: 40px;
+    }
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+}
+
+.breadcrumb-item a {
+  color: #a39d9d;
+  font-size: 17px;
+}
+
+.breadcrumb-item.active {
+  color: #333;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #a39d9d !important;
+}
+
+.breadcrumb-bg h4 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+
+.breadcrumb-bg.white-bg {
+  padding-top: 60px;
+  h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+  i {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+}

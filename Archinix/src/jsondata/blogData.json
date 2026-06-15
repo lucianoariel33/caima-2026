@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "title": "How to Design a Sustainable Home",
+        "category": "Architecture",
+        "author": "Jane Collins",
+        "date": "May 1, 2024",
+        "img": "/assets/img/blog/blog-1.jpg"
+    },
+    {
+        "id": 2,
+        "title": "The Importance of Lighting Design in Interior Spaces",
+        "category": "Interior Design",
+        "author": "Paul Roberts",
+        "date": "June 15, 2024",
+        "img": "/assets/img/blog/blog-2.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Creating a Functional Home Office Space",
+        "category": "Architecture",
+        "author": "Sarah Gomez",
+        "date": "August 8, 2024",
+        "img": "/assets/img/blog/blog-3.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Tips for Designing a Dream Kitchen",
+        "category": "Interior Design",
+        "author": "Raul Jones",
+        "date": "June 15, 2024",
+        "img": "/assets/img/blog/blog-4.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Creating a Sustainable Home: Tips and Tricks",
+        "category": "Architecture",
+        "author": "Sarah Gomez",
+        "date": "August 8, 2024",
+        "img": "/assets/img/blog/blog-5.jpg"
+    },
+    {
+        "id": 6,
+        "title": "The Rise of Biophilic Design: Bringing Nature Indoors",
+        "category": "Interior Design",
+        "author": "Paul Roberts",
+        "date": "June 15, 2024",
+        "img": "/assets/img/blog/blog-6.jpg"
+    },
+    {
+        "id": 7,
+        "title": "The Importance of Lighting Design in Interior Spaces",
+        "category": "Interior Design",
+        "author": "Paul Roberts",
+        "date": "June 15, 2024",
+        "img": "/assets/img/blog/blog-2.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Tips for Designing a Dream Kitchen",
+        "category": "Interior Design",
+        "author": "Raul Jones",
+        "date": "June 15, 2024",
+        "img": "/assets/img/blog/blog-4.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Creating a Sustainable Home: Tips and Tricks",
+        "category": "Architecture",
+        "author": "Sarah Gomez",
+        "date": "August 8, 2024",
+        "img": "/assets/img/blog/blog-5.jpg"
+    },
+    {
+        "id": 10,
+        "title": "How to Design a Sustainable Home",
+        "category": "Architecture",
+        "author": "Jane Collins",
+        "date": "May 1, 2024",
+        "img": "/assets/img/blog/blog-1.jpg"
+    },
+    {
+        "id": 11,
+        "title": "Creating a Functional Home Office Space",
+        "category": "Architecture",
+        "author": "Sarah Gomez",
+        "date": "August 8, 2024",
+        "img": "/assets/img/blog/blog-3.jpg"
+    },
+    {
+        "id": 12,
+        "title": "The Rise of Biophilic Design: Bringing Nature Indoors",
+        "category": "Interior Design",
+        "author": "Paul Roberts",
+        "date": "June 15, 2024",
+        "img": "/assets/img/blog/blog-6.jpg"
+    }
+]

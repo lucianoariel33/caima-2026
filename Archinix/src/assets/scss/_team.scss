@@ -1,0 +1,52 @@
+/* 30. Team CSS  */
+
+// Team # 02
+@use "./variables" as *;
+
+#team-2 {
+  .single-team-item {
+    margin-bottom: 50px;
+
+    @media #{$xs} {
+      margin-bottom: 30px;
+    }
+
+    .team-info {
+      display: block;
+    }
+
+    .team-info h5 {
+      font-size: 24px;
+      margin-top: 15px;
+    }
+
+    .team-info hr {
+      margin: 8px 0;
+    }
+
+    .team-info p {
+      margin: 0;
+    }
+
+    .social-icon {
+      font-size: 18px;
+
+      a i {
+        font-size: 18px;
+        margin-right: 10px;
+        color: #777;
+        margin-top: 5px;
+
+        &:hover {
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .team-section.pb-60 {
+    @media #{$xs} {
+      padding-bottom: 0;
+    }
+  }
+}

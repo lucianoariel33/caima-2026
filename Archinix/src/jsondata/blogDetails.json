@@ -1,0 +1,41 @@
+{
+    "id": 1,
+    "title": "Creating a Functional Home Office Space",
+    "author": "Sarah Roberts",
+    "date": "July 20, 2025",
+    "commentsCount": 26,
+    "featureImg": "/assets/img/blog/blog-feature.jpg",
+    "heading": "With the rise of remote work and flexible work arrangements, more and more people are finding themselves in need of a functional home office space.",
+    "following": "By following these tips and investing in a well-designed and functional home office space, you can ensure that you'r able to stay productive and focused in your work, no matter where you are.",
+    "paragraphs": [
+        "Whether you'r a full time remote Suspendisse potenti. Aenean sodales euismod mi, sit amet dictum quam sodales id. Donec euismod velit nisi, in bibendum tortor efficitur in. Vivamus vulputate leo non pulvinar bibendum. Nam pharetra nulla a vestibulum molestie. Aenean pharetra.",
+        "Here are some tips for creating a functional home office space:"
+    ],
+    "tips": [
+        {
+            "id": 1,
+            "title": "Starts with basics",
+            "text": "Donec tellus sem, semper vitae quam eu, bibendum tincidunt erat. Donec dignissim lectus id felis accumsan porta. Nunc tincidunt id est eget facilisis. Mauris orci enim, congue vel odio ac."
+        },
+        {
+            "id": 2,
+            "title": "Consider your storage needs",
+            "text": "Donec tellus sem, semper vitae quam eu, bibendum tincidunt erat. Donec dignissim lectus id felis accumsan porta. Nunc tincidunt id est eget facilisis. Mauris orci enim, congue vel odio ac."
+        },
+        {
+            "id": 3,
+            "title": "Design for productivity",
+            "text": "Donec tellus sem, semper vitae quam eu, bibendum tincidunt erat. Donec dignissim lectus id felis accumsan porta. Nunc tincidunt id est eget facilisis. Mauris orci enim, congue vel odio ac."
+        },
+        {
+            "id": 4,
+            "title": "Incorporate personal touches",
+            "text": "Donec tellus sem, semper vitae quam eu, bibendum tincidunt erat. Donec dignissim lectus id felis accumsan porta. Nunc tincidunt id est eget facilisis. Mauris orci enim, congue vel odio ac."
+        },
+        {
+            "id": 5,
+            "title": "Don't forget about ergonomics",
+            "text": "Donec tellus sem, semper vitae quam eu, bibendum tincidunt erat. Donec dignissim lectus id felis accumsan porta. Nunc tincidunt id est eget facilisis. Mauris orci enim, congue vel odio ac."
+        }
+    ]
+}

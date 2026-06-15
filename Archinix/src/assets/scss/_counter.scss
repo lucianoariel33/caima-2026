@@ -1,0 +1,71 @@
+/* 27. Counter CSS  */
+@use "./variables" as *;
+.single-counter-box {
+  text-align: center;
+  margin-bottom: 50px;
+
+  @media #{$xs} {
+    text-align: center;
+  }
+
+  p.counter-number {
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #171717;
+    border-bottom: 1px solid #ddd;
+    display: inline-block;
+
+    @media #{$lg} {
+      font-size: 65px;
+    }
+
+    @media #{$md} {
+      font-size: 50px;
+    }
+
+    @media #{$xs} {
+      font-size: 40px;
+    }
+
+    span {
+      font-size: 70px;
+      @media #{$lg} {
+        font-size: 65px;
+      }
+
+      @media #{$md} {
+        font-size: 50px;
+      }
+
+      @media #{$xs} {
+        font-size: 40px;
+      }
+    }
+  }
+
+  span {
+    font-size: 40px;
+    margin-left: 10px;
+    @media #{$xs} {
+      margin-left: 0;
+    }
+  }
+
+  h6 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #7f7f7f;
+
+    @media #{$xs} {
+      font-size: 17px;
+      margin-top: 10px;
+    }
+  }
+}
+
+p.counter-number span.operator {
+  font-size: 30px !important;
+  color: #555;
+}

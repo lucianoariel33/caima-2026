@@ -1,0 +1,359 @@
+body.dark {
+    background-color: #000;
+    color: #777;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #fff;
+    }
+
+    .section-title {
+        h2 {
+            color: #fff;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        h6 {
+            background: #171717;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        span {
+            color: #aaa;
+        }
+    }
+
+    .gray-bg {
+        background: #0A0A0A !important;
+    }
+
+    a,
+    button {
+        color: #fff;
+    }
+
+    .project-menu button.active,
+    .project-menu button:hover,
+    .project-menu a.active,
+    .project-menu a:hover {
+        color: #fff !important;
+    }
+
+    .dark-bg {
+        background: #0A0A0A;
+    }
+
+    .header-area .navigation,
+    .header-area .container {
+        background: #000;
+    }
+
+    .header-area.absolute-header .navigation,
+    .header-area .container {
+        background: inherit;
+    }
+
+    .header-area.absolute-header .navigation {
+        background: inherit;
+    }
+
+    .main-menu ul li.active a {
+        color: #fff;
+    }
+
+    .menu-trigger span {
+        background-color: #fff;
+    }
+
+    .white-btn {
+        color: #333;
+    }
+
+    .single-counter-box {
+        p.counter-number {
+            color: #fff;
+            border-color: #333;
+        }
+
+        h6 {
+            color: #858585;
+        }
+    }
+
+    .cp-custom-accordion {
+        .accordion-buttons {
+            background: #0A0A0A;
+            color: #fff;
+            border-bottom: 1px solid #333;
+        }
+
+        .accordion-body {
+            background: #0A0A0A;
+            color: #fff;
+        }
+    }
+
+    .sidebar-wrap.white-bg {
+        background: #0C0C0C !important;
+    }
+
+
+    .sidebar-wrap {
+
+        input,
+        textarea {
+            border-bottom: 1px solid #333;
+        }
+    }
+
+    .blog-category {
+        background: #000;
+
+        ul li {
+            border-color: #333;
+        }
+    }
+
+    .single-latest-post {
+        border-color: #333;
+    }
+
+    .popular-tag-wrap a {
+        border-color: #333;
+        padding: 12px;
+    }
+
+    .single-recent-post {
+        border-bottom: 1px solid #333;
+    }
+
+    .blog-details-page .blog-tag-wrap a {
+        border-color: #333;
+    }
+
+    .pagination-wrap {
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+
+    #blog_page .page-link {
+        background: #171717;
+        color: #fff;
+    }
+
+    #blog_page .active>.page-link,
+    #blog_page .page-link.active {
+        background: #0e0e0e !important;
+        color: #fff;
+    }
+
+    .comments-form-wrap {
+        background: #000;
+
+        .comments-form input,
+        .comments-form textarea {
+            border-color: #333;
+        }
+
+        input[type=submit] {
+            background: #000;
+            border-color: #333;
+        }
+    }
+
+    .contact-section {
+
+        .subimit-form-wrap input,
+        .subimit-form-wrap textarea {
+            border-bottom: 1px solid #333;
+        }
+
+        input[type=submit] {
+            border-color: #333;
+            background: #000;
+        }
+
+        .single-contact-info {
+            border-color: #333;
+        }
+
+        .social-area a {
+            background: #333;
+        }
+    }
+
+    .border-top {
+        border-top: 1px solid #333 !important;
+    }
+
+    .border-bottom {
+        border-bottom: 1px solid #171717 !important;
+    }
+
+    #hamburger i {
+        color: #fff;
+    }
+
+    .single-service-item {
+        .single-service-inner {
+            border-top: 1px solid #333;
+
+            h5 {
+                color: #fff;
+            }
+        }
+
+        &:last-child {
+            border-color: #333;
+        }
+    }
+
+    .feature_slider_wrap {
+        img {
+            filter: invert(1);
+        }
+    }
+
+    .single-process-wrap {
+        position: relative;
+        z-index: 1;
+        margin-top: 80px;
+        margin-bottom: 40px;
+
+        .process-num {
+            position: absolute;
+            top: -50px;
+            left: 0px;
+            z-index: -1;
+
+            span {
+                color: #171717;
+            }
+        }
+
+        h4 {
+            color: #fff;
+            font-weight: 400;
+        }
+
+        p {
+            color: #777;
+        }
+    }
+
+    .single-process-item {
+        background: #0A0A0A;
+        border: 1px solid #171717;
+
+        .process-num span {
+            color: #777;
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .process-icon i {
+            color: #777;
+            font-size: 25px;
+        }
+
+        .process-down {
+            p {
+                color: #777;
+                margin-bottom: 20px;
+            }
+
+            h4 {
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .process-wrapper.swiper {
+        .swiper-pagination {
+            .swiper-pagination-bullet {
+                background: #333;
+
+                &.swiper-pagination-bullet-active {
+                    background: #fff;
+                }
+            }
+        }
+    }
+
+    .process-section {
+        background: #000;
+    }
+
+    #testimonial-1 .testimonial-text p {
+        color: #fff;
+    }
+
+    .single-service-wrap {
+        border-color: #333;
+    }
+
+    .service-icon {
+        border-bottom: 1px solid #333;
+    }
+
+
+    #testimonial-2 .single-testimonial-item {
+        border-color: #333;
+    }
+
+    #project-1 .project-title h5 {
+        text-decoration-color: #333;
+    }
+
+    .single-blog-item {
+        .blog-meta {
+            border-color: #333;
+        }
+
+        &:hover .blog-content h3 a {
+            text-decoration-thickness: 1px;
+        }
+    }
+
+    .section-title span {
+        color: #777;
+    }
+
+    #home-3 .video-play-btn {
+        color: #fff;
+    }
+
+    .award-wrap {
+        border-color: #333;
+    }
+
+    span.timeline-line {
+        background: #333;
+    }
+
+    #project-standard .project-title:before {
+        background: #333;
+    }
+
+    #project-grid .single-project-item .project-info h5 {
+        color: #333;
+    }
+
+    .project-menu a.active,
+    .project-menu a:hover {
+        color: #fff;
+    }
+
+    .white-btn:hover {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+    }
+}

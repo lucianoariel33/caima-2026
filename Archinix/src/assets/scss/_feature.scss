@@ -1,0 +1,38 @@
+/* 34. Feature CSS */
+@use "./variables" as *;
+.single-feature-item {
+  margin-bottom: 30px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.feature-wrap {
+  @media #{$md} {
+    margin-top: 10px;
+  }
+  @media #{$xs} {
+    margin-top: 10px;
+  }
+}
+
+.single-feat-inner {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  @media #{$xs} {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .icon-wrap i:before {
+    font-size: 40px;
+  }
+}
+
+.icon-wrap {
+  width: 40px;
+}
+
+.feature-section h6 {
+  background: #ddd;
+}

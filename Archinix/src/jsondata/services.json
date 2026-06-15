@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "icon": "flaticon-architecture",
+        "title": "Architecture",
+        "description": "To create beautiful, healthy buildings to empower families, uplift communities, and improve our living world."
+    },
+    {
+        "id": 2,
+        "icon": "flaticon-floor-plan",
+        "title": "Renovation",
+        "description": "To create beautiful, healthy buildings to empower families, uplift communities, and improve our living world."
+    },
+    {
+        "id": 3,
+        "icon": "flaticon-sketch",
+        "title": "Interior Design",
+        "description": "To create beautiful, healthy buildings to empower families, uplift communities, and improve our living world."
+    },
+    {
+        "id": 4,
+        "icon": "flaticon-city-hall",
+        "title": "Historic Reservation",
+        "description": "To create beautiful, healthy buildings to empower families, uplift communities, and improve our living world."
+    },
+    {
+        "id": 5,
+        "icon": "flaticon-medieval-house",
+        "title": "Home Renovation",
+        "description": "To create beautiful, healthy buildings to empower families, uplift communities, and improve our living world."
+    },
+    {
+        "id": 6,
+        "icon": "flaticon-blueprint",
+        "title": "Landscape Design",
+        "description": "To create beautiful, healthy buildings to empower families, uplift communities, and improve our living world."
+    }
+]
