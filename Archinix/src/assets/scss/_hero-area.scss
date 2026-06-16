@@ -5,7 +5,7 @@
 
 #home-2 {
   .single-slide-item {
-    background-image: url(../img/slider/slide-1.jpg);
+    background-image: url(/ESTRUCTURA/sliderprincipal_01.jpg);
     background-size: cover;
     background-position: center;
     background-color: #ddd;
@@ -106,7 +106,7 @@
   }
 
   &.hero-area:before {
-    background-image: url(../img/hero-img.jpg);
+    background-image: url(/ESTRUCTURA/hero_home_03.jpg);
     position: absolute;
     content: "";
     top: 0;

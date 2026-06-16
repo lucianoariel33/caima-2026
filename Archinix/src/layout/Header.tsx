@@ -3,8 +3,8 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import NavMenu from "@/layout//HeaderContent/NavMenu";
 import { useTheme } from "@/context/ThemeContext";
 
-import logo from "/assets/img/logo/logo.png";
-import logoWhite from "/assets/img/logo/logo-white.png";
+const logo = "/ESTRUCTURA/logo_principal.png";
+const logoWhite = "/ESTRUCTURA/logo_blanco.png";
 
 import mainMenuData from "@/jsondata/menuItem.json";
 
@@ -194,7 +194,7 @@ export default function Header() {
 
         <div className="logo-side">
           <Link to="/" className="logo">
-            <img src="/assets/img/logo/logo-white.png" alt="" />
+            <img src="/ESTRUCTURA/logo_blanco.png" alt="" />
           </Link>
         </div>
 
@@ -204,7 +204,7 @@ export default function Header() {
               Welcome to Archinix, a full service architecture and interior
               design firm.
             </p>
-            <img src="/assets/img/offcanvas-img.jpg" alt="" />
+            <img src="/ESTRUCTURA/layout_offcanvas.jpg" alt="" />
 
             <div className="mt-30 mb-30">
               <Link to="/contact" className="white-btn">

@@ -1,6 +1,6 @@
 import BackgroundImgSet from "@components/BackgroundImgSet/BackgroundImgSet";
 import { Link } from "react-router-dom";
-import bgUrl from "/assets/img/cta-bg.jpg";
+const bgUrl = "/ESTRUCTURA/cta_principal.jpg";
 
 interface CtaProps {
   title: string;

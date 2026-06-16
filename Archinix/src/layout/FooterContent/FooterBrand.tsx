@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "/assets/img/logo/logo-white.png";
+const logo = "/ESTRUCTURA/logo_blanco.png";
 
 export default function FooterBrand() {
   return (

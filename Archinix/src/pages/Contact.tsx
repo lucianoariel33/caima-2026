@@ -1,6 +1,6 @@
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import ContactSection from "@components/Contact/ContactSection";
-import BreadcrumbBg from "/assets/img/breadcrumb/contact-bg.jpg";
+const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_contact.jpg";
 
 export default function Contact() {
   return (

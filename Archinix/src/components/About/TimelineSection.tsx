@@ -1,6 +1,6 @@
-import timelineOne from "/assets/img/timeline/1.jpg";
-import timelineTwo from "/assets/img/timeline/2.jpg";
-import timelineThree from "/assets/img/timeline/3.jpg";
+const timelineOne = "/ESTRUCTURA/seccion_timeline_01.jpg";
+const timelineTwo = "/ESTRUCTURA/seccion_timeline_02.jpg";
+const timelineThree = "/ESTRUCTURA/seccion_timeline_03.jpg";
 
 interface TimelineItem {
   id: number;

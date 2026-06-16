@@ -12,37 +12,37 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Mark Wood",
     role: "Chief Executive",
-    image: "assets/img/team/1.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_01.jpg",
   },
   {
     id: 2,
     name: "Natasha Kareem",
     role: "Project Manager",
-    image: "assets/img/team/2.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_02.jpg",
   },
   {
     id: 3,
     name: "Decan Rice",
     role: "Architect",
-    image: "assets/img/team/3.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_03.jpg",
   },
   {
     id: 4,
     name: "Patric Evra",
     role: "Architect",
-    image: "assets/img/team/4.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_04.jpg",
   },
   {
     id: 5,
     name: "Sophie White",
     role: "Civil Engineer",
-    image: "assets/img/team/5.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_05.jpg",
   },
   {
     id: 6,
     name: "Phil Jhones",
     role: "Architect",
-    image: "assets/img/team/6.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_06.jpg",
   },
 ];
 

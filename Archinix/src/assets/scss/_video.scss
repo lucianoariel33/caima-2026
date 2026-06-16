@@ -2,7 +2,7 @@
 @use "./variables" as *;
 
 .video-section {
-  background-image: url(../img/video-bg.jpg);
+  background-image: url(/ESTRUCTURA/video_fondo.jpg);
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -81,7 +81,7 @@
 }
 
 .video-wrapper {
-  background-image: url("/assets/img/video-bg.jpg");
+  background-image: url("/ESTRUCTURA/video_fondo.jpg");
   background-size: cover;
   background-position: center;
   height: 500px;

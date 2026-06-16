@@ -1,5 +1,5 @@
 import AboutProgress from "./AboutProgress";
-import aboutImg1 from "/assets/img/about/1-1.jpg";
+const aboutImg1 = "/ESTRUCTURA/seccion_about_01.jpg";
 
 interface AboutData {
     subtitle: string;

@@ -1,72 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-interface MasonryProject {
-    id: number;
-    title: string;
-    category: string;
-    filter: string[];
-    image: string;
-}
-
-const masonryProjects: MasonryProject[] = [
-    {
-        id: 1,
-        title: "Lakefront Retreat",
-        category: "architecture",
-        filter: ["building", "interior"],
-        image: "/assets/img/project/3-1.jpg",
-    },
-    {
-        id: 2,
-        title: "Modern Bunglow",
-        category: "interior",
-        filter: ["construction", "residence"],
-        image: "/assets/img/project/3-2.jpg",
-    },
-    {
-        id: 3,
-        title: "Office Building",
-        category: "architecture",
-        filter: ["residence", "building"],
-        image: "/assets/img/project/3-3.jpg",
-    },
-    {
-        id: 4,
-        title: "Industrial Chic",
-        category: "construction",
-        filter: ["grid-of-images", "interior", "construction"],
-        image: "/assets/img/project/3-4.jpg",
-    },
-    {
-        id: 5,
-        title: "Mediterrean Villa",
-        category: "interior",
-        filter: ["interior", "building"],
-        image: "/assets/img/project/3-5.jpg",
-    },
-    {
-        id: 6,
-        title: "Ranch House",
-        category: "construction",
-        filter: ["construction"],
-        image: "/assets/img/project/3-6.jpg",
-    },
-    {
-        id: 7,
-        title: "Urban Townhome",
-        category: "architecture",
-        filter: ["residence", "interior"],
-        image: "/assets/img/project/3-7.jpg",
-    },
-];
+import { projects } from "@/content/projects";
 
 const filters = [
     { label: "Show All", value: "*" },
-    { label: "Building", value: "building" },
-    { label: "Residence", value: "residence" },
-    { label: "Interior", value: "interior" },
-    { label: "Construction", value: "construction" },
 ];
 
 export default function ProjectThree() {
@@ -74,8 +11,8 @@ export default function ProjectThree() {
 
     const filteredProjects =
         activeFilter === "*"
-            ? masonryProjects
-            : masonryProjects.filter((p) => p.filter.includes(activeFilter));
+            ? projects
+            : projects.filter((project) => project.category === activeFilter);
 
     return (
         <div className="project-section gray-bg section-padding mt-0 mt-md-60 pb-90">
@@ -112,11 +49,11 @@ export default function ProjectThree() {
                                     key={item.id}
                                     className="col-lg-4 col-md-6 col-sm-6 project-item"
                                 >
-                                    <Link to={`/project-details/${item.id}`} className="img-zoom">
+                                    <Link to={`/project-details/${item.slug}`} className="img-zoom">
                                         <div className="project-box">
                                             <div className="project-img">
                                                 <img
-                                                    src={item.image}
+                                                    src={item.cover}
                                                     className="img-fluid mx-auto d-block"
                                                     alt={item.title}
                                                 />

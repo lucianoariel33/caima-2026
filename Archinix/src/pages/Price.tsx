@@ -2,8 +2,8 @@ import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import CtaContact from "@components/CTA/CtaContact";
 import PricingSection from "@components/Pricing/PricingSection";
 import ProcessSection from "@components/Process/ProcessSection";
-import imgUrl from "/assets/img/cta-bg-2.jpg";
-import bgUrl from "/assets/img/breadcrumb/price-bg.jpg";
+const imgUrl = "/ESTRUCTURA/cta_pricing.jpg";
+const bgUrl = "/ESTRUCTURA/breadcrumb_pricing.jpg";
 
 export default function Pricing() {
   return (

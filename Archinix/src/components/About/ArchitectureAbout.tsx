@@ -11,7 +11,7 @@ const aboutData: AboutSectionData = {
   subtitle: "About Us",
   title: "Architecture Renovation",
   text: "We craft premium digital work for web, mobile and experiential with creative agencies and global brands alike – putting passion. Since the 1980s, as the complexity of buildings began to increase, the field of architecture technological expertise.",
-  image: "/assets/img/about/1-1.jpg",
+  image: "/ESTRUCTURA/seccion_about_01.jpg",
 };
 
 export default function ArchitectureAbout() {

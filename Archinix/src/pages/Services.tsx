@@ -6,7 +6,7 @@ import OurProcess from "@components/Project/OurProcess/OurProcess";
 import ServiceItem from "@components/Services/ServiceItem";
 import Testimonial from "@components/Testimonial/Testimonial";
 
-import bgUrl from "/assets/img/breadcrumb/service-bg.jpg";
+const bgUrl = "/ESTRUCTURA/breadcrumb_servicios.jpg";
 
 export default function Services() {
   return (

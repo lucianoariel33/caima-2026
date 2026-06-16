@@ -6,7 +6,7 @@ interface AboutData {
 
 const aboutData: AboutData = {
   title: "Our Story",
-  image: "/assets/img/about/about-page-img.jpg",
+  image: "/ESTRUCTURA/seccion_about_page.jpg",
   paragraphs: [
     "Archinix was founded out of a shared desire to create spaces that feel as good as they look — honest, balanced, and deeply personal. With a foundation in architecture and product design, the studio connects people to their environments through refined, purposeful design.",
     "Every project begins with listening. We take the time to understand daily rhythms, personal values, and individual style. From that, we shape tailored interiors that reflect who you are — spaces that work quietly, beautifully, & intuitively.",

@@ -1,7 +1,7 @@
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import ProjectMasonryItem from "@components/Project/ProjectMasonry/ProjectMasonryItem";
 
-import BreadcrumbBg from "/assets/img/breadcrumb/project-bg.jpg";
+const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_proyectos.jpg";
 
 export default function ProjectMasonry() {
   return (

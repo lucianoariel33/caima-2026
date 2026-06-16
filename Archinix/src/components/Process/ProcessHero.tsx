@@ -1,4 +1,4 @@
-import processImg from "/assets/img/process-img.jpg";
+const processImg = "/ESTRUCTURA/process_imagen.jpg";
 
 interface ProcessHeroData {
   title: string;

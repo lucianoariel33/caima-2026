@@ -1,4 +1,4 @@
-import bannerImg from "/assets/img/banner.jpg";
+const bannerImg = "/ESTRUCTURA/hero_home_01.jpg";
 
 interface HeroData {
   title: string;

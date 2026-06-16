@@ -1,7 +1,7 @@
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import ProjectSliderItem from "@components/Project/ProjectSliderItem/ProjectSliderItem";
 
-import BreadcrumbBg from "/assets/img/breadcrumb/project-bg.jpg";
+const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_proyectos.jpg";
 
 export default function ProjectSlider() {
   return (

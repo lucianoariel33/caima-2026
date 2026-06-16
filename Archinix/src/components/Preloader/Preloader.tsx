@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import logo from "/assets/img/logo/logo.png";
+const logo = "/ESTRUCTURA/logo_principal.png";
 import "./Preloader.scss";
 
 interface PreloaderProps {

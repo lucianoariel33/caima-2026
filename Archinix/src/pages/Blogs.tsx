@@ -1,6 +1,6 @@
 import BlogList from "@components/Blog/BlogList";
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
-import BreadcrumbBg from "/assets/img/breadcrumb/blog-bg.jpg";
+const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_blog.jpg";
 
 export default function Blogs() {
   return (

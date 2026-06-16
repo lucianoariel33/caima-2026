@@ -15,7 +15,7 @@ export default function FeatureSlider() {
             <div className="feature_item">
                 {[...features, ...features].map((item, index) => (
                     <h2 key={index} className={item.stroke ? "stroke" : ""}>
-                        <img src="/assets/img/asterisk-dark.png" alt="feat-icon" />
+                        <img src="/ESTRUCTURA/icono_asterisk_dark.png" alt="feat-icon" />
                         {item.title}
                     </h2>
                 ))}

@@ -1,42 +1,6 @@
 import { Link } from "react-router-dom";
 import SectionHeading from "@components/SectionHeading/SectionHeading";
-
-interface ProjectItem {
-  id: number;
-  title: string;
-  imgSrc: string;
-  projectMeta?: {
-    location: string;
-    year: number;
-  };
-}
-
-const projects: ProjectItem[] = [
-  {
-    id: 1,
-    title: "The Beachfront Retreat",
-    imgSrc: "assets/img/project/1-1.jpg",
-    projectMeta: { location: "Miami, FL", year: 2025 },
-  },
-  {
-    id: 2,
-    title: "The Contemporary Condo",
-    imgSrc: "assets/img/project/1-2.jpg",
-    projectMeta: { location: "Toronto, ON", year: 2025 },
-  },
-  {
-    id: 3,
-    title: "The Hilltop Mansion",
-    imgSrc: "assets/img/project/1-3.jpg",
-    projectMeta: { location: "San Francisco, CA", year: 2025 },
-  },
-  {
-    id: 4,
-    title: "The Modernist House",
-    imgSrc: "assets/img/project/1-4.jpg",
-    projectMeta: { location: "Los Angeles, CA", year: 2025 },
-  },
-];
+import { projects } from "@/content/projects";
 
 export default function RecentProject() {
   return (
@@ -48,10 +12,10 @@ export default function RecentProject() {
           </div>
         </div>
         <div className="row gx-5 mt-30">
-          {projects.map((project, index) => (
+          {projects.slice(0, 4).map((project, index) => (
             <div className="col-xl-6 col-lg-6 col-md-6" key={project.id}>
               <Link
-                to={`/project-details/${project.id}`}
+                to={`/project-details/${project.slug}`}
                 className="single-project-item"
               >
                 <div
@@ -59,15 +23,15 @@ export default function RecentProject() {
                     }`}
                   data-wow-delay={`${index % 2 === 0 ? ".3s" : ".5s"}`}
                 >
-                  <img src={project.imgSrc} alt="" />
+                  <img src={project.cover} alt={project.title} />
                 </div>
                 <div className="project-info">
                   <div className="project-title">
                     <h5>{project.title}</h5>
                   </div>
                   <div className="project-meta">
-                    <span>Location: {project.projectMeta?.location}</span>
-                    <span>Year: {project.projectMeta?.year}</span>
+                    <span>Location: {project.location}</span>
+                    <span>Year: {project.year}</span>
                   </div>
                 </div>
               </Link>

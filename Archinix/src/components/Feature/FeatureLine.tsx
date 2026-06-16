@@ -1,5 +1,5 @@
 import BackgroundImgSet from "@components/BackgroundImgSet/BackgroundImgSet";
-import bgUrl from "/assets/img/feature-bg.jpg";
+const bgUrl = "/ESTRUCTURA/feature_fondo.jpg";
 
 interface FeatureItem {
   id: number;

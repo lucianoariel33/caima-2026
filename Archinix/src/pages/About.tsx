@@ -5,7 +5,7 @@ import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import Counter from "@components/Counter/Counter";
 import TeamsSection from "@components/TeamsSection/TeamsSection";
 import VideoSection from "@components/VideoSection/VideoSection";
-import BreadcrumbBg from "/assets/img/breadcrumb/about-bg.jpg";
+const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_about.jpg";
 
 export default function About() {
   return (

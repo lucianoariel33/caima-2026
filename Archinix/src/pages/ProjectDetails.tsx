@@ -1,18 +1,23 @@
+import { useParams } from "react-router-dom";
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import ProjectDetailsWrapper from "@components/Project/ProjectDetailsWrapper/ProjectDetailsWrapper";
+import { getProjectBySlug } from "@/content/projects";
 
-import BreadcrumbBg from "/assets/img/breadcrumb/project-bg.jpg";
+const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_proyectos.jpg";
 
 export default function ProjectDetails() {
+  const { id } = useParams();
+  const project = getProjectBySlug(id);
+
   return (
     <>
       <Breadcrumb
-        title="Lakefront Retreat"
+        title={project.title}
         bgImg={BreadcrumbBg}
-        breadcrumbs={[{ name: "Home", to: "/" }, { name: "Project Details" }]}
+        breadcrumbs={[{ name: "Home", to: "/" }, { name: project.title }]}
       />
 
-      <ProjectDetailsWrapper />
+      <ProjectDetailsWrapper project={project} />
     </>
   );
 }

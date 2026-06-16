@@ -3,52 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
-
-interface ProjectItem {
-  id: number;
-  title: string;
-  category: string;
-  img: string;
-  to: string;
-}
-
-const projects: ProjectItem[] = [
-  {
-    id: 1,
-    title: "Industrial Chic",
-    category: "Construction",
-    img: "/assets/img/project/project-standard/2-1.jpg",
-    to: "/project-details",
-  },
-  {
-    id: 2,
-    title: "Restaurant Inn",
-    category: "Interior",
-    img: "/assets/img/project/project-standard/2-2.jpg",
-    to: "/project-details",
-  },
-  {
-    id: 3,
-    title: "Parkview Resort",
-    category: "Renovation",
-    img: "/assets/img/project/project-standard/2-3.jpg",
-    to: "/project-details",
-  },
-  {
-    id: 4,
-    title: "Delta Villa",
-    category: "Architecture",
-    img: "/assets/img/project/project-standard/2-4.jpg",
-    to: "/project-details",
-  },
-  {
-    id: 5,
-    title: "Lakefront Retreat",
-    category: "Architecture",
-    img: "/assets/img/project/project-standard/2-5.jpg",
-    to: "/project-details",
-  },
-];
+import { projects } from "@/content/projects";
 
 export default function ProjectSliderItem() {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -79,11 +34,11 @@ export default function ProjectSliderItem() {
           {projects.map((item) => (
             <SwiperSlide key={item.id}>
               <Link
-                to={`/project-details/${item.id}`}
+                to={`/project-details/${item.slug}`}
                 className="single-project-wrapper"
               >
                 <div className="project-img">
-                  <img src={item.img} alt={item.title} loading="lazy" />
+                  <img src={item.cover} alt={item.title} loading="lazy" />
                 </div>
                 <div className="project-title">
                   <h3>{item.title}</h3>

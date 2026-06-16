@@ -4,17 +4,17 @@ import { Autoplay, Parallax, Pagination } from "swiper/modules";
 const slides = [
   {
     id: 1,
-    image: "/assets/img/slider/1.jpg",
+    image: "/ESTRUCTURA/sliderprincipal_01.jpg",
     title: "Kaave Academy",
   },
   {
     id: 2,
-    image: "/assets/img/slider/2.jpg",
+    image: "/ESTRUCTURA/sliderprincipal_02.jpg",
     title: "Bungalow",
   },
   {
     id: 3,
-    image: "/assets/img/slider/3.jpg",
+    image: "/ESTRUCTURA/sliderprincipal_03.jpg",
     title: "Casa Palermo",
   },
 ];

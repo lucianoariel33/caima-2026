@@ -4,47 +4,47 @@
 // breadcrumb bg
 @use "./variables" as *;
 .breadcrumb-bg {
-  background-image: url(../img/breadcrumb/service-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_servicios.jpg);
 }
 
 .breadcrumb-bg.about-bg {
-  background-image: url(../img/breadcrumb/about-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_about.jpg);
 }
 
 .breadcrumb-bg.service-bg {
-  background-image: url(../img/breadcrumb/service-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_servicios.jpg);
 }
 
 .breadcrumb-bg.team-bg {
-  background-image: url(../img/breadcrumb/team-bg.jpeg);
+  background-image: url(/ESTRUCTURA/breadcrumb_equipo.jpeg);
 }
 
 .breadcrumb-bg.price-bg {
-  background-image: url(../img/breadcrumb/price-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_pricing.jpg);
 }
 
 .breadcrumb-bg.testimonial-bg {
-  background-image: url(../img/breadcrumb/testimonial-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_testimonios.jpg);
 }
 
 .breadcrumb-bg.process-bg {
-  background-image: url(../img/breadcrumb/process-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_process.jpg);
 }
 
 .breadcrumb-bg.project-bg {
-  background-image: url(../img/breadcrumb/project-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_proyectos.jpg);
 }
 
 .breadcrumb-bg.blog-bg {
-  background-image: url(../img/breadcrumb/blog-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_blog.jpg);
 }
 
 .breadcrumb-bg.contact-bg {
-  background-image: url(../img/breadcrumb/contact-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_contact.jpg);
 }
 
 .breadcrumb-bg {
-  background-image: url(../img/breadcrumb/contact-bg.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_contact.jpg);
   height: 480px;
   background-size: cover;
   background-position: center bottom;

@@ -3,8 +3,8 @@ import CtaContact from "@components/CTA/CtaContact";
 import OurClients from "@components/OurClients/OurClients";
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 
-import bgUrl from "/assets/img/cta-bg.jpg";
-import BreadcrumbBg from "/assets/img/breadcrumb/testimonial-bg.jpg";
+const bgUrl = "/ESTRUCTURA/cta_principal.jpg";
+const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_testimonios.jpg";
 
 export default function Testimonial() {
   return (

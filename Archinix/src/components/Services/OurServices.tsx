@@ -1,9 +1,9 @@
-import service1 from "/assets/img/service/service-1.jpg";
-import service2 from "/assets/img/service/service-2.jpg";
-import service3 from "/assets/img/service/service-3.jpg";
-import service4 from "/assets/img/service/service-4.jpg";
-import service5 from "/assets/img/service/service-5.jpg";
-import service6 from "/assets/img/service/service-6.jpg";
+const service1 = "/ESTRUCTURA/seccion_servicio_01.jpg";
+const service2 = "/ESTRUCTURA/seccion_servicio_02.jpg";
+const service3 = "/ESTRUCTURA/seccion_servicio_03.jpg";
+const service4 = "/ESTRUCTURA/seccion_servicio_04.jpg";
+const service5 = "/ESTRUCTURA/seccion_servicio_05.jpg";
+const service6 = "/ESTRUCTURA/seccion_servicio_06.jpg";
 
 interface ServiceItem {
   id: number;

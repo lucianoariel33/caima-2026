@@ -1,4 +1,4 @@
-import quoteImg from "/assets/img/straight-quotes.png";
+const quoteImg = "/ESTRUCTURA/icono_straight_quotes.png";
 
 interface BlogQuote {
   details: string;
