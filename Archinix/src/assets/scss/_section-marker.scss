@@ -1,0 +1,35 @@
+.section-marker {
+  position: relative;
+}
+
+.section-marker__badge {
+  align-items: center;
+  background: #ffcc33;
+  border: 2px solid #111;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+  color: #111;
+  display: inline-flex;
+  font-size: 18px;
+  font-weight: 800;
+  height: 42px;
+  justify-content: center;
+  left: 16px;
+  line-height: 1;
+  min-width: 48px;
+  padding: 0 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 16px;
+  z-index: 999;
+}
+
+@media (max-width: 767px) {
+  .section-marker__badge {
+    font-size: 15px;
+    height: 34px;
+    left: 10px;
+    min-width: 40px;
+    top: 10px;
+  }
+}
