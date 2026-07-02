@@ -4,47 +4,47 @@
 // breadcrumb bg
 @use "./variables" as *;
 .breadcrumb-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_servicios.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_servicios_1920x480.jpg);
 }
 
 .breadcrumb-bg.about-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_about.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_about_1920x480.jpg);
 }
 
 .breadcrumb-bg.service-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_servicios.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_servicios_1920x480.jpg);
 }
 
 .breadcrumb-bg.team-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_equipo.jpeg);
+  background-image: url(/ESTRUCTURA/breadcrumb_equipo_1920x480.jpg);
 }
 
 .breadcrumb-bg.price-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_pricing.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_pricing_1920x480.jpg);
 }
 
 .breadcrumb-bg.testimonial-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_testimonios.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_testimonios_1920x480.jpg);
 }
 
 .breadcrumb-bg.process-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_process.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_process_1920x480.jpg);
 }
 
 .breadcrumb-bg.project-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_proyectos.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_proyectos_1920x480.jpg);
 }
 
 .breadcrumb-bg.blog-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_blog.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_blog_1920x480.jpg);
 }
 
 .breadcrumb-bg.contact-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_contact.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_contact_1920x480.jpg);
 }
 
 .breadcrumb-bg {
-  background-image: url(/ESTRUCTURA/breadcrumb_contact.jpg);
+  background-image: url(/ESTRUCTURA/breadcrumb_contact_1920x480.jpg);
   height: 480px;
   background-size: cover;
   background-position: center bottom;
@@ -63,8 +63,7 @@
   & .breadcrumb-title h1 {
     font-size: 65px;
     font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: -1px;
+    letter-spacing: 0.02em;
     color: #fff;
     margin: 0;
 

@@ -16,6 +16,26 @@
 
 // About Page
 
+.about-section--home-studio {
+  .about-content-wrap {
+    margin-bottom: 0;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  @media #{$xs} {
+    .row.align-items-center {
+      align-items: flex-start !important;
+    }
+
+    .about-content-wrap {
+      margin-top: 20px;
+    }
+  }
+}
+
 #about-page {
   .about-content-wrap {
     padding-right: 60px;

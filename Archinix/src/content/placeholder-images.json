@@ -1,0 +1,36 @@
+{
+  "slider": [
+    "/media/slider/slide-01_1920x1080.jpg",
+    "/media/slider/slide-02_1920x1080.jpg",
+    "/media/slider/slide-03_1920x1080.jpg",
+    "/media/slider/slide-04_1920x1080.jpg",
+    "/media/slider/slide-05_1920x1080.jpg",
+    "/media/slider/slide-06_1920x1080.jpg",
+    "/media/slider/slide-07_1920x1080.jpg",
+    "/media/slider/slide-08_1920x1080.jpg",
+    "/media/slider/slide-09_1920x1080.jpg",
+    "/media/slider/slide-10_1920x1080.jpg"
+  ],
+  "proyectos": [
+    "/media/proyectos/img-01.jpg",
+    "/media/proyectos/img-02.jpg",
+    "/media/proyectos/img-03.jpg",
+    "/media/proyectos/img-04.jpg",
+    "/media/proyectos/img-05.jpg",
+    "/media/proyectos/img-06.jpg",
+    "/media/proyectos/img-07.webp",
+    "/media/proyectos/img-08.jpg",
+    "/media/proyectos/img-09.jpg",
+    "/media/proyectos/img-10.jpg",
+    "/media/proyectos/img-11.jpg",
+    "/media/proyectos/img-12.jpg",
+    "/media/proyectos/img-13.jpg",
+    "/media/proyectos/img-14.jpg",
+    "/media/proyectos/img-15.jpg",
+    "/media/proyectos/img-16.jpg",
+    "/media/proyectos/img-17.jpg",
+    "/media/proyectos/img-18.jpg",
+    "/media/proyectos/img-19.jpg",
+    "/media/proyectos/img-20.jpg"
+  ]
+}

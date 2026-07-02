@@ -1,8 +1,50 @@
+// Cambiar a false para ocultar los cuadraditos amarillos de sección (A1, B1, etc.)
+$show-section-markers: true;
+
+$section-reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
 .section-marker {
   position: relative;
+  scroll-margin-top: 100px;
+
+  &:not(.section-marker--instant):not(.section-marker--visible) {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+  }
+
+  &:not(.section-marker--instant) {
+    transition:
+      opacity 0.75s $section-reveal-ease,
+      transform 0.75s $section-reveal-ease;
+  }
+
+  &.section-marker--visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-marker {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-marker {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 .section-marker__badge {
+  @if not $show-section-markers {
+    display: none !important;
+  }
+
   align-items: center;
   background: #ffcc33;
   border: 2px solid #111;

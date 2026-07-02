@@ -12,37 +12,37 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Mark Wood",
     role: "Chief Executive",
-    image: "/ESTRUCTURA/seccion_equipo_01.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_01_800x900.jpg",
   },
   {
     id: 2,
     name: "Natasha Kareem",
     role: "Project Manager",
-    image: "/ESTRUCTURA/seccion_equipo_02.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_02_800x900.jpg",
   },
   {
     id: 3,
     name: "Decan Rice",
     role: "Architect",
-    image: "/ESTRUCTURA/seccion_equipo_03.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_03_800x900.jpg",
   },
   {
     id: 4,
     name: "Patric Evra",
     role: "Architect",
-    image: "/ESTRUCTURA/seccion_equipo_04.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_04_800x900.jpg",
   },
   {
     id: 5,
     name: "Sophie White",
     role: "Civil Engineer",
-    image: "/ESTRUCTURA/seccion_equipo_05.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_05_800x900.jpg",
   },
   {
     id: 6,
     name: "Phil Jhones",
     role: "Architect",
-    image: "/ESTRUCTURA/seccion_equipo_06.jpg",
+    image: "/ESTRUCTURA/seccion_equipo_06_800x900.jpg",
   },
 ];
 

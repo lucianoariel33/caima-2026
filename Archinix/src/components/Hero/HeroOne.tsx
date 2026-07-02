@@ -1,4 +1,4 @@
-const bannerImg = "/ESTRUCTURA/hero_home_01.jpg";
+const bannerImg = "/ESTRUCTURA/hero_home_01_1920x1100.jpg";
 
 interface HeroData {
   title: string;

@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
-const logo = "/ESTRUCTURA/logo_blanco.png";
+import { content } from "@/content/useContent";
 
 export default function FooterBrand() {
+  const { logos, name } = content.site;
+  const { brandText } = content.footer;
+
   return (
     <>
       <Link to="/" className="logo">
-        <img src={logo} alt="Archinix Logo" />
+        <img src={logos.principal} alt={name} />
       </Link>
-      <p>
-        We are the top architecture firm <br />
-        delivering the best works. Innovative <br />
-        services highly customized.
-      </p>
+      <p>{brandText}</p>
     </>
   );
 }

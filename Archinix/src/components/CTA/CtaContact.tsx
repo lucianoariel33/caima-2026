@@ -1,6 +1,6 @@
 import BackgroundImgSet from "@components/BackgroundImgSet/BackgroundImgSet";
 import { Link } from "react-router-dom";
-const bgUrl = "/ESTRUCTURA/cta_contacto.jpg";
+const bgUrl = "/ESTRUCTURA/cta_contacto_1900x760.jpg";
 
 interface CtaProps {
   title?: string;
@@ -24,7 +24,7 @@ export default function CtaContact({
       <div className="overlay-3"></div>
       <div className="cta-inner text-center">
         <div className="section-title">
-          <div className="heading-animation">
+          <div className="heading-animation image-text-panel">
             <h2 className="text-white visible-slowly-right">{title}</h2>
           </div>
           <Link to="/contact" className="theme-btn white-btn mt-30 wow fadeInUp" data-wow-delay=".3s">

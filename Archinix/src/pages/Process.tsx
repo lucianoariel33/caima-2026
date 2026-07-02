@@ -3,7 +3,7 @@ import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import FeatureLine from "@components/Feature/FeatureLine";
 import ProcessHero from "@components/Process/ProcessHero";
 import OurProcess from "@components/Project/OurProcess/OurProcess";
-const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_process.jpg";
+const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_process_1920x480.jpg";
 
 export default function Process() {
   return (

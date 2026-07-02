@@ -50,7 +50,7 @@ export default function ProjectTwo() {
                                     <Link to={`/project-details/${item.slug}`} className="project-icon">
                                         <i className="las la-plus"></i>
                                     </Link>
-                                    <div className="hover-info">
+                                    <div className="hover-info image-text-panel">
                                         <h4>
                                             {item.title} <span>{item.category}</span>
                                         </h4>

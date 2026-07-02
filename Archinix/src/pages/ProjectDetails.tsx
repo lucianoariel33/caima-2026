@@ -1,23 +1,24 @@
 import { useParams } from "react-router-dom";
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import ProjectDetailsWrapper from "@components/Project/ProjectDetailsWrapper/ProjectDetailsWrapper";
+import SectionMarker from "@components/SectionMarker/SectionMarker";
 import { getProjectBySlug } from "@/content/projects";
-
-const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_proyectos.jpg";
+import { content } from "@/content/useContent";
 
 export default function ProjectDetails() {
   const { id } = useParams();
   const project = getProjectBySlug(id);
+  const breadcrumbBg = content.projectsPage.breadcrumb.background;
 
   return (
     <>
-      <Breadcrumb
-        title={project.title}
-        bgImg={BreadcrumbBg}
-        breadcrumbs={[{ name: "Home", to: "/" }, { name: project.title }]}
-      />
+      <SectionMarker code="F1" name="Detalle - Encabezado">
+        <Breadcrumb title={project.title} bgImg={breadcrumbBg} />
+      </SectionMarker>
 
-      <ProjectDetailsWrapper project={project} />
+      <SectionMarker code="F2" name="Detalle - Contenido">
+        <ProjectDetailsWrapper project={project} />
+      </SectionMarker>
     </>
   );
 }

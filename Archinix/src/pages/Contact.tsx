@@ -1,16 +1,19 @@
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import ContactSection from "@components/Contact/ContactSection";
-const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_contact.jpg";
+import SectionMarker from "@components/SectionMarker/SectionMarker";
+import { content } from "@/content/useContent";
 
 export default function Contact() {
+  const { breadcrumb } = content.contact;
+
   return (
     <>
-      <Breadcrumb
-        title="Contact Us"
-        bgImg={BreadcrumbBg}
-        breadcrumbs={[{ name: "Home", to: "/" }, { name: "Contact" }]}
-      />
-      <ContactSection />
+      <SectionMarker code="E1" name="Contact - Encabezado">
+        <Breadcrumb title={breadcrumb.title} bgImg={breadcrumb.background} />
+      </SectionMarker>
+      <SectionMarker code="E2" name="Contact - Formulario e info">
+        <ContactSection />
+      </SectionMarker>
     </>
   );
 }

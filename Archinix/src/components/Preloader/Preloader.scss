@@ -1,82 +1,49 @@
 @use "../../assets/scss/variables" as *;
 
 .preloader-wrap {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    overflow: hidden;
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
 
-    [data-theme="dark"] & {
-        background: #111111;
-    }
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
 
-    .preloader-inner {
-        text-align: center;
-        width: 300px;
-    }
+.logo-container {
+  .preloader-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+  }
+}
 
-    .logo-container {
-        margin-bottom: 30px;
+.preloader-spinner {
+  width: 44px;
+  height: 44px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: preloader-spin 0.85s linear infinite;
+}
 
-        .preloader-logo {
-            width: 150px;
-            height: auto;
-            filter: grayscale(1);
+@keyframes preloader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-            [data-theme="dark"] & {
-                filter: invert(1) grayscale(1);
-            }
-        }
-    }
-
-    .progress-container {
-        width: 100%;
-        height: 2px;
-        background: rgba(0, 0, 0, 0.05);
-        margin-bottom: 15px;
-        overflow: hidden;
-        position: relative;
-
-        [data-theme="dark"] & {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .progress-bar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1d1e21;
-            transform-origin: left;
-
-            [data-theme="dark"] & {
-                background: #ffffff;
-            }
-        }
-    }
-
-    .percentage-wrap {
-        font-family: var(--title-font);
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 2px;
-        color: #1d1e21;
-        text-transform: uppercase;
-
-        [data-theme="dark"] & {
-            color: #ffffff;
-        }
-
-        .symbol {
-            margin-left: 2px;
-        }
-    }
+@media (prefers-reduced-motion: reduce) {
+  .preloader-spinner {
+    animation: none;
+    border-top-color: rgba(255, 255, 255, 0.5);
+  }
 }

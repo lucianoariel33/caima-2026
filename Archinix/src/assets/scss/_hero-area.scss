@@ -5,7 +5,7 @@
 
 #home-2 {
   .single-slide-item {
-    background-image: url(/ESTRUCTURA/sliderprincipal_01.jpg);
+    background-image: url(/media/slider/slide-01_1920x1080.jpg);
     background-size: cover;
     background-position: center;
     background-color: #ddd;
@@ -33,13 +33,11 @@
 
     .project-info-wrapper h6 {
       font-size: 14px;
-      text-transform: uppercase;
       color: #fff;
       letter-spacing: 2px;
     }
 
     .project-info-wrapper h1 {
-      text-transform: uppercase;
       font-size: 80px;
       font-weight: 400;
 
@@ -106,7 +104,7 @@
   }
 
   &.hero-area:before {
-    background-image: url(/ESTRUCTURA/hero_home_03.jpg);
+    background-image: url(/ESTRUCTURA/hero_home_03_800x1000.jpg);
     position: absolute;
     content: "";
     top: 0;
@@ -138,7 +136,6 @@
   }
 
   .section-title h1 {
-    text-transform: uppercase;
     font-size: 70px;
     font-weight: 500;
     line-height: 80px;

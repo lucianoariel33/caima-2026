@@ -1,35 +1,24 @@
 import { Link } from "react-router-dom";
-
-interface FooterContact {
-  office: string;
-  emailLabel: string;
-  email: string;
-  time: string;
-  phone: string;
-}
-
-const footerContact: FooterContact = {
-  office: "Corporate Office- 175 24th Street, OT-35 London, UK 265",
-  emailLabel: "Have a project in mind?",
-  email: "info@archinix.com",
-  time: "Mon-Fri, 08.00 AM-09.00 PM",
-  phone: "+18-4675826",
-};
+import { content } from "@/content/useContent";
 
 export default function FooterOffice() {
+  const { address, email, schedule, phone } = content.site;
+  const { officeTitle } = content.footer;
+  const { projectInMind } = content.ui;
+
   return (
     <div>
-      <h5>Office</h5>
-      <p className="me-5">{footerContact.office}</p>
+      <h5>{officeTitle}</h5>
+      <p className="me-5">{address}</p>
 
       <div className="company-email">
-        <p>{footerContact.emailLabel}</p>
-        <Link to={`mailto:${footerContact.email}`}>{footerContact.email}</Link>
+        <p>{projectInMind}</p>
+        {email && <Link to={`mailto:${email}`}>{email}</Link>}
       </div>
 
       <div className="phone-number">
-        <p>{footerContact.time}</p>
-        <Link to={`tel:${footerContact.phone}`}>{footerContact.phone}</Link>
+        <p>{schedule}</p>
+        {phone && <Link to={`tel:${phone}`}>{phone}</Link>}
       </div>
     </div>
   );

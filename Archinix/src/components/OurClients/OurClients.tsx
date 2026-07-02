@@ -15,7 +15,7 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Ryans Gigs",
     role: "Managing Director",
-    image: "/ESTRUCTURA/seccion_cliente_01.jpg",
+    image: "/ESTRUCTURA/seccion_cliente_01_120x120.jpg",
     message:
       "I was especially impressed by their attention to detail and their ability to incorporate unique design elements that truly make my home one of kind.",
   },
@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
     id: 2,
     name: "Paul Scholes",
     role: "Director",
-    image: "/ESTRUCTURA/seccion_cliente_02.jpg",
+    image: "/ESTRUCTURA/seccion_cliente_02_120x120.jpg",
     message:
       "I was especially impressed by their attention to detail and their ability to incorporate unique design elements that truly make my home one of kind.",
   },
@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     id: 3,
     name: "Alex Ferguson",
     role: "Chief Executive Officer",
-    image: "/ESTRUCTURA/seccion_cliente_03.jpg",
+    image: "/ESTRUCTURA/seccion_cliente_03_120x120.jpg",
     message:
       "I was especially impressed by their attention to detail and their ability to incorporate unique design elements that truly make my home one of kind.",
   },
@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     id: 4,
     name: "Eric Cantona",
     role: "Chief Advisor",
-    image: "/ESTRUCTURA/seccion_cliente_04.jpg",
+    image: "/ESTRUCTURA/seccion_cliente_04_120x120.jpg",
     message:
       "I was especially impressed by their attention to detail and their ability to incorporate unique design elements that truly make my home one of kind.",
   },

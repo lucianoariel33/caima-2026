@@ -1,4 +1,4 @@
-const processImg = "/ESTRUCTURA/process_imagen.jpg";
+const processImg = "/ESTRUCTURA/process_imagen_890x664.jpg";
 
 interface ProcessHeroData {
   title: string;

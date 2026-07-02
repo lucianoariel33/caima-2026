@@ -1,8 +1,10 @@
-// Font Family
+// Tipografia
+// - Bank Gothic: titulos (h1, h2)
+// - Century Gothic / Futura local: cuerpo (español completo; NO usar Futura PT CDN)
 
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
-
-$grotesk: "Space Grotesk", sans-serif;
+$font-title: "Bank Gothic", "Arial Narrow", sans-serif;
+$font-body: "Century Gothic", Futura, "Trebuchet MS", "Segoe UI", sans-serif;
+$grotesk: $font-body;
 
 // Colors ---------------
 

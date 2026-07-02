@@ -1,9 +1,9 @@
-const service1 = "/ESTRUCTURA/seccion_servicio_01.jpg";
-const service2 = "/ESTRUCTURA/seccion_servicio_02.jpg";
-const service3 = "/ESTRUCTURA/seccion_servicio_03.jpg";
-const service4 = "/ESTRUCTURA/seccion_servicio_04.jpg";
-const service5 = "/ESTRUCTURA/seccion_servicio_05.jpg";
-const service6 = "/ESTRUCTURA/seccion_servicio_06.jpg";
+const service1 = "/ESTRUCTURA/seccion_servicio_01_738x1024.jpg";
+const service2 = "/ESTRUCTURA/seccion_servicio_02_738x1024.jpg";
+const service3 = "/ESTRUCTURA/seccion_servicio_03_738x1024.jpg";
+const service4 = "/ESTRUCTURA/seccion_servicio_04_738x1024.jpg";
+const service5 = "/ESTRUCTURA/seccion_servicio_05_738x1024.jpg";
+const service6 = "/ESTRUCTURA/seccion_servicio_06_738x1024.jpg";
 
 interface ServiceItem {
   id: number;

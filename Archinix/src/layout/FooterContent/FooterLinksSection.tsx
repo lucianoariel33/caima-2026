@@ -1,28 +1,16 @@
-interface FooterLinks {
-  title: string;
-  links: { name: string; to: string }[];
-}
-
-const footerLinks: FooterLinks = {
-  title: "Links",
-  links: [
-    { name: "Company", to: "about" },
-    { name: "Careers", to: "contact" },
-    { name: "Press Media", to: "blogs" },
-    { name: "Services", to: "services" },
-    { name: "Projects", to: "project-standard" },
-  ],
-};
 import { Link } from "react-router-dom";
+import { content } from "@/content/useContent";
 
 export default function FooterLinksSection() {
+  const { linksTitle, links } = content.footer;
+
   return (
     <div>
-      <h5>{footerLinks.title}</h5>
+      <h5>{linksTitle}</h5>
       <ul>
         <li>
-          {footerLinks.links.map((link, index) => (
-            <Link to={`/${link.to}`} key={index}>
+          {links.map((link) => (
+            <Link to={`/${link.to}`} key={link.to}>
               {link.name}
             </Link>
           ))}

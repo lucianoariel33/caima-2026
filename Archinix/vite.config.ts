@@ -8,7 +8,17 @@ const rootDir = fileURLToPath(new URL('.', import.meta.url));
 export default defineConfig({
   root: rootDir,
   plugins: [react()],
-   resolve: {
+  server: {
+    watch: {
+      // Evita crash EBUSY en Windows con archivos bloqueados (fuentes, fotos de referencia)
+      ignored: [
+        '**/font/**',
+        '**/imagen ejemplos/**',
+        '**/PROYECTOS/**',
+      ],
+    },
+  },
+  resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),

@@ -1,6 +1,6 @@
-const timelineOne = "/ESTRUCTURA/seccion_timeline_01.jpg";
-const timelineTwo = "/ESTRUCTURA/seccion_timeline_02.jpg";
-const timelineThree = "/ESTRUCTURA/seccion_timeline_03.jpg";
+const timelineOne = "/ESTRUCTURA/seccion_timeline_01_850x570.jpg";
+const timelineTwo = "/ESTRUCTURA/seccion_timeline_02_850x570.jpg";
+const timelineThree = "/ESTRUCTURA/seccion_timeline_03_850x570.jpg";
 
 interface TimelineItem {
   id: number;

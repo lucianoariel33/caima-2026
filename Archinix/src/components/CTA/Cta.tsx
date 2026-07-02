@@ -1,31 +1,21 @@
 import BackgroundImgSet from "@components/BackgroundImgSet/BackgroundImgSet";
 import { Link } from "react-router-dom";
-const bgUrl = "/ESTRUCTURA/cta_principal.jpg";
-
-interface CtaProps {
-  title: string;
-  subtitle: string;
-}
-
-const defaultData: CtaProps = {
-  title: " Let's start your new ",
-  subtitle: " dream project",
-};
+import { content } from "@/content/useContent";
 
 export default function Cta() {
-  const { title, subtitle } = defaultData;
+  const { cta } = content.home;
+  const { contactButton } = content.ui;
+
   return (
-    <BackgroundImgSet className="cta-img-area img-scale" bgUrl={bgUrl}>
+    <BackgroundImgSet className="cta-img-area cta-img-area--home img-scale" bgUrl={cta.background}>
+      <div className="overlay-3"></div>
       <div className="cta-inner text-center">
-        <div className="section-title">
-          <div>
-            <h2 className="text-white visible-slowly-right">
-              {title} <br />
-              {subtitle}
-            </h2>
+        <div className="section-title cta-home-stack">
+          <div className="image-text-panel">
+            <h2 className="text-white">{cta.title}</h2>
           </div>
-          <Link to="/contact" className="theme-btn white-btn mt-30">
-            Contact Us
+          <Link to={cta.linkTo} className="theme-btn white-btn cta-home-stack__btn">
+            {contactButton}
           </Link>
         </div>
       </div>

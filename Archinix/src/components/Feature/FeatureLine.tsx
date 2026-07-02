@@ -1,31 +1,18 @@
 import BackgroundImgSet from "@components/BackgroundImgSet/BackgroundImgSet";
-const bgUrl = "/ESTRUCTURA/feature_fondo.jpg";
-
-interface FeatureItem {
-  id: number;
-  name: string;
-}
-
-const features: FeatureItem[] = [
-  { id: 1, name: "Construction Project" },
-  { id: 2, name: "Interior Design" },
-  { id: 3, name: "Concept Drawings" },
-  { id: 4, name: "Building Venture" },
-  { id: 5, name: "Construction Project" },
-  { id: 6, name: "Interior Design" },
-  { id: 7, name: "Concept Drawings" },
-  { id: 8, name: "Building Venture" },
-];
+import { content } from "@/content/useContent";
 
 export default function FeatureLine() {
+  const { featureLine } = content.home;
+  const items = [...featureLine.items, ...featureLine.items];
+
   return (
     <div className="feature_wrap">
-      <BackgroundImgSet className="feature_item_one" bgUrl={bgUrl}>
+      <BackgroundImgSet className="feature_item_one" bgUrl={featureLine.background}>
         <div className="feature_scroller">
           <div className="scroller_track">
-            {[...features, ...features].map((feature, index) => (
-              <div className="feature_item_one" key={`${feature.id}-${index}`}>
-                {feature.name}
+            {items.map((name, index) => (
+              <div className="feature_item_one" key={`${name}-${index}`}>
+                {name}
               </div>
             ))}
           </div>

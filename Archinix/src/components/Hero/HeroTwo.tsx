@@ -1,25 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Parallax, Pagination } from "swiper/modules";
-
-const slides = [
-  {
-    id: 1,
-    image: "/ESTRUCTURA/sliderprincipal_01.jpg",
-    title: "Kaave Academy",
-  },
-  {
-    id: 2,
-    image: "/ESTRUCTURA/sliderprincipal_02.jpg",
-    title: "Bungalow",
-  },
-  {
-    id: 3,
-    image: "/ESTRUCTURA/sliderprincipal_03.jpg",
-    title: "Casa Palermo",
-  },
-];
+import { content } from "@/content/useContent";
 
 export default function HeroSlider() {
+  const { hero } = content.home;
+
   return (
     <div id="home-2" className="homepage-slides owl-carousel">
       <Swiper
@@ -30,8 +15,8 @@ export default function HeroSlider() {
         speed={1000}
         parallax={true}
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
+        {hero.slides.map((slide, index) => (
+          <SwiperSlide key={index}>
             <div
               className="single-slide-item d-flex align-items-center"
               data-background={slide.image}
@@ -51,16 +36,16 @@ export default function HeroSlider() {
                       data-wow-delay=".2s"
                     >
                       <div className="project-info-wrapper">
-                        <div className="project-title">
-                          <h6>Feature Project / 2025</h6>
+                        <div className="project-title image-text-panel">
+                          <h6>
+                            {hero.label} / {slide.year}
+                          </h6>
                           <h1 className="text-white">{slide.title}</h1>
                         </div>
                       </div>
 
-                      <div className="project-slogan">
-                        <h3 className="text-white">
-                          Beyound Architecture. Creating Experience.
-                        </h3>
+                      <div className="project-slogan image-text-panel">
+                        <h3 className="text-white">{hero.slogan}</h3>
                       </div>
                     </div>
                   </div>

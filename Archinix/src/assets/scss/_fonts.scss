@@ -1,0 +1,73 @@
+// Bank Gothic — titulos (h1, h2)
+@font-face {
+  font-family: "Bank Gothic";
+  src: url("../../../font/Bank-Gothic-Font/BankGothicLtBTLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bank Gothic";
+  src: url("../../../font/Bank-Gothic-Font/bankgothic-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bank Gothic";
+  src: url("../../../font/Bank-Gothic-Font/BankGothicMediumBT.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bank Gothic";
+  src: url("../../../font/Bank-Gothic-Font/BankGothic Md BT.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --title-font: "Bank Gothic", "Arial Narrow", sans-serif;
+  // Sin Futura PT del CDN (variante cirilica, rompe ñ/tildes). Century Gothic = sustituto en Windows.
+  --body-font: "Century Gothic", Futura, "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+body {
+  font-family: var(--body-font);
+  font-synthesis: none;
+}
+
+h1,
+h2,
+.section-title h1,
+.section-title h2,
+.breadcrumb-title h1 {
+  font-family: var(--title-font);
+  font-weight: 400;
+  text-transform: none;
+  font-synthesis: none;
+}
+
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+label,
+input,
+textarea,
+button,
+.theme-btn,
+.white-btn,
+.link-text {
+  font-family: var(--body-font);
+  text-transform: none;
+  font-synthesis: none;
+}

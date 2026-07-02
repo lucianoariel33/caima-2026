@@ -2,7 +2,7 @@ import ProcessAccordion from "@components/Accordions/ProcessAccordion";
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import CtaContact from "@components/CTA/CtaContact";
 import TeamsSection from "@components/TeamsSection/TeamsSection";
-const bgUrl = "/ESTRUCTURA/breadcrumb_equipo.jpeg";
+const bgUrl = "/ESTRUCTURA/breadcrumb_equipo_1920x480.jpg";
 
 export default function Teams() {
   return (

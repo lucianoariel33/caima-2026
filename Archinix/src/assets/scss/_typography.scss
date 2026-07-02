@@ -1,0 +1,205 @@
+@use "./variables" as *;
+
+// Titulos: Bank Gothic Unicode | Cuerpo: Century Gothic / Futura
+
+.section-title h1 {
+  font-size: 52px;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+
+  @media #{$lg} {
+    font-size: 46px;
+  }
+
+  @media #{$md} {
+    font-size: 40px;
+  }
+
+  @media #{$sm} {
+    font-size: 34px;
+  }
+
+  @media #{$xs} {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+}
+
+.section-title h2 {
+  text-transform: none;
+  font-size: 42px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+
+  @media #{$lg} {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  @media #{$md} {
+    font-size: 34px;
+    line-height: 1.25;
+  }
+
+  @media #{$xs} {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+}
+
+.section-title.text-up h2 {
+  text-transform: none;
+  font-size: 48px;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+
+  @media #{$xs} {
+    font-size: 32px;
+  }
+}
+
+.section-title h6 {
+  text-transform: none;
+  font-family: $font-body;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+}
+
+#home-2 .single-slide-item .project-info-wrapper h1 {
+  text-transform: none;
+  font-size: 52px;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+
+  @media #{$lg} {
+    font-size: 46px;
+  }
+
+  @media #{$md} {
+    font-size: 40px;
+  }
+
+  @media #{$xs} {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+
+#home-2 .single-slide-item .project-info-wrapper h6 {
+  font-family: $font-body;
+  letter-spacing: 0.14em;
+}
+
+.breadcrumb-bg .breadcrumb-title h1 {
+  text-transform: none;
+  font-size: 48px;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+
+  @media #{$md} {
+    font-size: 40px;
+  }
+
+  @media #{$sm} {
+    font-size: 34px;
+  }
+
+  @media #{$xs} {
+    font-size: 32px;
+  }
+}
+
+.cta-img-area .cta-inner h2 {
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+
+  @media #{$md} {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  @media #{$xs} {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+}
+
+.cta-img-area.cta-img-area--home .cta-inner h2 {
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-wrap: nowrap;
+
+  @media #{$md} {
+    font-size: 24px;
+  }
+
+  @media #{$xs} {
+    font-size: 18px;
+    letter-spacing: 0.02em;
+  }
+}
+
+.feature_item h2 {
+  text-transform: none;
+  font-size: 38px;
+  letter-spacing: 0.02em;
+
+  @media #{$xs} {
+    font-size: 26px;
+  }
+}
+
+.cad-projects-section__eyebrow {
+  text-transform: none;
+}
+
+.cad-project-card__badge,
+.cad-project-card__link {
+  font-family: $font-body;
+}
+
+.cad-project-card__badge {
+  text-transform: none;
+}
+
+.cad-project-filter__pill {
+  font-family: $font-body;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+.project-details h2,
+.project-info h6 {
+  text-transform: none;
+  font-family: $font-title;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.project-details h2 {
+  font-size: 34px;
+}
+
+.single-service-item .single-service-inner h5 {
+  text-transform: none;
+  font-family: $font-title;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+
+  @media #{$md} {
+    font-size: 30px;
+  }
+
+  @media #{$xs} {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+}

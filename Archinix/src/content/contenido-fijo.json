@@ -1,0 +1,274 @@
+{
+  "site": {
+    "name": "CAD Arquitectura y Diseño",
+    "director": "Arq. Gustavo Caimaris",
+    "tagline": "Arquitectura con excelencia. Creando espacios que transforman.",
+    "logos": {
+      "principal": "/logo/web.svg",
+      "blanco": "/logo/web.svg"
+    },
+    "email": "info@cad-arquitectura.com",
+    "phone": "",
+    "address": "Buenos Aires, Argentina",
+    "schedule": "Lun-Vie, 09:00 - 18:00",
+    "copyright": "CAD Arquitectura y Diseño. Todos los derechos reservados."
+  },
+  "navigation": [
+    { "name": "Inicio", "to": "/" },
+    { "name": "Nosotros", "to": "/about" },
+    { "name": "Servicios", "to": "/services" },
+    { "name": "Proyectos", "to": "/project-standard" },
+    { "name": "Contacto", "to": "/contact" }
+  ],
+  "ui": {
+    "homeLabel": "Inicio",
+    "contactButton": "Contacto",
+    "verMasButton": "Ver más",
+    "moreAboutLink": "Conocé más",
+    "getInTouchButton": "Escribinos",
+    "submitButton": "Enviar",
+    "contactInfoTitle": "Datos de contacto",
+    "projectInMind": "¿Tenés un proyecto en mente?"
+  },
+  "header": {
+    "offcanvasText": "CAD Arquitectura y Diseño — soluciones arquitectónicas personalizadas para transformar la forma en que vivís, trabajás y disfrutás tu entorno.",
+    "offcanvasImage": "/ESTRUCTURA/layout_offcanvas_1315x902.jpg"
+  },
+  "footer": {
+    "brandText": "Estudio de arquitectura dirigido por el Arq. Gustavo Caimaris. Más de 30 años creando espacios funcionales y de alta calidad.",
+    "officeTitle": "Estudio",
+    "linksTitle": "Enlaces",
+    "links": [
+      { "name": "Nosotros", "to": "about" },
+      { "name": "Servicios", "to": "services" },
+      { "name": "Proyectos", "to": "project-standard" },
+      { "name": "Contacto", "to": "contact" }
+    ],
+    "socialTitle": "Seguinos",
+    "social": [
+      { "name": "Instagram", "url": "#", "icon": "lab la-instagram" },
+      { "name": "LinkedIn", "url": "#", "icon": "lab la-linkedin-in" },
+      { "name": "Facebook", "url": "#", "icon": "lab la-facebook-f" }
+    ],
+    "legal": "Política de privacidad | Términos y condiciones"
+  },
+  "home": {
+    "hero": {
+      "label": "Proyecto destacado",
+      "slogan": "Arquitectura con excelencia. Creando espacios que transforman.",
+      "slides": [
+        { "image": "/media/slider/slide-01_1920x1080.jpg", "title": "Proyecto 01", "year": "2024" },
+        { "image": "/media/slider/slide-02_1920x1080.jpg", "title": "Proyecto 02", "year": "2024" },
+        { "image": "/media/slider/slide-03_1920x1080.jpg", "title": "Proyecto 03", "year": "2023" },
+        { "image": "/media/slider/slide-04_1920x1080.jpg", "title": "Proyecto 04", "year": "2023" },
+        { "image": "/media/slider/slide-05_1920x1080.jpg", "title": "Proyecto 05", "year": "2022" },
+        { "image": "/media/slider/slide-06_1920x1080.jpg", "title": "Proyecto 06", "year": "2022" },
+        { "image": "/media/slider/slide-07_1920x1080.jpg", "title": "Proyecto 07", "year": "2021" },
+        { "image": "/media/slider/slide-08_1920x1080.jpg", "title": "Proyecto 08", "year": "2021" },
+        { "image": "/media/slider/slide-09_1920x1080.jpg", "title": "Proyecto 09", "year": "2020" },
+        { "image": "/media/slider/slide-10_1920x1080.jpg", "title": "Proyecto 10", "year": "2020" }
+      ]
+    },
+    "about": {
+      "subtitle": "El estudio",
+      "title": "CAD Arquitectura y Diseño",
+      "description": "Estudio dirigido por el Arq. Gustavo Caimaris, junto a un equipo de profesionales. Creamos espacios inspiradores y funcionales que transforman la forma en que las personas viven, trabajan y disfrutan su entorno.",
+      "linkTo": "/about"
+    },
+    "featureLine": {
+      "background": "/ESTRUCTURA/feature_fondo_1920x683.jpg",
+      "items": [
+        "Vivienda Unifamiliar",
+        "Vivienda Multifamiliar",
+        "Diseño Comercial",
+        "Oficinas",
+        "Naves Industriales",
+        "Diseño de Interiores",
+        "Dirección de Obra",
+        "Gestión de Proyectos"
+      ]
+    },
+    "features": {
+      "subtitle": "Servicios",
+      "title": "Soluciones integrales",
+      "items": [
+        {
+          "iconClass": "flaticon-architecture",
+          "title": "Diseño conceptual",
+          "description": "Desarrollamos propuestas que equilibran estética y funcionalidad, escuchando las necesidades de cada cliente."
+        },
+        {
+          "iconClass": "flaticon-home",
+          "title": "Dirección de obra",
+          "description": "Acompañamos cada etapa de la ejecución con control técnico y seguimiento permanente del proyecto."
+        },
+        {
+          "iconClass": "flaticon-floor-plan",
+          "title": "Gestión de proyectos",
+          "description": "Coordinamos desarrollos residenciales y comerciales con foco en calidad, plazos y transparencia."
+        },
+        {
+          "iconClass": "flaticon-sketch",
+          "title": "Diseño de interiores",
+          "description": "Intervenimos espacios comerciales y residenciales con soluciones personalizadas y materiales de calidad."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Hace realidad tu proyecto.",
+      "background": "/ESTRUCTURA/cta_principal_1900x760.jpg",
+      "linkTo": "/contact"
+    },
+    "featureSlider": {
+      "icon": "/ESTRUCTURA/icono_asterisk_dark.png",
+      "items": [
+        { "title": "Excelencia técnica", "stroke": false },
+        { "title": "Diseño personalizado", "stroke": true },
+        { "title": "+30 años de experiencia", "stroke": false },
+        { "title": "Dirección de obra", "stroke": true },
+        { "title": "Gestión de proyectos", "stroke": false },
+        { "title": "Confianza y calidad", "stroke": true }
+      ]
+    },
+    "projects": {
+      "title": "Proyectos",
+      "subtitle": "Portfolio",
+      "description": "Una selección de obras residenciales, comerciales, industriales y de oficinas desarrolladas por el estudio."
+    },
+    "counters": [
+      { "value": 30, "label": "Años de experiencia", "highlight": true },
+      { "value": 45000, "label": "m² construidos" },
+      { "value": 42, "label": "Proyectos" },
+      { "value": 6, "label": "Especialidades" }
+    ]
+  },
+  "about": {
+    "breadcrumb": {
+      "title": "Nosotros",
+      "background": "/ESTRUCTURA/breadcrumb_about_1920x480.jpg"
+    },
+    "story": {
+      "title": "Nuestro estudio",
+      "image": "/ESTRUCTURA/seccion_about_page_1100x893.jpg",
+      "paragraphs": [
+        "CAD Arquitectura y Diseño es un estudio dirigido por el Arq. Gustavo Caimaris, junto a un equipo de profesionales y asesores permanentes.",
+        "Nos apasiona crear espacios inspiradores y funcionales. Combinamos creatividad, innovación y experiencia técnica para dar vida a proyectos únicos.",
+        "Trabajamos estrechamente con cada cliente para diseñar espacios que reflejen su visión, con equilibrio entre estética y funcionalidad."
+      ]
+    },
+    "architecture": {
+      "subtitle": "Enfoque",
+      "title": "Arquitectura con propósito",
+      "description": "Nos especializamos en viviendas unifamiliares y multifamiliares, diseño comercial, oficinas, naves industriales e interiores. Más de 45.000 m² construidos respaldan nuestro recorrido.",
+      "image": "/ESTRUCTURA/seccion_about_01_1000x1000.jpg"
+    }
+  },
+  "services": {
+    "breadcrumb": {
+      "title": "Servicios",
+      "background": "/ESTRUCTURA/breadcrumb_servicios_1920x480.jpg"
+    },
+    "items": [
+      {
+        "id": 1,
+        "icon": "flaticon-architecture",
+        "title": "Diseño conceptual",
+        "description": "Propuestas arquitectónicas personalizadas que integran creatividad, funcionalidad y las necesidades de cada cliente."
+      },
+      {
+        "id": 2,
+        "icon": "flaticon-floor-plan",
+        "title": "Dirección y ejecución de obras",
+        "description": "Seguimiento técnico y control de calidad en todas las etapas de materialización del proyecto."
+      },
+      {
+        "id": 3,
+        "icon": "flaticon-sketch",
+        "title": "Gestión de proyectos",
+        "description": "Coordinación integral de desarrollos residenciales, comerciales e industriales."
+      },
+      {
+        "id": 4,
+        "icon": "flaticon-city-hall",
+        "title": "Vivienda residencial",
+        "description": "Proyectos unifamiliares y multifamiliares con soluciones habitacionales de alta calidad."
+      },
+      {
+        "id": 5,
+        "icon": "flaticon-medieval-house",
+        "title": "Diseño comercial y oficinas",
+        "description": "Espacios comerciales, corporativos y de trabajo pensados para la experiencia del usuario."
+      },
+      {
+        "id": 6,
+        "icon": "flaticon-blueprint",
+        "title": "Naves industriales e interiores",
+        "description": "Depósitos, plantas industriales y diseño interior para entornos funcionales y eficientes."
+      }
+    ],
+    "coreFeature": {
+      "subtitle": "Especialidades",
+      "title": "Lo que hacemos",
+      "items": [
+        {
+          "iconClass": "flaticon-architecture",
+          "title": "Residencial",
+          "description": "Viviendas unifamiliares y multifamiliares con diseño contemporáneo y materiales de calidad."
+        },
+        {
+          "iconClass": "flaticon-home",
+          "title": "Comercial",
+          "description": "Locales, showrooms y espacios gastronómicos con identidad propia y funcionalidad."
+        },
+        {
+          "iconClass": "flaticon-floor-plan",
+          "title": "Corporativo",
+          "description": "Oficinas y espacios de trabajo con foco en confort, imagen y eficiencia."
+        },
+        {
+          "iconClass": "flaticon-sketch",
+          "title": "Industrial",
+          "description": "Naves, depósitos y plantas con soluciones técnicas y constructivas eficientes."
+        }
+      ]
+    }
+  },
+  "projectsPage": {
+    "breadcrumb": {
+      "title": "Proyectos",
+      "background": "/ESTRUCTURA/breadcrumb_proyectos_1920x480.jpg"
+    }
+  },
+  "contact": {
+    "breadcrumb": {
+      "title": "Contacto",
+      "background": "/ESTRUCTURA/breadcrumb_contact_1920x480.jpg"
+    },
+    "intro": "¿Tenés un proyecto en mente? Escribinos y te respondemos a la brevedad. También podés contactarnos por email o teléfono.",
+    "formTitle": "Enviá tu consulta",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210146.68168877432!2d-58.57338320713459!3d-34.61580371739104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b027ef289%3A0xdf28f1c8f22c9603!2sBuenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar",
+    "placeholders": {
+      "name": "Tu nombre",
+      "email": "Tu email",
+      "phone": "Tu teléfono",
+      "message": "Tu mensaje"
+    },
+    "errors": {
+      "nameRequired": "El nombre es obligatorio.",
+      "emailRequired": "El email es obligatorio.",
+      "emailInvalid": "Email inválido.",
+      "phoneRequired": "El teléfono es obligatorio.",
+      "phoneInvalid": "Teléfono inválido.",
+      "messageRequired": "El mensaje es obligatorio."
+    },
+    "successMessage": "¡Mensaje enviado! Te contactaremos pronto."
+  },
+  "projectCategories": [
+    "Comercial",
+    "Industrial",
+    "Oficinas",
+    "Vivienda Multifamiliar",
+    "Vivienda Unifamiliar",
+    "Diseño Integral"
+  ]
+}

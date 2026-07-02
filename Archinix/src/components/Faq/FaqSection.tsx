@@ -1,5 +1,5 @@
 import { useState } from "react";
-const faqImg = "/ESTRUCTURA/faq_imagen.jpg";
+const faqImg = "/ESTRUCTURA/faq_imagen_1920x902.jpg";
 
 interface FaqItem {
   id: number;

@@ -1,24 +1,17 @@
 import { Link } from "react-router-dom";
+import { content } from "@/content/useContent";
 
-interface SocialItem {
-  name: string;
-  url: string;
-}
-
-const socialLinks: SocialItem[] = [
-  { name: "Facebook", url: "#" },
-  { name: "Instagram", url: "#" },
-  { name: "Medium", url: "#" },
-];
 export default function FooterSocial() {
+  const { socialTitle, social } = content.footer;
+
   return (
     <div>
-      <h5>Follow Us</h5>
+      <h5>{socialTitle}</h5>
       <ul>
         <li>
           <div className="social-area">
-            {socialLinks.map((item, index) => (
-              <Link key={index} to={`/${item.url}`}>
+            {social.map((item) => (
+              <Link key={item.name} to={item.url}>
                 {item.name}
               </Link>
             ))}

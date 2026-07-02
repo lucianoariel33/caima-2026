@@ -1,7 +1,7 @@
 import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import ProjectListItem from "@components/Project/ProjectList/ProjectListItem";
 
-const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_proyectos.jpg";
+const BreadcrumbBg = "/ESTRUCTURA/breadcrumb_proyectos_1920x480.jpg";
 
 export default function ProjectList() {
   return (

@@ -1,121 +1,99 @@
 # Imagenes de estructura central
 
-Esta carpeta contiene las imagenes fijas de la web en una sola ubicacion:
+Esta carpeta contiene las imagenes fijas de la web.
 
 ```text
 Archinix/public/ESTRUCTURA
 ```
 
-No uses subcarpetas para las imagenes nuevas. Reemplaza los archivos directamente aca, manteniendo exactamente el mismo nombre y extension.
-
 Los proyectos dinamicos van aparte en:
 
 ```text
 Archinix/PROYECTOS
+Archinix/public/media/proyectos
 ```
 
-## Principales
+## Convencion de nombres
 
-| Uso | Archivo | Tamano actual |
-|---|---|---:|
-| Favicon | `favicon.png` | 172 x 172 |
-| Logo principal | `logo_principal.png` | 198 x 64 |
-| Logo blanco | `logo_blanco.png` | 198 x 64 |
-| Logo alternativo | `logo_alternativo.png` | 198 x 64 |
-| Hero Home 1 | `hero_home_01.jpg` | 1920 x 1100 |
-| Hero Home 3 | `hero_home_03.jpg` | 800 x 1000 |
+Todas las fotos usan el formato:
 
-## Slider principal
+```text
+nombre-uso_ANCHOxALTO.jpg
+```
 
-El slide de Home 2 levanta estas imagenes:
+El tamaño en el nombre es el **tamano exacto** que debe tener la imagen de reemplazo.
 
-| Uso | Archivo | Tamano actual |
-|---|---|---:|
-| Slide 1 | `sliderprincipal_01.jpg` | 2880 x 1960 |
-| Slide 2 | `sliderprincipal_02.jpg` | 2880 x 1960 |
-| Slide 3 | `sliderprincipal_03.jpg` | 2880 x 1960 |
+Ejemplo: `breadcrumb_about_1920x480.jpg` → exportar una imagen de **1920 × 480 px**.
 
-## Layout general
+Para regenerar todas desde el slider del hero:
 
-| Uso | Archivo | Tamano actual |
-|---|---|---:|
-| Imagen offcanvas lateral | `layout_offcanvas.jpg` | 1315 x 902 |
-| CTA principal | `cta_principal.jpg` | 1900 x 760 |
-| CTA pricing | `cta_pricing.jpg` | 2880 x 1560 |
-| CTA contacto | `cta_contacto.jpg` | 2880 x 1560 |
-| Franja feature | `feature_fondo.jpg` | 1920 x 683 |
-| Video section | `video_fondo.jpg` | 1920 x 1080 |
-| FAQ | `faq_imagen.jpg` | 1920 x 902 |
-| Process | `process_imagen.jpg` | 890 x 664 |
-| Fondo services | `services_fondo.jpg` | 1930 x 711 |
-| Fondo team | `team_fondo.jpeg` | 1880 x 1253 |
+```bash
+npm run setup:estructura
+```
 
-## Breadcrumbs
+Eso recorta fotos del slider al tamano de cada slot y actualiza las rutas en el codigo.
 
-| Pagina | Archivo | Tamano actual |
-|---|---|---:|
-| About | `breadcrumb_about.jpg` | 2880 x 1620 |
-| Blog | `breadcrumb_blog.jpg` | 1315 x 902 |
-| Contact | `breadcrumb_contact.jpg` | 1536 x 661 |
-| FAQ | `breadcrumb_faq.jpg` | 1920 x 902 |
-| Pricing | `breadcrumb_pricing.jpg` | 1600 x 865 |
-| Process | `breadcrumb_process.jpg` | 1600 x 865 |
-| Project | `breadcrumb_proyectos.jpg` | 1920 x 1081 |
-| Services | `breadcrumb_servicios.jpg` | 1930 x 711 |
-| Team | `breadcrumb_equipo.jpeg` | 1880 x 1253 |
-| Testimonial | `breadcrumb_testimonios.jpg` | 1536 x 661 |
+---
 
-## Secciones fijas
+## Paginas activas (Home, About, Services, Proyectos, Contact)
 
-| Uso | Archivo | Tamano actual |
-|---|---|---:|
-| About cuadrada | `seccion_about_01.jpg` | 1000 x 1000 |
-| About page | `seccion_about_page.jpg` | 1100 x 893 |
-| Servicio 1 | `seccion_servicio_01.jpg` | 738 x 1024 |
-| Servicio 2 | `seccion_servicio_02.jpg` | 738 x 1024 |
-| Servicio 3 | `seccion_servicio_03.jpg` | 738 x 1024 |
-| Servicio 4 | `seccion_servicio_04.jpg` | 738 x 1024 |
-| Servicio 5 | `seccion_servicio_05.jpg` | 738 x 1024 |
-| Servicio 6 | `seccion_servicio_06.jpg` | 738 x 1024 |
-| Timeline 1 | `seccion_timeline_01.jpg` | 850 x 570 |
-| Timeline 2 | `seccion_timeline_02.jpg` | 850 x 570 |
-| Timeline 3 | `seccion_timeline_03.jpg` | 850 x 570 |
-| Timeline 4 | `seccion_timeline_04.jpg` | 850 x 571 |
-| Timeline 5 | `seccion_timeline_05.jpg` | 850 x 570 |
-| Equipo 1 | `seccion_equipo_01.jpg` | 800 x 900 |
-| Equipo 2 | `seccion_equipo_02.jpg` | 800 x 900 |
-| Equipo 3 | `seccion_equipo_03.jpg` | 900 x 1000 |
-| Equipo 4 | `seccion_equipo_04.jpg` | 804 x 904 |
-| Equipo 5 | `seccion_equipo_05.jpg` | 800 x 900 |
-| Equipo 6 | `seccion_equipo_06.jpg` | 800 x 889 |
-| Testimonio 1 | `seccion_testimonial_01.jpg` | 500 x 603 |
-| Testimonio 2 | `seccion_testimonial_02.jpg` | 500 x 603 |
-| Testimonio 3 | `seccion_testimonial_03.jpg` | 500 x 634 |
-| Cliente 1 | `seccion_cliente_01.jpg` | 120 x 120 |
-| Cliente 2 | `seccion_cliente_02.jpg` | 120 x 120 |
-| Cliente 3 | `seccion_cliente_03.jpg` | 120 x 120 |
-| Cliente 4 | `seccion_cliente_04.jpg` | 120 x 120 |
+| Uso | Archivo | Tamano |
+|---|---|---|
+| Offcanvas lateral | `layout_offcanvas_1315x902.jpg` | 1315 × 902 |
+| Franja feature (home) | `feature_fondo_1920x683.jpg` | 1920 × 683 |
+| CTA principal (home) | `cta_principal_1900x760.jpg` | 1900 × 760 |
+| Breadcrumb Nosotros | `breadcrumb_about_1920x480.jpg` | 1920 × 480 |
+| About — Nuestro estudio | `seccion_about_page_1100x893.jpg` | 1100 × 893 |
+| About — Enfoque | `seccion_about_01_1000x1000.jpg` | 1000 × 1000 |
+| About — Video fondo | `video_fondo_1920x1080.jpg` | 1920 × 1080 |
+| Breadcrumb Servicios | `breadcrumb_servicios_1920x480.jpg` | 1920 × 480 |
+| Testimonial 1–3 | `seccion_testimonial_01_500x603.jpg` … `03_500x634.jpg` | 500 × 603 / 634 |
+| Breadcrumb Proyectos | `breadcrumb_proyectos_1920x480.jpg` | 1920 × 480 |
+| Breadcrumb Contacto | `breadcrumb_contact_1920x480.jpg` | 1920 × 480 |
 
-## Iconos graficos
+## Slider hero (home)
 
-| Uso | Archivo | Tamano actual |
-|---|---|---:|
-| Asterisco oscuro | `icono_asterisk_dark.png` | 64 x 64 |
-| Comillas | `icono_quotes.png` | 64 x 64 |
-| Comillas rectas | `icono_straight_quotes.png` | 64 x 64 |
-| Feature 1 | `icono_feature_01.png` | 64 x 64 |
-| Feature 2 | `icono_feature_02.png` | 64 x 64 |
-| Feature 3 | `icono_feature_03.png` | 64 x 64 |
-| Feature 4 | `icono_feature_04.png` | 64 x 64 |
-| Service 1 | `icono_service_01.png` | 64 x 64 |
-| Service 2 | `icono_service_02.png` | 64 x 64 |
-| Service 3 | `icono_service_03.png` | 64 x 64 |
+Ruta: `Archinix/public/media/slider/`
 
-## Como reemplazar
+| Archivo | Tamano |
+|---|---|
+| `slide-01_1920x1080.jpg` … `slide-10_1920x1080.jpg` | 1920 × 1080 |
 
-1. Entra a `Archinix/public/ESTRUCTURA`.
-2. Pega la nueva imagen con el mismo nombre exacto.
-3. Acepta reemplazar el archivo anterior.
-4. Recarga la web.
+---
 
-No cambies nombres ni extensiones si queres evitar tocar codigo.
+## Secciones del template (rutas ocultas)
+
+| Uso | Archivo | Tamano |
+|---|---|---|
+| Hero Home 1 | `hero_home_01_1920x1100.jpg` | 1920 × 1100 |
+| Hero Home 3 | `hero_home_03_800x1000.jpg` | 800 × 1000 |
+| Slider legacy | `sliderprincipal_01_1920x1080.jpg` … `03` | 1920 × 1080 |
+| CTA pricing / contacto | `cta_pricing_1900x760.jpg`, `cta_contacto_1900x760.jpg` | 1900 × 760 |
+| FAQ | `faq_imagen_1920x902.jpg` | 1920 × 902 |
+| Process | `process_imagen_890x664.jpg` | 890 × 664 |
+| Services fondo | `services_fondo_1920x683.jpg` | 1920 × 683 |
+| Team fondo | `team_fondo_1920x1080.jpg` | 1920 × 1080 |
+| Breadcrumbs blog, FAQ, pricing, process, equipo, testimonios | `breadcrumb_*_1920x480.jpg` | 1920 × 480 |
+| Servicios 1–6 | `seccion_servicio_01_738x1024.jpg` … `06` | 738 × 1024 |
+| Timeline 1–5 | `seccion_timeline_01_850x570.jpg` … `05` | 850 × 570 |
+| Equipo 1–6 | `seccion_equipo_01_800x900.jpg` … `06` | 800 × 900 |
+| Clientes 1–4 | `seccion_cliente_01_120x120.jpg` … `04` | 120 × 120 |
+
+## Iconos y logos (sin cambiar)
+
+| Uso | Archivo |
+|---|---|
+| Favicon | `favicon.png` |
+| Logos | `logo_principal.png`, `logo_blanco.png`, `logo_alternativo.png` |
+| Iconos UI | `icono_*.png` |
+
+---
+
+## Como reemplazar una imagen
+
+1. Prepará la foto al **mismo tamano** que indica el nombre del archivo.
+2. Entrá a `Archinix/public/ESTRUCTURA` (o `public/media/slider` para slides).
+3. Reemplazá el archivo manteniendo **exactamente** el mismo nombre.
+4. Recargá la web.
+
+No cambies el nombre ni el tamano en el filename si no queres tocar codigo.

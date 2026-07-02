@@ -1,0 +1,109 @@
+@use "./variables" as *;
+
+// Recuadro negro para texto sobre fotos. No usar en header / menú.
+.image-text-panel {
+  display: inline-block;
+  max-width: 100%;
+  background: rgba(0, 0, 0, 0.88);
+  padding: 16px 24px;
+  color: #fff;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a {
+    color: #fff;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.image-text-panel--block {
+  display: block;
+  width: fit-content;
+}
+
+// Hero slider
+#home-2 {
+  .project-title.image-text-panel {
+    padding: 18px 28px;
+  }
+
+  .project-slogan.image-text-panel {
+    margin-top: 16px;
+    padding: 14px 28px;
+
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
+// Breadcrumbs con foto de fondo
+.breadcrumb-bg .breadcrumb-title.image-text-panel {
+  padding: 16px 32px;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+// CTA sobre imagen
+.cta-img-area .cta-inner .image-text-panel {
+  padding: 18px 32px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+// Project slider legacy (#project-2)
+#project-2 .hover-info.image-text-panel,
+#project-2 .project-inner .hover-info {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+#project-grid .single-project-item .project-info.image-text-panel,
+#project-grid .single-project-item:hover .project-info {
+  background: rgba(0, 0, 0, 0.88);
+  color: #fff;
+
+  h5,
+  p {
+    color: #fff;
+  }
+}
+
+// Móvil: sin recuadro negro en bloques de texto (solo overlay más fuerte en portadas)
+@media #{$xs} {
+  .image-text-panel {
+    background: transparent;
+    padding: 0;
+  }
+
+  #home-2 .project-title.image-text-panel,
+  #home-2 .project-slogan.image-text-panel,
+  .breadcrumb-bg .breadcrumb-title.image-text-panel,
+  .cta-img-area .cta-inner .image-text-panel {
+    padding: 0;
+  }
+
+  #home-2 .single-slide-item .overlay-3,
+  .breadcrumb-bg .overlay-3,
+  .cta-img-area .overlay-3 {
+    visibility: visible;
+    z-index: 1;
+    opacity: 0.55;
+  }
+}

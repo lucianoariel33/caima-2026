@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import NavMenu from "@/layout//HeaderContent/NavMenu";
-import { useTheme } from "@/context/ThemeContext";
-
-const logo = "/ESTRUCTURA/logo_principal.png";
-const logoWhite = "/ESTRUCTURA/logo_blanco.png";
-
-import mainMenuData from "@/jsondata/menuItem.json";
+import { content } from "@/content/useContent";
 
 interface SubmenuItem {
   name: string;
@@ -18,10 +13,13 @@ interface MenuItem {
   submenu?: SubmenuItem[];
 }
 
-const mainMenu: MenuItem[] = mainMenuData;
+const { logos } = content.site;
+const mainMenu = content.navigation as MenuItem[];
+const { header: headerContent } = content;
+const { contactButton, getInTouchButton } = content.ui;
 
 export default function Header() {
-  const { theme } = useTheme();
+  const { email, phone } = content.site;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
   const [activeMobileMenu, setActiveMobileMenu] = useState<number | null>(null);
@@ -49,7 +47,8 @@ export default function Header() {
     setOffcanvasOpen(false);
   };
 
-  const isHomeTwo = location.pathname === "/home-two";
+  // La home usa el hero slider a pantalla completa, que requiere header transparente superpuesto
+  const isHomeTwo = location.pathname === "/" || location.pathname === "/home-two";
 
   return (
     <>
@@ -66,7 +65,7 @@ export default function Header() {
                 <div className="col-xl-5 col-lg-4 col-6">
                   <div className="logo">
                     <Link to="/" className="logo">
-                      <img src={(theme === 'dark' || (isHomeTwo && !isSticky)) ? logoWhite : logo} alt="logo" />
+                      <img src={logos.principal} alt={content.site.name} />
                     </Link>
                   </div>
                 </div>
@@ -165,14 +164,18 @@ export default function Header() {
                       </nav>
 
                       <div className="action-bar">
-                        <Link to="mailto:info@Archinix.com">
-                          <i className="las la-envelope"></i>info@Archinix.com
-                        </Link>
-                        <Link to="tel:123-456-7890">
-                          <i className="las la-phone"></i>123-456-7890
-                        </Link>
+                        {email && (
+                          <Link to={`mailto:${email}`}>
+                            <i className="las la-envelope"></i>{email}
+                          </Link>
+                        )}
+                        {phone && (
+                          <Link to={`tel:${phone}`}>
+                            <i className="las la-phone"></i>{phone}
+                          </Link>
+                        )}
                         <Link to="/contact" className="theme-btn">
-                          Contact Us
+                          {contactButton}
                         </Link>
                       </div>
                     </div>
@@ -194,38 +197,28 @@ export default function Header() {
 
         <div className="logo-side">
           <Link to="/" className="logo">
-            <img src="/ESTRUCTURA/logo_blanco.png" alt="" />
+            <img src={logos.principal} alt={content.site.name} />
           </Link>
         </div>
 
         <div className="side-info">
           <div className="contact-list mb-40">
-            <p>
-              Welcome to Archinix, a full service architecture and interior
-              design firm.
-            </p>
-            <img src="/ESTRUCTURA/layout_offcanvas.jpg" alt="" />
+            <p>{headerContent.offcanvasText}</p>
+            <img src={headerContent.offcanvasImage} alt="" />
 
             <div className="mt-30 mb-30">
               <Link to="/contact" className="white-btn">
-                Get In Touch
+                {getInTouchButton}
               </Link>
             </div>
           </div>
 
           <div className="social-area-wrap">
-            <Link to="#">
-              <i className="lab la-facebook-f"></i>
-            </Link>
-            <Link to="#">
-              <i className="lab la-instagram"></i>
-            </Link>
-            <Link to="#">
-              <i className="lab la-linkedin-in"></i>
-            </Link>
-            <Link to="#">
-              <i className="lab la-skype"></i>
-            </Link>
+            {content.footer.social.map((item) => (
+              <Link to={item.url} key={item.name}>
+                <i className={item.icon}></i>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

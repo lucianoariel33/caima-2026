@@ -1,3 +1,4 @@
+@use "fonts";
 @use "variables";
 @use "common";
 @use "spacer";
@@ -10,6 +11,7 @@
 @use "about";
 @use "services";
 @use "project";
+@use "proyectos-cad";
 @use "process";
 @use "faq";
 @use "video";
@@ -30,3 +32,6 @@
 @use "dark";
 @use "theme-toggle";
 @use "section-marker";
+@use "transitions";
+@use "image-text-panel";
+@use "typography";

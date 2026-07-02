@@ -1,28 +1,34 @@
-import { Link } from "react-router-dom";
+import { useMemo, useState } from "react";
 import { projects } from "@/content/projects";
+import ProjectCategoryFilter from "@/components/Project/ProjectCategoryFilter";
+import ProjectsGrid from "@/components/Project/ProjectsGrid";
+import { content } from "@/content/useContent";
 
 export default function ProjectStandardItem() {
+  const [activeFilter, setActiveFilter] = useState("*");
+  const { subtitle, description } = content.home.projects;
+
+  const filteredProjects = useMemo(
+    () =>
+      activeFilter === "*"
+        ? projects
+        : projects.filter((project) => project.category === activeFilter),
+    [activeFilter]
+  );
+
   return (
-    <div id="project-standard" className="project-section pt-60 pb-60">
+    <div id="project-standard" className="cad-projects-section cad-projects-section--page pt-60 pb-90">
       <div className="container">
-        <div className="row">
-          {projects.map((item, index) => (
-            <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${0.2 * (index % 3 + 1)}s`} key={item.id}>
-              <Link
-                to={`/project-details/${item.slug}`}
-                className="single-project-wrapper"
-              >
-                <div className="project-img">
-                  <img src={item.cover} alt={item.title} loading="lazy" />
-                </div>
-                <div className="project-title">
-                  <h3>{item.title}</h3>
-                  <h6>{item.category}</h6>
-                </div>
-              </Link>
-            </div>
-          ))}
+        <div className="cad-projects-section__intro">
+          <p className="cad-projects-section__eyebrow">{subtitle}</p>
+          {description && <p className="cad-projects-section__lead">{description}</p>}
+          <ProjectCategoryFilter
+            activeFilter={activeFilter}
+            onFilterChange={setActiveFilter}
+          />
         </div>
+
+        <ProjectsGrid projects={filteredProjects} />
       </div>
     </div>
   );

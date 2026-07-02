@@ -1,0 +1,299 @@
+@use "variables" as *;
+
+.cad-projects-section {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(255, 255, 255, 0.04), transparent 40%),
+      radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.03), transparent 35%);
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    margin-bottom: 48px;
+    gap: 24px 0;
+
+    &--centered {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
+
+      .section-title {
+        margin-bottom: 24px;
+      }
+
+      .cad-project-filter {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__lead {
+    margin-top: 18px;
+    margin-bottom: 0;
+    max-width: 520px;
+    color: #9a9a9a;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  &__intro {
+    margin-bottom: 40px;
+  }
+
+  &__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 12px;
+    color: #8f8f8f;
+    margin-bottom: 12px;
+  }
+
+  &__grid {
+    margin-top: 8px;
+  }
+
+  &__cta {
+    margin-top: 56px;
+    text-align: center;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-inline: 34px;
+
+    i {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover i {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.cad-project-filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.02);
+
+  &__pill {
+    appearance: none;
+    cursor: pointer;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.58);
+    padding: 14px 22px;
+    font-family: $font-body;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition:
+      color 0.25s ease,
+      background 0.25s ease;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &:hover:not(.is-active) {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    &.is-active {
+      background: #fff;
+      color: #0a0a0a;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: -2px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  @media #{$lg} {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    border: none;
+    background: transparent;
+    gap: 8px;
+
+    &__pill {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 12px 10px;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-align: center;
+      white-space: normal;
+    }
+  }
+
+  @media #{$xs} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.cad-projects-section--page {
+  .cad-project-filter {
+    justify-content: flex-start;
+    margin-top: 28px;
+  }
+}
+
+.cad-project-card {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+
+  &__media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    background: #111;
+    aspect-ratio: 4 / 5;
+    isolation: isolate;
+  }
+
+  &--featured &__media {
+    aspect-ratio: 16 / 11;
+
+    @media #{$md, $xs} {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  &__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &__badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 3;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  &__footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 22px 22px 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.82) 45%, rgba(0, 0, 0, 0.92) 100%);
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease, margin-top 0.3s ease;
+
+    i {
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .cad-project-card__media img {
+      transform: scale(1.08);
+    }
+
+    .cad-project-card__badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cad-project-card__link {
+      opacity: 1;
+      max-height: 30px;
+      margin-top: 10px;
+    }
+
+    .cad-project-card__link i {
+      transform: translateX(3px);
+    }
+  }
+
+  @media (hover: none) {
+    .cad-project-card__badge,
+    .cad-project-card__link {
+      opacity: 1;
+      transform: none;
+      max-height: 30px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.cad-projects-grid {
+  .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+  }
+}
+
+body.dark {
+  .cad-projects-section__lead,
+  .cad-projects-section__eyebrow {
+    color: #9a9a9a;
+  }
+}

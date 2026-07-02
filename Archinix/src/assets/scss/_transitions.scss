@@ -1,0 +1,33 @@
+@use "./variables" as *;
+
+$transition-ease: cubic-bezier(0.22, 1, 0.36, 1);
+$section-reveal-duration: 0.75s;
+$page-enter-duration: 0.45s;
+
+.page-transition {
+  animation: pageEnter $page-enter-duration $transition-ease both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
+
+@media #{$xs} {
+  .page-transition {
+    animation: none;
+  }
+}

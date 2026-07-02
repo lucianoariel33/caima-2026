@@ -1,3 +1,6 @@
+import { content } from "./useContent";
+import placeholderImages from "./placeholder-images.json";
+
 interface ProjectMeta {
   titulo?: string;
   slug?: string;
@@ -38,39 +41,28 @@ const markdownFiles = import.meta.glob("../../PROYECTOS/*/proyecto.md", {
   query: "?raw",
 }) as Record<string, string>;
 
-const imageFiles = import.meta.glob(
-  "../../PROYECTOS/*/fotos/*.{jpg,jpeg,png,webp}",
-  {
-    eager: true,
-    import: "default",
-    query: "?url",
-  }
-) as Record<string, string>;
+const projectPlaceholders = placeholderImages.proyectos;
 
-const fallbackCover = "/assets/img/project/1-1.jpg";
-const fallbackGallery = [
-  "/assets/img/project/project-details-2.jpg",
-  "/assets/img/project/project-details-3.jpg",
-];
+const genericCopy = {
+  summary:
+    "Proyecto desarrollado por el estudio con foco en funcionalidad, estética y calidad constructiva.",
+  description: [
+    "Desarrollo arquitectónico integral que integra diseño, planificación y ejecución bajo estándares técnicos del estudio.",
+    "La propuesta prioriza la experiencia del usuario, la eficiencia espacial y la coherencia material en cada etapa del proyecto.",
+  ],
+  concept: [
+    "Concepto basado en líneas claras, proporciones equilibradas y una lectura contemporánea del espacio.",
+  ],
+  result: [
+    "Resultado alineado con los objetivos del encargo, con soluciones constructivas eficientes y acabados de calidad.",
+  ],
+};
 
 function getFolder(path: string) {
   const parts = path.split("/");
   const projectsIndex = parts.findIndex((part) => part === "PROYECTOS");
 
   return parts[projectsIndex + 1] ?? "Proyecto";
-}
-
-function slugify(value: string) {
-  return value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
-
-function stripQuotes(value: string) {
-  return value.trim().replace(/^["']|["']$/g, "");
 }
 
 function parseFrontmatter(markdown: string): {
@@ -112,75 +104,78 @@ function parseFrontmatter(markdown: string): {
           break;
         }
 
-        values.push(stripQuotes(galleryMatch[1]));
+        values.push(galleryMatch[1].trim().replace(/^["']|["']$/g, ""));
         nextIndex += 1;
       }
 
       meta.galeria = values;
       index = nextIndex - 1;
     } else {
-      meta[key] = stripQuotes(rawValue) as never;
+      meta[key] = rawValue.replace(/^["']|["']$/g, "") as never;
     }
   }
 
   return { meta, body };
 }
 
-function getSection(markdown: string, title: string) {
-  const pattern = new RegExp(`## ${title}\\s*([\\s\\S]*?)(?=\\n## |$)`, "i");
-  const match = markdown.match(pattern);
-
-  if (!match) {
-    return [];
+function getPlaceholderCover(index: number) {
+  if (!projectPlaceholders.length) {
+    return "/media/proyectos/img-01.jpg";
   }
 
-  return match[1]
-    .trim()
-    .split(/\n\s*\n/)
-    .map((paragraph) => paragraph.replace(/\r?\n/g, " ").trim())
-    .filter(Boolean);
+  return projectPlaceholders[index % projectPlaceholders.length];
 }
 
-function resolveImage(folder: string, relativePath?: string, fallback?: string) {
-  if (!relativePath) {
-    return fallback ?? fallbackCover;
+function getPlaceholderGallery(index: number) {
+  if (!projectPlaceholders.length) {
+    return ["/media/proyectos/img-01.jpg"];
   }
 
-  const normalized = relativePath.replace(/^\.\//, "");
-  const key = `../../PROYECTOS/${folder}/${normalized}`;
+  const length = projectPlaceholders.length;
 
-  return imageFiles[key] ?? fallback ?? fallbackCover;
+  return [
+    projectPlaceholders[index % length],
+    projectPlaceholders[(index + 1) % length],
+    projectPlaceholders[(index + 2) % length],
+  ];
 }
 
-export const projects: ProjectContent[] = Object.entries(markdownFiles).map(
+function formatProjectNumber(index: number) {
+  return String(index + 1).padStart(2, "0");
+}
+
+export const PROJECT_CATEGORIES = content.projectCategories;
+
+const sortedProjectEntries = Object.entries(markdownFiles)
+  .filter(([path]) => !path.includes("/Ejemplo/"))
+  .sort(([pathA], [pathB]) =>
+    getFolder(pathA).localeCompare(getFolder(pathB), "es")
+  );
+
+export const projects: ProjectContent[] = sortedProjectEntries.map(
   ([path, markdown], index) => {
     const folder = getFolder(path);
-    const { meta, body } = parseFrontmatter(markdown);
-    const title = meta.titulo || folder;
-    const galleryFromMeta = meta.galeria?.length ? meta.galeria : [];
+    const { meta } = parseFrontmatter(markdown);
+    const number = formatProjectNumber(index);
 
     return {
       id: index + 1,
       folder,
-      slug: meta.slug || slugify(title),
-      title,
+      slug: `proyecto-${number}`,
+      title: `Proyecto ${number}`,
       category: meta.categoria || "Proyecto",
-      location: meta.ubicacion || "",
-      year: String(meta.anio || ""),
-      client: meta.cliente || "",
-      architect: meta.arquitecto || "",
-      surface: meta.superficie || "",
-      status: meta.estado || "",
-      cover: resolveImage(folder, meta.portada, fallbackCover),
-      gallery: galleryFromMeta.length
-        ? galleryFromMeta.map((image, imageIndex) =>
-            resolveImage(folder, image, fallbackGallery[imageIndex])
-          )
-        : fallbackGallery,
-      summary: getSection(body, "Resumen")[0] || "",
-      description: getSection(body, "Descripcion"),
-      concept: getSection(body, "Concepto"),
-      result: getSection(body, "Resultado"),
+      location: "",
+      year: "",
+      client: "",
+      architect: content.site.director,
+      surface: "",
+      status: "Referencia",
+      cover: getPlaceholderCover(index),
+      gallery: getPlaceholderGallery(index),
+      summary: genericCopy.summary,
+      description: genericCopy.description,
+      concept: genericCopy.concept,
+      result: genericCopy.result,
     };
   }
 );

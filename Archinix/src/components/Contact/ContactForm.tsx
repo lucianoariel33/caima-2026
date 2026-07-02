@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { content } from "@/content/useContent";
 
 interface ContactState {
   name: string;
@@ -12,6 +13,10 @@ interface ContactErrors {
 }
 
 export default function ContactForm() {
+  const { formTitle, placeholders, errors: errorMessages, successMessage } =
+    content.contact;
+  const { submitButton } = content.ui;
+
   const [formData, setFormData] = useState<ContactState>({
     name: "",
     email: "",
@@ -43,13 +48,13 @@ export default function ContactForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[0-9]{7,15}$/;
 
-    if (!name.trim()) newErrors.name = "Name is required.";
-    if (!email.trim()) newErrors.email = "Email is required.";
+    if (!name.trim()) newErrors.name = errorMessages.nameRequired;
+    if (!email.trim()) newErrors.email = errorMessages.emailRequired;
     else if (!emailRegex.test(email))
-      newErrors.email = "Invalid email address.";
-    if (!phone.trim()) newErrors.phone = "Phone number is required.";
-    else if (!phoneRegex.test(phone)) newErrors.phone = "Invalid phone number.";
-    if (!message.trim()) newErrors.message = "Message is required.";
+      newErrors.email = errorMessages.emailInvalid;
+    if (!phone.trim()) newErrors.phone = errorMessages.phoneRequired;
+    else if (!phoneRegex.test(phone)) newErrors.phone = errorMessages.phoneInvalid;
+    if (!message.trim()) newErrors.message = errorMessages.messageRequired;
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -59,7 +64,7 @@ export default function ContactForm() {
 
     await new Promise((r) => setTimeout(r, 600));
 
-    setSuccess("Your form has been successfully submitted!");
+    setSuccess(successMessage);
 
     setFormData({
       name: "",
@@ -75,7 +80,7 @@ export default function ContactForm() {
     <div className="subimit-form-wrap">
       <div className="section-title">
         <h2>
-          Submit Form{" "}
+          {formTitle}{" "}
           <span>
             <i className="las la-arrow-right"></i>
           </span>
@@ -86,7 +91,7 @@ export default function ContactForm() {
         <input
           type="text"
           name="name"
-          placeholder="Your Name"
+          placeholder={placeholders.name}
           value={formData.name}
           onChange={handleChange}
           aria-invalid={!!errors.name}
@@ -97,7 +102,7 @@ export default function ContactForm() {
         <input
           type="email"
           name="email"
-          placeholder="Email"
+          placeholder={placeholders.email}
           value={formData.email}
           onChange={handleChange}
           aria-invalid={!!errors.email}
@@ -110,7 +115,7 @@ export default function ContactForm() {
         <input
           type="tel"
           name="phone"
-          placeholder="Phone Number"
+          placeholder={placeholders.phone}
           value={formData.phone}
           onChange={handleChange}
           aria-invalid={!!errors.phone}
@@ -122,7 +127,7 @@ export default function ContactForm() {
 
         <textarea
           name="message"
-          placeholder="Message"
+          placeholder={placeholders.message}
           rows={8}
           value={formData.message}
           onChange={handleChange}
@@ -134,7 +139,7 @@ export default function ContactForm() {
         )}
 
         <button type="submit" className="theme-btn w-100">
-          Submit
+          {submitButton}
         </button>
       </form>
 
