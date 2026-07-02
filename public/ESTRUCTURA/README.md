@@ -3,14 +3,14 @@
 Esta carpeta contiene las imagenes fijas de la web.
 
 ```text
-Archinix/public/ESTRUCTURA
+public/ESTRUCTURA
 ```
 
 Los proyectos dinamicos van aparte en:
 
 ```text
-Archinix/PROYECTOS
-Archinix/public/media/proyectos
+PROYECTOS
+public/media/proyectos
 ```
 
 ## Convencion de nombres
@@ -53,7 +53,7 @@ Eso recorta fotos del slider al tamano de cada slot y actualiza las rutas en el 
 
 ## Slider hero (home)
 
-Ruta: `Archinix/public/media/slider/`
+Ruta: `public/media/slider/`
 
 | Archivo | Tamano |
 |---|---|
@@ -92,7 +92,7 @@ Ruta: `Archinix/public/media/slider/`
 ## Como reemplazar una imagen
 
 1. Prepará la foto al **mismo tamano** que indica el nombre del archivo.
-2. Entrá a `Archinix/public/ESTRUCTURA` (o `public/media/slider` para slides).
+2. Entrá a `public/ESTRUCTURA` (o `public/media/slider` para slides).
 3. Reemplazá el archivo manteniendo **exactamente** el mismo nombre.
 4. Recargá la web.
 

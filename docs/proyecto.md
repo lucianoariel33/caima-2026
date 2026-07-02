@@ -8,10 +8,11 @@ El workspace contiene una plantilla web React llamada Archinix, orientada a arqu
 
 Carpetas principales:
 
-- `Archinix`: aplicacion real.
-- `Archinix-Documentaion`: documentacion original como sitio HTML.
-- `documentacion.md`: resumen operativo de la documentacion original.
-- `proyecto.md`: este mapa del estado del proyecto.
+- Raiz del repo: aplicacion React (sitio web).
+- `docs/Archinix-Documentaion`: documentacion original como sitio HTML.
+- `docs/documentacion.md`: resumen operativo de la documentacion original.
+- `docs/proyecto.md`: este mapa del estado del proyecto.
+- `docs/HOME-SECCIONES.md`: mapa de secciones del home.
 
 ## Stack
 
@@ -25,7 +26,7 @@ Carpetas principales:
 - GSAP instalado.
 - Iconos: Line Awesome, Flaticon, Flaticon UIcons.
 
-Scripts en `Archinix/package.json`:
+Scripts en `package.json`:
 
 ```json
 {
@@ -38,7 +39,7 @@ Scripts en `Archinix/package.json`:
 
 ## Como correr
 
-Desde `Archinix`:
+Desde la raiz del repo:
 
 ```powershell
 npm install
@@ -69,7 +70,7 @@ Alias en `vite.config.ts` y `tsconfig.app.json`:
 
 Deploy:
 
-- `Archinix/vercel.json` reescribe todas las rutas a `/`, util para React Router en Vercel.
+- `vercel.json` en la raiz reescribe todas las rutas a `/`, util para React Router en Vercel.
 
 ## Entrada de la app
 
@@ -235,7 +236,7 @@ Fuente principal actual: Space Grotesk importada desde Google Fonts en `_variabl
 Imagenes publicas en:
 
 ```text
-Archinix/public/assets/img
+public/assets/img
 ```
 
 Subcarpetas principales:

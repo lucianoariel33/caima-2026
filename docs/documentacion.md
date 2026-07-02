@@ -1,6 +1,6 @@
 # Documentacion de Archinix
 
-Resumen compacto de la documentacion incluida en `Archinix-Documentaion/index.html`.
+Resumen compacto de la documentacion incluida en `docs/Archinix-Documentaion/index.html`.
 
 ## Identidad de la plantilla
 
@@ -19,8 +19,8 @@ Resumen compacto de la documentacion incluida en `Archinix-Documentaion/index.ht
 
 ## Que incluye el paquete
 
-- `Archinix`: plantilla React editable.
-- `Archinix-Documentaion`: documentacion original en HTML con imagenes de referencia.
+- Raiz del repo: plantilla React editable (sitio web).
+- `docs/Archinix-Documentaion`: documentacion original en HTML con imagenes de referencia.
 
 ## Tecnologias declaradas
 
@@ -36,10 +36,10 @@ Resumen compacto de la documentacion incluida en `Archinix-Documentaion/index.ht
 
 ## Instalacion local
 
-Entrar a la carpeta de la plantilla:
+Desde la raiz del repositorio:
 
 ```powershell
-cd Archinix
+cd caima-2026
 ```
 
 Instalar dependencias:
@@ -68,7 +68,7 @@ http://localhost:5173
 
 ## Build local
 
-Desde `Archinix`:
+Desde la raiz del repo:
 
 ```powershell
 npm run build
@@ -79,44 +79,44 @@ La documentacion dice que genera una carpeta de salida en la raiz del proyecto. 
 ## Deploy
 
 - La documentacion enlaza un video para Vercel: https://www.youtube.com/watch?v=7T4w0QJtL-o
-- El proyecto ya incluye `Archinix/vercel.json` con rewrites hacia `/`, necesario para que las rutas de React Router funcionen al recargar paginas internas.
+- El proyecto incluye `vercel.json` en la raiz con rewrites hacia `/`, necesario para que las rutas de React Router funcionen al recargar paginas internas.
 
 ## Configuracion basica del sitio
 
 ### Titulo y favicon
 
-- Titulo del navegador: editar `Archinix/index.html`.
-- Favicon: reemplazar o cambiar la referencia a `Archinix/public/assets/img/favicon.png`.
+- Titulo del navegador: editar `index.html`.
+- Favicon: reemplazar o cambiar la referencia a `public/assets/img/favicon.png`.
 - Titulos visibles de paginas internas: se editan en los componentes de pagina y/o `Breadcrumb`.
 
 ### Logos
 
 Logos principales del proyecto:
 
-- `Archinix/public/assets/img/logo/logo.png`
-- `Archinix/public/assets/img/logo/logo-white.png`
-- `Archinix/public/assets/img/logo/logo-2.png`
+- `public/assets/img/logo/logo.png`
+- `public/assets/img/logo/logo-white.png`
+- `public/assets/img/logo/logo-2.png`
 
 Uso principal:
 
-- Header: `Archinix/src/layout/Header.tsx`.
-- Footer: `Archinix/src/layout/FooterContent/FooterBrand.tsx`.
-- Offcanvas lateral: `Archinix/src/layout/Header.tsx`.
+- Header: `src/layout/Header.tsx`.
+- Footer: `src/layout/FooterContent/FooterBrand.tsx`.
+- Offcanvas lateral: `src/layout/Header.tsx`.
 
 ### Menu
 
 El menu principal se edita en:
 
 ```text
-Archinix/src/jsondata/menuItem.json
+src/jsondata/menuItem.json
 ```
 
 Ese JSON alimenta:
 
 ```text
-Archinix/src/layout/Header.tsx
-Archinix/src/layout/HeaderContent/NavMenu.tsx
-Archinix/src/layout/HeaderContent/SubMenu.tsx
+src/layout/Header.tsx
+src/layout/HeaderContent/NavMenu.tsx
+src/layout/HeaderContent/SubMenu.tsx
 ```
 
 ### Footer
@@ -124,7 +124,7 @@ Archinix/src/layout/HeaderContent/SubMenu.tsx
 El footer se arma en:
 
 ```text
-Archinix/src/layout/Footer.tsx
+src/layout/Footer.tsx
 ```
 
 Partes editables:
@@ -164,13 +164,13 @@ En el proyecto real las rutas estan definidas en `src/App.tsx`.
 Entrada de estilos:
 
 ```text
-Archinix/src/index.scss
+src/index.scss
 ```
 
 Ese archivo importa Bootstrap, Line Awesome, Flaticon, Animate, Flaticon UIcons, estilos de Swiper y el paquete Sass local:
 
 ```text
-Archinix/src/assets/scss/style.scss
+src/assets/scss/style.scss
 ```
 
 Archivos importantes:
