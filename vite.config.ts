@@ -9,6 +9,8 @@ export default defineConfig({
   root: rootDir,
   plugins: [react()],
   server: {
+    port: 5173,
+    strictPort: true,
     watch: {
       // Evita crash EBUSY en Windows con archivos bloqueados (fuentes, fotos de referencia)
       ignored: [
