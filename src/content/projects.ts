@@ -11,7 +11,11 @@ interface ProjectMeta {
   arquitecto?: string;
   superficie?: string;
   estado?: string;
+  thumbnail?: string;
   portada?: string;
+  destacada?: string;
+  imagen_destacada?: string;
+  imagenDestacada?: string;
   galeria?: string[];
 }
 
@@ -27,6 +31,8 @@ export interface ProjectContent {
   architect: string;
   surface: string;
   status: string;
+  thumbnail: string;
+  featuredImage: string;
   cover: string;
   gallery: string[];
   summary: string;
@@ -40,6 +46,14 @@ const markdownFiles = import.meta.glob("../../PROYECTOS/*/proyecto.md", {
   import: "default",
   query: "?raw",
 }) as Record<string, string>;
+
+const projectImageFiles = import.meta.glob(
+  "../../PROYECTOS/*/fotos/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}",
+  {
+    eager: true,
+    import: "default",
+  }
+) as Record<string, string>;
 
 const projectPlaceholders = placeholderImages.proyectos;
 
@@ -201,6 +215,26 @@ function getPlaceholderGallery(index: number) {
   ];
 }
 
+function getAssetPath(projectMarkdownPath: string, assetPath?: string) {
+  if (!assetPath) {
+    return "";
+  }
+
+  if (/^(https?:)?\/\//.test(assetPath) || assetPath.startsWith("/")) {
+    return assetPath;
+  }
+
+  const basePath = projectMarkdownPath.replace(/\/proyecto\.md$/, "");
+  const cleanAssetPath = assetPath.replace(/^\.\//, "");
+  const lookupPath = `${basePath}/${cleanAssetPath}`;
+
+  return projectImageFiles[lookupPath] ?? "";
+}
+
+function getUniqueImages(images: string[]) {
+  return [...new Set(images.filter(Boolean))];
+}
+
 function formatProjectNumber(index: number) {
   return String(index + 1).padStart(2, "0");
 }
@@ -289,6 +323,21 @@ export const projects: ProjectContent[] = sortedProjectEntries.map(
     const { meta, body } = parseFrontmatter(markdown);
     const number = formatProjectNumber(index);
     const projectCopy = buildProjectCopy(meta, body);
+    const fallbackCover = getPlaceholderCover(index);
+    const fallbackGallery = getPlaceholderGallery(index);
+    const thumbnail = getAssetPath(path, meta.thumbnail) || fallbackCover;
+    const featuredImage =
+      getAssetPath(
+        path,
+        meta.destacada || meta.imagen_destacada || meta.imagenDestacada || meta.portada
+      ) || thumbnail;
+    const galleryFromMeta =
+      meta.galeria
+        ?.map((imagePath) => getAssetPath(path, imagePath))
+        .filter(Boolean) ?? [];
+    const gallery = getUniqueImages(
+      galleryFromMeta.length ? galleryFromMeta : fallbackGallery
+    );
 
     return {
       id: index + 1,
@@ -299,11 +348,13 @@ export const projects: ProjectContent[] = sortedProjectEntries.map(
       location: meta.ubicacion || "",
       year: meta.anio || "",
       client: meta.cliente || "",
-      architect: content.site.director,
-      surface: "",
+      architect: meta.arquitecto || content.site.director,
+      surface: meta.superficie || "",
       status: meta.estado || "Referencia",
-      cover: getPlaceholderCover(index),
-      gallery: getPlaceholderGallery(index),
+      thumbnail,
+      featuredImage,
+      cover: thumbnail,
+      gallery,
       summary: projectCopy.summary,
       description: projectCopy.description,
       concept: projectCopy.concept,
@@ -314,4 +365,22 @@ export const projects: ProjectContent[] = sortedProjectEntries.map(
 
 export function getProjectBySlug(slug?: string) {
   return projects.find((project) => project.slug === slug) ?? projects[0];
+}
+
+function getProjectSeed(slug: string) {
+  return slug.split("").reduce((total, char) => total + char.charCodeAt(0), 0);
+}
+
+export function getMoreProjects(currentSlug: string, limit = 6) {
+  const seed = getProjectSeed(currentSlug);
+
+  return projects
+    .filter((project) => project.slug !== currentSlug)
+    .sort((projectA, projectB) => {
+      const scoreA = (projectA.id * 37 + seed) % 97;
+      const scoreB = (projectB.id * 37 + seed) % 97;
+
+      return scoreA - scoreB;
+    })
+    .slice(0, limit);
 }

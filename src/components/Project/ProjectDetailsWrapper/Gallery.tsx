@@ -1,13 +1,24 @@
-export default function Gallery({ images }: { images: string[] }) {
+export default function Gallery({
+  images,
+  title,
+}: {
+  images: string[];
+  title?: string;
+}) {
+  if (!images.length) {
+    return null;
+  }
+
   return (
-    <div className="project-details-img">
-      <div className="row mt-30">
+    <section className="project-details-img cad-project-gallery">
+      {title && <h2>{title}</h2>}
+      <div className="cad-project-gallery__grid">
         {images.map((img, index) => (
-          <div className="col-xl-6" key={index}>
-            <img src={img} alt={`Project image ${index}`} />
-          </div>
+          <figure className="cad-project-gallery__item" key={`${img}-${index}`}>
+            <img src={img} alt={`Imagen ${index + 1} del proyecto`} loading="lazy" />
+          </figure>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

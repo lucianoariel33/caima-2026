@@ -33,14 +33,20 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // La home usa el hero slider a pantalla completa, que requiere header transparente superpuesto
+  // Las portadas a pantalla completa usan header transparente superpuesto.
   const isHomeTwo = location.pathname === "/" || location.pathname === "/home-two";
+  const isProjectDetail = location.pathname.startsWith("/project-details/");
+  const isOverlayHeader = isHomeTwo || isProjectDetail;
 
   return (
     <>
-      <div className={`header-area ${isHomeTwo ? "absolute-header" : ""}`}>
+      <div
+        className={`header-area ${isOverlayHeader ? "absolute-header" : ""} ${
+          isProjectDetail ? "project-detail-header" : ""
+        }`}
+      >
         <div id="header-sticky" className={isSticky ? "header-sticky" : ""}>
-          <div className={`navigation ${isHomeTwo && !isSticky ? "border-0" : ""}`}>
+          <div className={`navigation ${isOverlayHeader && !isSticky ? "border-0" : ""}`}>
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-xl-4 col-lg-3 col-7">

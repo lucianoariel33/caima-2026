@@ -11,7 +11,9 @@ export default function Footer() {
   const { headline, lead } = content.footer;
   const { getInTouchButton } = content.ui;
   const location = useLocation();
-  const hideHero = location.pathname === "/contact";
+  const hideHero =
+    location.pathname === "/contact" ||
+    location.pathname.startsWith("/project-details/");
 
   return (
     <>

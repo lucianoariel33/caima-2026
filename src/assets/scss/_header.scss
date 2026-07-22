@@ -116,6 +116,42 @@
   background: #000;
 }
 
+.project-detail-header .header-sticky {
+  background: #111;
+
+  .navigation {
+    background: #111;
+  }
+
+  .main-menu ul > li > a,
+  .main-menu ul li.active a {
+    color: #fff;
+  }
+
+  .main-menu ul li a:before,
+  .main-menu ul li.active:before {
+    background: #fff;
+  }
+}
+
+body.project-detail-heading-visible {
+  .project-detail-header .header-sticky {
+    .navigation {
+      min-height: 56px;
+      padding: 6px 0;
+    }
+
+    .main-menu ul > li > a {
+      padding: 22px 0;
+    }
+
+    .main-menu ul li.active:before,
+    .main-menu ul li a.navlink:before {
+      bottom: 17px;
+    }
+  }
+}
+
 /* 15. Main Menu */
 
 .main-menu {
