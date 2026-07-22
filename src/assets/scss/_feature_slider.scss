@@ -7,23 +7,23 @@
 .feature_item {
   display: flex;
   align-items: center;
-  height: 100px;
-  gap: 80px;
+  height: 82px;
+  gap: 56px;
   width: max-content;
-  animation: architon-scroller 100s linear infinite;
+  animation: architon-scroller 90s linear infinite;
 
   @media #{$xs} {
     height: 60px;
   }
 
   h2 {
-    font-size: 60px;
+    font-size: 44px;
     font-weight: 400;
-    margin-right: 30px;
-    letter-spacing: -1px;
+    margin-right: 20px;
+    letter-spacing: 0;
 
     @media #{$xs} {
-      font-size: 30px;
+      font-size: 26px;
       letter-spacing: 0;
     }
 
@@ -34,10 +34,10 @@
   }
 
   img {
-    width: 50px;
+    width: 34px;
     display: inline-block;
-    margin-right: 30px;
-    margin-top: -10px;
+    margin-right: 18px;
+    margin-top: -6px;
   }
 }
 
@@ -72,56 +72,66 @@
     width: 100%;
     height: 100%;
     background: #171717;
-    opacity: 0.2;
+    opacity: 0.34;
+    pointer-events: none;
   }
 }
 
 .feature_item_one {
   display: flex;
   align-items: center;
-  height: 400px;
+  overflow: hidden;
+  height: 300px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   @media #{$md} {
-    height: 300px;
+    height: 260px;
   }
 
   @media #{$xs} {
     height: 200px;
   }
 
-  .feature_item_one {
-    color: #fff;
-    font-size: 90px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-right: 60px;
-    color: transparent;
-    -webkit-text-stroke: 0.8px #fffbfb;
-    -webkit-text-stroke-width: 1px;
-    letter-spacing: -2px;
-
-    @media #{$md} {
-      font-size: 80px;
-    }
-
-    @media #{$xs} {
-      font-size: 50px;
-    }
-  }
 }
 
 .feature_scroller {
+  position: relative;
+  z-index: 1;
   overflow: hidden;
   width: 100%;
+  padding: 18px 0;
 }
 
 .scroller_track {
   display: flex;
+  align-items: center;
   width: max-content;
   animation: architon-scroller 100s linear infinite;
+}
+
+.feature_item_one__text {
+  color: transparent;
+  flex: 0 0 auto;
+  margin-right: 48px;
+  padding: 0.12em 0;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #fffbfb;
+
+  @media #{$md} {
+    font-size: 54px;
+  }
+
+  @media #{$xs} {
+    margin-right: 34px;
+    font-size: 34px;
+    line-height: 1.18;
+  }
 }
 
 .slick-list {

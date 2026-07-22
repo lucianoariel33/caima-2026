@@ -23,6 +23,9 @@ export default function FeatureThree() {
                   data-wow-delay={delays[index] ?? ".2s"}
                 >
                   <div className="single-feature-item">
+                    <span className="single-feature-item__number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                     <div className="single-feat-inner">
                       <div className="icon-wrap">
                         <i className={feature.iconClass}></i>

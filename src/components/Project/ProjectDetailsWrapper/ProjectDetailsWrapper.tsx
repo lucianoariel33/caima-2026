@@ -21,16 +21,16 @@ export default function ProjectDetailsWrapper({
   project: ProjectContent;
 }) {
   const overview: ParagraphSection = {
-    title: "Descripcion",
+    title: "Descripción",
     paragraphs: project.description.length
       ? project.description
       : [project.summary].filter(Boolean),
   };
   const info: InfoItem[] = [
-    { label: "Ano", value: project.year },
+    { label: "Año", value: project.year },
     { label: "Cliente", value: project.client },
     { label: "Arquitecto", value: project.architect },
-    { label: "Ubicacion", value: project.location },
+    { label: "Ubicación", value: project.location },
     { label: "Superficie", value: project.surface },
     { label: "Estado", value: project.status },
   ].filter((item) => item.value);

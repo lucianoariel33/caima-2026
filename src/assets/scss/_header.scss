@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     background: #fff;
+    min-height: 92px;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -17,13 +18,17 @@
     font-family: $font-body;
     font-size: 26px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0;
     color: $theme_color;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
     img {
-      max-height: 45px;
+      display: block;
       width: auto;
+      height: 28px;
+      min-width: 76px;
+      max-height: 28px;
+      object-fit: contain;
       transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
   }
@@ -95,13 +100,15 @@
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
   .navigation {
-    padding: 12px 0;
+    min-height: 74px;
+    padding: 10px 0;
     background: #fff;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .logo img {
-    max-height: 35px;
+    height: 28px;
+    max-height: 28px;
   }
 }
 
@@ -118,7 +125,7 @@
     >li {
       display: inline-block;
       line-height: 1;
-      margin: 0 20px;
+      margin: 0 16px;
       position: relative;
 
       >a {
@@ -127,7 +134,7 @@
         font-weight: 400;
         text-transform: capitalize;
         line-height: 1;
-        padding: 35px 0;
+        padding: 36px 0;
         overflow: hidden;
         color: $body_text;
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -535,4 +542,29 @@
   @media #{$xs} {
     display: none;
   }
+}
+
+.header-mobile-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+
+  &:hover,
+  &.active {
+    background: #fff;
+    color: $primary_color;
+  }
+}
+
+.header-sticky .header-mobile-contact,
+body.dark .header-mobile-contact {
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #fff;
 }

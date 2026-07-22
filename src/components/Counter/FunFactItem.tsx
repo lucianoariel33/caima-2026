@@ -6,10 +6,12 @@ interface Props {
 }
 
 export default function FunFactItem({ value, label }: Props) {
+  const formattedValue = value.toLocaleString("es-AR");
+
   return (
     <div className="single-counter-box">
       <p className="counter-number">
-        <span>{value}</span>
+        <span>{formattedValue}</span>
       </p>
       <h6>{label}</h6>
     </div>

@@ -10,7 +10,7 @@ export default function FooterBottom() {
         <div className="row justify-content-between align-items-center">
           <div className="col-lg-6 col-md-6">
             <p className="copyright-line">
-              © {new Date().getFullYear()} {copyright}
+              {new Date().getFullYear()} · {copyright}
             </p>
           </div>
 

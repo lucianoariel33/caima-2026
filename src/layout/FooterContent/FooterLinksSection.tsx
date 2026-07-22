@@ -5,16 +5,16 @@ export default function FooterLinksSection() {
   const { linksTitle, links } = content.footer;
 
   return (
-    <div>
+    <div className="footer-links">
       <h5>{linksTitle}</h5>
       <ul>
-        <li>
-          {links.map((link) => (
+        {links.map((link) => (
+          <li key={link.to}>
             <Link to={`/${link.to}`} key={link.to}>
               {link.name}
             </Link>
-          ))}
-        </li>
+          </li>
+        ))}
       </ul>
     </div>
   );

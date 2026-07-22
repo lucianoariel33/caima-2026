@@ -17,6 +17,9 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         <span className="cad-project-card__badge">{project.category}</span>
         <div className="cad-project-card__footer">
           <h4 className="cad-project-card__title">{project.title}</h4>
+          {project.location && (
+            <p className="cad-project-card__location">{project.location}</p>
+          )}
           <span className="cad-project-card__link">
             Ver proyecto <i className="las la-arrow-right"></i>
           </span>

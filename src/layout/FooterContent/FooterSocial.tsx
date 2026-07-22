@@ -5,19 +5,16 @@ export default function FooterSocial() {
   const { socialTitle, social } = content.footer;
 
   return (
-    <div>
+    <div className="footer-social">
       <h5>{socialTitle}</h5>
-      <ul>
-        <li>
-          <div className="social-area">
-            {social.map((item) => (
-              <Link key={item.name} to={item.url}>
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </li>
-      </ul>
+      <div className="social-area">
+        {social.map((item) => (
+          <Link key={item.name} to={item.url} aria-label={item.name}>
+            <i className={item.icon}></i>
+            <span>{item.name}</span>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

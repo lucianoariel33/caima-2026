@@ -2,27 +2,32 @@
 @use "./variables" as *;
 .single-counter-box {
   text-align: center;
-  margin-bottom: 50px;
+  min-height: 150px;
+  padding: 30px 18px;
+  margin-bottom: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   @media #{$xs} {
     text-align: center;
   }
 
   p.counter-number {
-    font-size: 70px;
+    font-size: 56px;
     font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 1px;
+    line-height: 1.1;
+    letter-spacing: 0;
     color: #171717;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 0;
     display: inline-block;
+    margin-bottom: 18px;
 
     @media #{$lg} {
-      font-size: 65px;
+      font-size: 50px;
     }
 
     @media #{$md} {
-      font-size: 50px;
+      font-size: 42px;
     }
 
     @media #{$xs} {
@@ -30,17 +35,17 @@
     }
 
     span {
-      font-size: 70px;
+      font-size: inherit;
       @media #{$lg} {
-        font-size: 65px;
+        font-size: inherit;
       }
 
       @media #{$md} {
-        font-size: 50px;
+        font-size: inherit;
       }
 
       @media #{$xs} {
-        font-size: 40px;
+        font-size: inherit;
       }
     }
   }
@@ -54,9 +59,10 @@
   }
 
   h6 {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 400;
     color: #7f7f7f;
+    line-height: 1.4;
 
     @media #{$xs} {
       font-size: 17px;

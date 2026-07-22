@@ -7,9 +7,9 @@ export default function FooterOffice() {
   const { projectInMind } = content.ui;
 
   return (
-    <div>
+    <div className="footer-contact">
       <h5>{officeTitle}</h5>
-      <p className="me-5">{address}</p>
+      <p className="footer-contact__address">{address}</p>
 
       <div className="company-email">
         <p>{projectInMind}</p>
