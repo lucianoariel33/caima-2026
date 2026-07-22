@@ -11,7 +11,7 @@ export default function FeatureLine() {
         <div className="feature_scroller">
           <div className="scroller_track">
             {items.map((name, index) => (
-              <div className="feature_item_one" key={`${name}-${index}`}>
+              <div className="feature_item_one__text" key={`${name}-${index}`}>
                 {name}
               </div>
             ))}

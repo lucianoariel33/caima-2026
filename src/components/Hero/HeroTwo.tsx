@@ -31,20 +31,14 @@ export default function HeroSlider() {
               <div className="hero-area-content">
                 <div className="container">
                   <div className="row align-items-center">
-                    <div
-                      className="col-xl-12 col-lg-12 col-md-12 col-sm-8 wow fadeInUp animated"
-                      data-wow-delay=".2s"
-                    >
-                      <div className="project-info-wrapper">
-                        <div className="project-title image-text-panel">
-                          <h6>
-                            {hero.label} / {slide.year}
-                          </h6>
-                          <h1 className="text-white">{slide.title}</h1>
-                        </div>
-                      </div>
-
-                      <div className="project-slogan image-text-panel">
+                    <div className="col-xl-10 col-lg-11 col-md-12 wow fadeInUp animated" data-wow-delay=".2s">
+                      <div className="hero-copy">
+                        <p className="hero-copy__eyebrow">
+                          {hero.label}
+                          <span>{slide.year}</span>
+                        </p>
+                        <h1 className="text-white">{slide.title}</h1>
+                        <div className="hero-copy__rule"></div>
                         <h3 className="text-white">{hero.slogan}</h3>
                       </div>
                     </div>

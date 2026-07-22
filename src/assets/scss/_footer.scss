@@ -1,126 +1,284 @@
-/* 31. Footer Area CSS  */
+/* 31. Footer Area CSS */
 @use "./variables" as *;
+
 .footer-area {
-  background: $primary_color;
+  position: relative;
+  overflow: hidden;
+  background: #050505;
   color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
   @media #{$md} {
-    padding: 100px 50px;
+    padding: 0 32px;
   }
+
   @media #{$xs} {
-    padding: 50px 30px;
+    padding: 0 20px;
     margin-top: 0;
   }
+
   .logo {
-    height: 90px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    padding-right: 30px;
-    font-size: 26px;
-    font-weight: 500;
-    color: #fff;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    margin-bottom: 28px;
 
     img {
-      max-height: 64px;
+      max-height: 58px;
       width: auto;
     }
   }
+
   h5 {
-    font-size: 20px;
-    font-weight: 600;
     color: #fff;
-    margin: 20px 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 24px;
+    text-transform: uppercase;
   }
+
   p {
-    margin-top: 5px;
-    color: $body_text;
+    margin: 0;
+    color: #9a9a9a;
   }
-  ul li a {
-    font-size: 15px;
-    display: block;
-    color: $body_text;
-    padding: 10px 0;
-    position: relative;
-    @media #{$xs} {
-      padding: 6px 0;
-    }
-    &:hover {
-      opacity: 0.5;
+}
+
+.footer-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 48px;
+  align-items: end;
+  padding: 86px 0 70px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  @media #{$md} {
+    grid-template-columns: 1fr;
+    padding: 72px 0 56px;
+  }
+
+  @media #{$xs} {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 56px 0 44px;
+  }
+
+  h2 {
+    max-width: 860px;
+    color: #fff;
+    font-size: clamp(40px, 6vw, 84px);
+    font-weight: 400;
+    line-height: 1.02;
+  }
+}
+
+.footer-hero__eyebrow {
+  margin-bottom: 18px !important;
+  color: rgba(255, 255, 255, 0.58) !important;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.footer-hero__aside {
+  p {
+    max-width: 390px;
+    color: #b8b8b8;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+}
+
+.footer-hero__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  i {
+    font-size: 16px;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    color: #fff;
+
+    i {
+      transform: translateX(4px);
     }
   }
 }
 
 .footer-up {
-  padding: 80px 0;
-  .social-area i {
-    color: #eee;
-    font-size: 20px;
-    margin-right: 10px;
-  }
+  padding: 58px 0 68px;
+
   @media #{$md} {
-    padding-bottom: 0;
-    padding-top: 0;
+    padding: 50px 0;
   }
+
   @media #{$xs} {
-    padding: 0;
+    padding: 44px 0;
+  }
+}
+
+.footer-brand {
+  max-width: 520px;
+
+  &__title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 24px;
+    text-transform: none;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 24px;
+
+    img {
+      display: block;
+      width: auto;
+      max-height: 28px;
+    }
+
+    @media #{$xs} {
+      margin-top: 22px;
+    }
+  }
+
+  > p {
+    max-width: 430px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+
+.footer-specialties {
+  margin-top: 30px;
+
+  > span {
+    display: block;
+    margin-bottom: 14px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 470px;
+  }
+
+  li {
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #d9d9d9;
+    font-size: 13px;
+    line-height: 1;
+  }
+}
+
+.footer-contact__address {
+  max-width: 220px;
+  margin-bottom: 28px !important;
+  line-height: 1.6;
+}
+
+.company-email,
+.phone-number {
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 13px;
+  }
+
+  a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: rgba(255, 255, 255, 0.35);
+
+    &:hover {
+      color: #fff;
+      text-decoration-color: #fff;
+    }
+  }
+}
+
+.footer-links {
+  ul {
+    display: grid;
+    gap: 10px;
+  }
+
+  a {
+    color: #a8a8a8;
+    font-size: 15px;
+    line-height: 1.2;
+
+    &:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+  }
+}
+
+.footer-social {
+  .social-area {
+    display: grid;
+    gap: 10px;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    color: #a8a8a8;
+    font-size: 15px;
+    line-height: 1.2;
+
+    i {
+      width: 18px;
+      color: #fff;
+      font-size: 17px;
+    }
+
+    &:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
   }
 }
 
 .footer-bottom {
   font-size: 14px;
   font-weight: 400;
-  padding: 15px 0;
-  background: $primary_color;
-  border-top: 1px solid #222;
+  padding: 18px 0;
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
   p {
     margin: 0;
-    font-size: 14px;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 13px;
   }
+
   @media #{$xs} {
     text-align: center;
-  }
-}
 
-.company-email {
-  margin-bottom: 15px;
-  p {
-    margin: 0;
-  }
-}
-
-.company-email a {
-  color: #f6f6f6;
-  font-size: 18px;
-  font-weight: 400;
-  text-decoration: underline;
-  &:hover {
-    color: #fff;
-  }
-}
-
-.phone-number {
-  margin-bottom: 15px;
-  p {
-    margin: 0;
-  }
-}
-
-.phone-number a {
-  font-size: 18px;
-  font-weight: 400;
-  color: #fff;
-}
-
-.footer-two {
-  ul li a {
-    color: #fff;
-  }
-}
-
-.footer-area p br {
-  @media #{$xs} {
-    display: none;
+    .privacy {
+      margin-top: 8px;
+    }
   }
 }

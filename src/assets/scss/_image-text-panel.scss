@@ -34,22 +34,6 @@
   width: fit-content;
 }
 
-// Hero slider
-#home-2 {
-  .project-title.image-text-panel {
-    padding: 18px 28px;
-  }
-
-  .project-slogan.image-text-panel {
-    margin-top: 16px;
-    padding: 14px 28px;
-
-    h3 {
-      margin: 0;
-    }
-  }
-}
-
 // Breadcrumbs con foto de fondo
 .breadcrumb-bg .breadcrumb-title.image-text-panel {
   padding: 16px 32px;
@@ -104,6 +88,6 @@
   .cta-img-area .overlay-3 {
     visibility: visible;
     z-index: 1;
-    opacity: 0.55;
+    opacity: 1;
   }
 }

@@ -1,0 +1,86 @@
+@use "./variables" as *;
+
+.home-main {
+  background: #0a0a0a;
+
+  .about-section--home-studio {
+    padding: 92px 0 82px;
+
+    @media #{$md} {
+      padding: 74px 0 68px;
+    }
+
+    @media #{$xs} {
+      padding: 56px 0 52px;
+    }
+  }
+
+  .feature_wrap > .feature_item_one {
+    height: 250px;
+
+    @media #{$md} {
+      height: 230px;
+    }
+
+    @media #{$xs} {
+      height: 170px;
+    }
+  }
+
+  .feature_wrap .feature_item_one__text {
+    height: auto;
+  }
+
+  .feature-section {
+    padding-top: 82px;
+    padding-bottom: 58px;
+
+    @media #{$md} {
+      padding-top: 68px;
+      padding-bottom: 48px;
+    }
+
+    @media #{$xs} {
+      padding-top: 52px;
+      padding-bottom: 34px;
+    }
+  }
+
+  .cad-projects-section--home {
+    padding-top: 84px;
+    padding-bottom: 54px;
+
+    @media #{$md} {
+      padding-top: 68px;
+      padding-bottom: 46px;
+    }
+
+    @media #{$xs} {
+      padding-top: 52px;
+      padding-bottom: 34px;
+    }
+  }
+
+  .cad-projects-section__cta {
+    margin-top: 38px;
+  }
+
+  .counter-section {
+    padding-top: 0;
+    padding-bottom: 24px;
+  }
+
+  .single-counter-box {
+    margin-bottom: 18px;
+  }
+
+  .feature_slider_wrap {
+    padding-top: 34px;
+    padding-bottom: 34px;
+
+    @media #{$xs} {
+      padding-top: 22px;
+      padding-bottom: 22px;
+    }
+  }
+}
