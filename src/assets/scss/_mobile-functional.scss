@@ -1,0 +1,779 @@
+@use "./variables" as *;
+
+@media #{$xs} {
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  body *,
+  body *::before,
+  body *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .container,
+  .container-fluid {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 24px;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  p,
+  .p-xl,
+  .cad-projects-section__lead,
+  .cad-portfolio-intro__detail p,
+  .cad-project-catalog__header > p,
+  .contact-text p,
+  .footer-hero__aside p {
+    max-width: none;
+    font-size: 15px;
+    line-height: 1.6;
+    text-wrap: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: anywhere;
+    text-wrap: auto;
+  }
+
+  .section-padding,
+  .home-main .section-padding,
+  .feature-section,
+  .cad-projects-section--home,
+  .about-section--home-studio {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+
+  .section-title {
+    margin-bottom: 20px;
+  }
+
+  .section-title h1,
+  .section-title h2,
+  .breadcrumb-bg .breadcrumb-title h1,
+  .cad-portfolio-intro h2,
+  .cad-project-catalog__header h3,
+  .contact-form-heading h2,
+  .contact-info__heading h2,
+  .footer-hero h2 {
+    font-size: 28px !important;
+    line-height: 1.18 !important;
+  }
+
+  .section-title h6,
+  .breadcrumb-title__eyebrow,
+  .cad-projects-section__eyebrow,
+  .contact-text span,
+  .contact-form-heading p,
+  .contact-info__heading p {
+    margin-bottom: 12px !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    white-space: normal;
+  }
+
+  .theme-btn,
+  .primary-btn,
+  .white-btn,
+  .cad-projects-section__btn,
+  .footer-hero__link,
+  input[type="submit"],
+  button[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    padding: 15px 18px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .header-area {
+    .navigation {
+      min-height: 62px;
+      padding: 10px 0;
+    }
+
+    .logo img {
+      height: 24px;
+      min-width: 70px;
+      max-height: 24px;
+    }
+
+    .header-mobile-contact {
+      min-height: 36px;
+      padding: 0 10px;
+      font-size: 11px;
+    }
+  }
+
+  .header-sticky .navigation {
+    min-height: 58px;
+    padding: 8px 0;
+  }
+
+  #home-2 {
+    .swiper {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .single-slide-item {
+      display: block !important;
+      min-height: 0;
+      height: auto;
+      padding: 112px 0 54px;
+      background-position: center center !important;
+    }
+
+    .single-slide-item .overlay-3 {
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.56) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.2) 100%);
+    }
+
+    .hero-area-content {
+      padding: 0;
+    }
+
+    .hero-copy {
+      max-width: none;
+      padding: 0;
+    }
+
+    .hero-copy__eyebrow {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 12px;
+      line-height: 1.35;
+
+      span {
+        display: block;
+        margin-top: 8px;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    .hero-copy h1 {
+      max-width: none;
+      font-size: 32px;
+      line-height: 1.12;
+    }
+
+    .hero-copy__rule {
+      width: 68px;
+      margin: 18px 0 16px;
+    }
+
+    .hero-copy h3 {
+      max-width: none;
+      font-family: $font-body;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .swiper-pagination {
+      left: 18px;
+      bottom: 20px;
+    }
+  }
+
+  .about-section--home-studio {
+    .about-content-wrap {
+      margin-top: 0;
+    }
+
+    .about-content-wrap h3 {
+      font-family: $font-body;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    &__highlights {
+      display: block;
+      margin-top: 24px;
+      background: transparent;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    &__highlight {
+      padding: 16px 0;
+
+      strong {
+        font-size: 28px;
+      }
+
+      span {
+        max-width: none;
+      }
+    }
+  }
+
+  .feature_wrap {
+    overflow: visible;
+
+    &::after {
+      opacity: 0.54;
+    }
+  }
+
+  .home-main .feature_wrap > .feature_item_one,
+  .feature_item_one {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding: 34px 0;
+  }
+
+  .feature_scroller,
+  .scroller_track {
+    width: 100%;
+    overflow: visible;
+  }
+
+  .scroller_track {
+    display: grid;
+    gap: 12px;
+    animation: none;
+  }
+
+  .feature_item_one__text {
+    margin-right: 0;
+    color: #fff;
+    font-size: 21px;
+    line-height: 1.25;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke: 0;
+    white-space: normal;
+
+    &:nth-child(n + 9) {
+      display: none;
+    }
+  }
+
+  .single-feature-item {
+    min-height: 0;
+    padding: 22px 0;
+    margin-bottom: 0;
+
+    &:hover {
+      transform: none;
+    }
+
+    &__number {
+      position: static;
+      margin-bottom: 14px;
+    }
+
+    p {
+      max-width: none;
+    }
+  }
+
+  .single-feat-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .icon-wrap {
+    flex: 0 0 34px;
+    width: 34px;
+  }
+
+  .service-title h4 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .cad-projects-section {
+    overflow: visible;
+  }
+
+  .cad-projects-section__header,
+  .cad-projects-section__header--centered {
+    display: block;
+    margin-bottom: 26px;
+    text-align: left;
+  }
+
+  .cad-projects-section__header--centered .cad-projects-section__lead {
+    margin: 0 0 20px;
+    max-width: none;
+  }
+
+  .cad-project-filter {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+
+    &__pill {
+      min-height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 11px 12px;
+      text-align: left;
+      white-space: normal;
+    }
+  }
+
+  .cad-projects-grid .row {
+    --bs-gutter-y: 18px;
+  }
+
+  .cad-project-card {
+    color: #fff;
+
+    &__media,
+    &--featured &__media {
+      display: flex;
+      flex-direction: column;
+      aspect-ratio: auto;
+      min-height: 0;
+      overflow: visible;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #111;
+    }
+
+    &__media img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    &__badge {
+      position: static;
+      align-self: flex-start;
+      margin: 12px 14px 0;
+      opacity: 1;
+      transform: none;
+    }
+
+    &__footer {
+      position: static;
+      padding: 14px;
+      background: #111;
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    &__location {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    &__link {
+      max-height: none;
+      margin-top: 12px;
+      opacity: 1;
+      overflow: visible;
+    }
+  }
+
+  .single-counter-box {
+    min-height: 0;
+    padding: 20px 0;
+    margin-bottom: 0;
+    text-align: left;
+
+    p.counter-number {
+      margin-bottom: 6px;
+      font-size: 34px;
+    }
+
+    h6 {
+      margin-top: 0;
+      font-size: 15px;
+    }
+  }
+
+  .feature_slider_wrap {
+    padding: 28px 18px !important;
+    overflow: visible;
+  }
+
+  .feature_item {
+    display: grid;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    animation: none;
+    white-space: normal;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.25;
+
+      &:nth-child(n + 7) {
+        display: none;
+      }
+    }
+
+    img {
+      flex: 0 0 18px;
+      width: 18px;
+      margin: 0;
+    }
+  }
+
+  .cta-img-area,
+  .cta-img-area.cta-img-area--home {
+    height: auto;
+    min-height: 0;
+    padding: 46px 18px;
+    background-attachment: scroll;
+
+    .cta-inner {
+      position: relative;
+      inset: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    .cta-inner .section-title.cta-home-stack {
+      gap: 18px;
+      width: 100%;
+    }
+
+    .cta-inner h2 {
+      max-width: none;
+      font-size: 24px !important;
+      line-height: 1.25 !important;
+      white-space: normal;
+    }
+  }
+
+  .breadcrumb-bg,
+  .breadcrumb-bg--portfolio {
+    min-height: 0;
+    padding: 94px 0 42px;
+    align-items: flex-end;
+
+    &::after {
+      display: none;
+    }
+
+    .breadcrumb-title__lead {
+      max-width: none;
+      margin-top: 16px !important;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .breadcrumb-title__highlights {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 18px;
+
+      li {
+        min-width: 0;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .cad-portfolio-intro,
+  .cad-portfolio-featured,
+  .cad-project-catalog__header,
+  .cad-project-detail__summary-grid,
+  .cad-project-detail__text-grid,
+  .cad-more-projects__grid,
+  .contact-section .contact-form-panel,
+  .contact-section .contact-info-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cad-portfolio-featured__main,
+  .cad-portfolio-featured__main img {
+    min-height: 0;
+  }
+
+  .cad-portfolio-featured__main img {
+    height: 240px;
+  }
+
+  .cad-portfolio-featured__overlay {
+    position: static;
+    padding: 18px;
+    background: #111;
+
+    h3 {
+      font-size: 24px;
+      line-height: 1.15;
+    }
+  }
+
+  .cad-portfolio-featured__side {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+
+  .cad-portfolio-note,
+  .cad-portfolio-small-card div {
+    padding: 20px;
+  }
+
+  .cad-project-detail__hero {
+    height: auto;
+    min-height: 0;
+  }
+
+  .cad-project-detail__hero img {
+    height: 360px;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .cad-project-detail__hero-overlay {
+    padding: 96px 0 28px;
+  }
+
+  .cad-project-detail__sticky-heading,
+  .cad-more-projects__sticky-heading {
+    display: none;
+  }
+
+  .cad-project-detail__body {
+    padding: 44px 0 80px;
+  }
+
+  .cad-project-detail__summary-cell {
+    padding: 22px 0;
+  }
+
+  .cad-project-detail__summary-image {
+    min-height: 0;
+  }
+
+  .project-info {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .cad-project-gallery__item,
+  .cad-project-gallery__item:first-child,
+  .cad-project-gallery__item:nth-child(2),
+  .cad-project-gallery__item:nth-child(5n) {
+    aspect-ratio: auto;
+  }
+
+  .cad-project-gallery__item img {
+    height: auto;
+  }
+
+  .contact-section {
+    padding-bottom: 54px;
+
+    .contact-intro-row {
+      margin: 40px auto 34px;
+      text-align: left;
+    }
+
+    .contact-text {
+      text-align: left;
+    }
+
+    .contact-form-panel {
+      padding: 34px 0;
+    }
+
+    .contact-form-heading {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    .subimit-form-wrap input,
+    .subimit-form-wrap textarea {
+      margin-bottom: 22px;
+      font-size: 15px;
+    }
+
+    .single-contact-info {
+      padding: 20px 0;
+      border-right: 0;
+    }
+
+    .contact-social-panel {
+      display: block;
+      padding: 22px 18px;
+    }
+
+    .contact-social-links {
+      margin-top: 18px;
+    }
+  }
+
+  .footer-area {
+    padding: 0;
+    overflow: visible;
+
+    .container {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    h5 {
+      margin-bottom: 12px;
+      font-size: 13px;
+      line-height: 1.3;
+    }
+  }
+
+  .footer-hero {
+    display: none;
+  }
+
+  .footer-up,
+  .footer-up--compact {
+    padding: 30px 0;
+  }
+
+  .footer-up .row {
+    --bs-gutter-y: 26px;
+  }
+
+  .footer-brand {
+    max-width: none;
+
+    > p {
+      max-width: none;
+    }
+  }
+
+  .footer-brand__logo {
+    margin-top: 18px;
+
+    img {
+      max-height: 24px;
+    }
+  }
+
+  .footer-specialties {
+    margin-top: 22px;
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      max-width: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 9px 10px;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+  }
+
+  .footer-contact__address {
+    max-width: none;
+    margin-bottom: 20px !important;
+  }
+
+  .company-email,
+  .phone-number {
+    margin-bottom: 18px;
+  }
+
+  .company-email a,
+  .phone-number a {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-links ul,
+  .footer-social .social-area {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .footer-links a,
+  .footer-social a {
+    display: flex;
+    align-items: center;
+    min-height: 42px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 10px 12px;
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  .footer-social a i {
+    flex: 0 0 18px;
+    margin-right: 0;
+  }
+
+  .footer-bottom {
+    padding: 16px 0 20px;
+    text-align: left;
+
+    .row {
+      --bs-gutter-y: 8px;
+    }
+
+    .text-md-end {
+      text-align: left !important;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .privacy {
+      margin-top: 0;
+    }
+  }
+}
