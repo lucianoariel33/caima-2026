@@ -36,7 +36,7 @@ h5,
 h6 {
   position: relative;
   color: $primary_color;
-  font-family: $font-body;
+  font-family: $font-title;
   font-weight: 400;
   margin: 0;
   letter-spacing: 0;
@@ -60,7 +60,7 @@ p {
   font-family: $font-body;
   font-size: 16px;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 1.7;
   position: relative;
   color: $body_text;
 
@@ -70,12 +70,12 @@ p {
 
   @media #{$md} {
     font-size: 15px;
-    line-height: 25px;
+    line-height: 1.65;
   }
 
   @media #{$xs} {
     font-size: 15px;
-    line-height: 25px;
+    line-height: 1.65;
     margin: 0;
   }
 }

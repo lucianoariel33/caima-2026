@@ -1,11 +1,86 @@
 @use "./variables" as *;
 
-// Titulos: Bank Gothic Unicode | Cuerpo: Century Gothic / Futura
+// Sistema tipografico global
+// Titulos: Bank Gothic | Cuerpo: Century Gothic / Futura
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title h1,
+.section-title h2,
+.section-title h3,
+.breadcrumb-title h1,
+.cad-portfolio-intro h2,
+.cad-portfolio-featured__overlay h3,
+.cad-project-catalog__header h3,
+.cad-project-card__title,
+.cad-project-detail__hero h1,
+.cad-project-detail__sticky-inner h2,
+.cad-project-detail__intro span,
+.project-info-wrap__label,
+.cad-project-text-block h3,
+.cad-project-gallery h2,
+.cad-more-projects h2,
+.cad-more-projects__sticky-inner h2,
+.contact-form-heading h2,
+.contact-info__heading h2,
+.contact-social-panel h3,
+.footer-hero h2,
+.feature_item h2,
+.single-service-item .single-service-inner h5 {
+  font-family: $font-title;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+p,
+.cad-project-detail__intro p,
+.cad-project-text-block p,
+.cad-projects-section__lead,
+.cad-portfolio-intro__detail p,
+.cad-portfolio-featured__overlay p,
+.cad-portfolio-note p,
+.cad-project-catalog__header > p,
+.contact-text p,
+.footer-hero__aside p {
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.breadcrumb-title__eyebrow,
+.cad-projects-section__eyebrow,
+.cad-project-card__badge,
+.cad-project-card__link,
+.cad-project-filter__pill,
+.cad-portfolio-featured__overlay span,
+.cad-portfolio-featured__overlay small,
+.cad-portfolio-note span,
+.cad-portfolio-small-card span,
+.contact-text span,
+.contact-form-heading p,
+.contact-info__heading p,
+.single-contact-info p,
+.contact-social-panel p,
+.project-info h6,
+.cad-project-detail__quick-meta span,
+.cad-project-detail__sticky-meta small,
+.cad-more-projects__archive-link,
+.cad-more-projects__card span {
+  font-family: $font-body;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
 
 .section-title h1 {
   font-size: 52px;
   line-height: 1.15;
-  letter-spacing: 0.02em;
   text-wrap: balance;
 
   @media #{$lg} {
@@ -30,7 +105,6 @@
   text-transform: none;
   font-size: 42px;
   line-height: 1.2;
-  letter-spacing: 0.02em;
   text-wrap: balance;
 
   @media #{$lg} {
@@ -53,7 +127,6 @@
   text-transform: none;
   font-size: 48px;
   line-height: 1.15;
-  letter-spacing: 0.02em;
 
   @media #{$xs} {
     font-size: 32px;
@@ -64,14 +137,12 @@
   text-transform: none;
   font-family: $font-body;
   font-size: 12px;
-  letter-spacing: 0.14em;
 }
 
 #home-2 .single-slide-item .project-info-wrapper h1 {
   text-transform: none;
   font-size: 52px;
   line-height: 1.15;
-  letter-spacing: 0.02em;
 
   @media #{$lg} {
     font-size: 46px;
@@ -89,7 +160,6 @@
 
 #home-2 .single-slide-item .project-info-wrapper h6 {
   font-family: $font-body;
-  letter-spacing: 0.14em;
 }
 
 .breadcrumb-bg .breadcrumb-title h1 {
@@ -114,7 +184,6 @@
 .cta-img-area .cta-inner h2 {
   font-size: 48px;
   line-height: 1.2;
-  letter-spacing: 0.02em;
   text-wrap: balance;
 
   @media #{$md} {
@@ -131,7 +200,6 @@
 .cta-img-area.cta-img-area--home .cta-inner h2 {
   font-size: 28px;
   line-height: 1;
-  letter-spacing: 0.04em;
   white-space: nowrap;
   text-wrap: nowrap;
 
@@ -141,14 +209,12 @@
 
   @media #{$xs} {
     font-size: 18px;
-    letter-spacing: 0.02em;
   }
 }
 
 .feature_item h2 {
   text-transform: none;
   font-size: 38px;
-  letter-spacing: 0.02em;
 
   @media #{$xs} {
     font-size: 26px;
@@ -189,10 +255,8 @@
 
 .single-service-item .single-service-inner h5 {
   text-transform: none;
-  font-family: $font-title;
   font-size: 36px;
   line-height: 1.2;
-  letter-spacing: 0.02em;
 
   @media #{$md} {
     font-size: 30px;

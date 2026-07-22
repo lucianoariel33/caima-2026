@@ -22,11 +22,15 @@ export default function ProjectDetailsWrapper({
   project: ProjectContent;
 }) {
   const heroRef = useRef<HTMLElement | null>(null);
+  const moreProjectsRef = useRef<HTMLElement | null>(null);
   const [showStickyHeading, setShowStickyHeading] = useState(false);
+  const [showMoreProjectsHeading, setShowMoreProjectsHeading] = useState(false);
+  const [dockMoreProjectsHeading, setDockMoreProjectsHeading] = useState(false);
   const moreProjects = getMoreProjects(project.slug, 6);
   const overviewParagraphs = project.description.length
     ? project.description
     : [project.summary].filter(Boolean);
+  const detailImage = project.gallery[0] || project.featuredImage;
   const info: InfoItem[] = [
     { label: "Año", value: project.year },
     { label: "Arquitecto", value: project.architect },
@@ -47,21 +51,43 @@ export default function ProjectDetailsWrapper({
   useEffect(() => {
     let frame = 0;
 
-    const updateStickyHeading = () => {
+    const updateStickyHeadings = () => {
+      const headerOffset = window.innerWidth < 768 ? 68 : 74;
+
       if (!heroRef.current) {
         return;
       }
 
-      const headerOffset = window.innerWidth < 768 ? 68 : 74;
       setShowStickyHeading(heroRef.current.getBoundingClientRect().bottom <= headerOffset);
+
+      if (!moreProjectsRef.current) {
+        setDockMoreProjectsHeading(false);
+        setShowMoreProjectsHeading(false);
+        return;
+      }
+
+      const moreProjectsRect = moreProjectsRef.current.getBoundingClientRect();
+      const projectBarHeight = window.innerWidth < 768 ? 120 : 96;
+      const moreProjectsBarHeight = window.innerWidth < 768 ? 84 : 92;
+      const moreProjectsOffset = headerOffset + projectBarHeight;
+      const footerTop = document.querySelector(".footer-area")?.getBoundingClientRect().top;
+      const shouldDockMoreProjects =
+        moreProjectsRect.top <= moreProjectsOffset &&
+        typeof footerTop === "number" &&
+        footerTop <= moreProjectsOffset + moreProjectsBarHeight;
+
+      setDockMoreProjectsHeading(shouldDockMoreProjects);
+      setShowMoreProjectsHeading(
+        moreProjectsRect.top <= moreProjectsOffset && !shouldDockMoreProjects
+      );
     };
 
     const onScroll = () => {
       window.cancelAnimationFrame(frame);
-      frame = window.requestAnimationFrame(updateStickyHeading);
+      frame = window.requestAnimationFrame(updateStickyHeadings);
     };
 
-    updateStickyHeading();
+    updateStickyHeadings();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
 
@@ -70,18 +96,18 @@ export default function ProjectDetailsWrapper({
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [project.slug]);
+  }, [project.slug, moreProjects.length]);
 
   useEffect(() => {
     document.body.classList.toggle(
       "project-detail-heading-visible",
-      showStickyHeading
+      showStickyHeading || showMoreProjectsHeading
     );
 
     return () => {
       document.body.classList.remove("project-detail-heading-visible");
     };
-  }, [showStickyHeading]);
+  }, [showStickyHeading, showMoreProjectsHeading]);
 
   return (
     <div className="single-project-section cad-project-detail">
@@ -121,10 +147,36 @@ export default function ProjectDetailsWrapper({
         </div>
       </div>
 
+      {moreProjects.length > 0 && (
+        <div
+          className={`cad-more-projects__sticky-heading ${
+            showMoreProjectsHeading || dockMoreProjectsHeading ? "is-visible" : ""
+          } ${dockMoreProjectsHeading ? "is-docked" : ""}`}
+        >
+          <div className="container">
+            <div className="cad-more-projects__sticky-inner">
+              <h2>
+                Más proyectos
+                <span className="cad-more-projects__down-arrow" aria-hidden="true">&gt;</span>
+              </h2>
+
+              <Link to="/project-standard" className="cad-more-projects__archive-link">
+                Ir a la sección proyectos
+                <i className="las la-arrow-right" aria-hidden="true"></i>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="container">
         <div className="project-details-wrapper cad-project-detail__body">
-          <div className="row gx-5">
-            <div className="col-xl-8">
+          <section className="cad-project-detail__summary-grid">
+            <div className="cad-project-detail__summary-cell cad-project-detail__summary-cell--info">
+              <InfoSidebar info={info} />
+            </div>
+
+            <div className="cad-project-detail__summary-cell cad-project-detail__summary-cell--description">
               <div className="cad-project-detail__intro">
                 <span>Descripción</span>
                 {overviewParagraphs.map((paragraph, index) => (
@@ -133,10 +185,10 @@ export default function ProjectDetailsWrapper({
               </div>
             </div>
 
-            <div className="col-xl-4">
-              <InfoSidebar info={info} />
-            </div>
-          </div>
+            <figure className="cad-project-detail__summary-image">
+              <img src={detailImage} alt={`${project.title} - imagen de apoyo`} loading="lazy" />
+            </figure>
+          </section>
 
           <Gallery images={project.gallery} title="Galería" />
 
@@ -149,10 +201,17 @@ export default function ProjectDetailsWrapper({
           </div>
 
           {moreProjects.length > 0 && (
-            <section className="cad-more-projects" aria-label="Más proyectos">
+            <section className="cad-more-projects" aria-label="Más proyectos" ref={moreProjectsRef}>
               <div className="cad-more-projects__header">
-                <p className="cad-project-detail__eyebrow">Portfolio</p>
-                <h2>Más proyectos</h2>
+                <h2>
+                  Más proyectos
+                  <span className="cad-more-projects__down-arrow" aria-hidden="true">&gt;</span>
+                </h2>
+
+                <Link to="/project-standard" className="cad-more-projects__archive-link">
+                  Ir a la sección proyectos
+                  <i className="las la-arrow-right" aria-hidden="true"></i>
+                </Link>
               </div>
 
               <div className="cad-more-projects__grid">

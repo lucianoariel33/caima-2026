@@ -7,7 +7,7 @@
       "principal": "/logo/web.svg",
       "blanco": "/logo/web.svg"
     },
-    "email": "info@cad-arquitectura.com",
+    "email": "info@caimarisarq.com.ar",
     "phone": "",
     "address": "Buenos Aires, Argentina",
     "schedule": "Lun-Vie, 09:00 - 18:00",
@@ -58,9 +58,9 @@
     ],
     "socialTitle": "Redes",
     "social": [
-      { "name": "Instagram", "url": "#", "icon": "lab la-instagram" },
-      { "name": "LinkedIn", "url": "#", "icon": "lab la-linkedin-in" },
-      { "name": "Facebook", "url": "#", "icon": "lab la-facebook-f" }
+      { "name": "Instagram", "url": "https://www.instagram.com/caimarisarq/", "icon": "lab la-instagram" },
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/gustavo-caimaris-75b984144/", "icon": "lab la-linkedin-in" },
+      { "name": "YouTube", "url": "https://www.youtube.com/channel/UC1ojcO33jRJirS7UCcT1T5g", "icon": "lab la-youtube" }
     ],
     "legal": "Privacidad y términos"
   },
@@ -279,7 +279,7 @@
       "eyebrow": "Contacto",
       "title": "Hablemos de tu próxima obra.",
       "description": "Proyecto, documentación, dirección y gestión de obra para residencias, espacios comerciales, oficinas e industrias.",
-      "highlights": ["Buenos Aires, Argentina", "Proyecto y dirección", "info@cad-arquitectura.com"],
+      "highlights": ["Buenos Aires, Argentina", "Proyecto y dirección", "info@caimarisarq.com.ar"],
       "background": "/ESTRUCTURA/breadcrumb_contact_1920x480.jpg"
     },
     "intro": "Contanos en qué etapa estás y qué necesitás resolver. Proyecto, dirección, documentación, interiores o seguimiento de obra: respondemos con una primera orientación clara.",
@@ -299,7 +299,9 @@
       "phoneInvalid": "Teléfono inválido.",
       "messageRequired": "El mensaje es obligatorio."
     },
-    "successMessage": "¡Mensaje enviado! Te contactaremos pronto."
+    "successMessage": "¡Mensaje enviado! Te contactaremos pronto.",
+    "sendingMessage": "Enviando...",
+    "submitErrorMessage": "No pudimos enviar el mensaje. Escribinos a info@caimarisarq.com.ar."
   },
   "projectCategories": [
     "Comercial",

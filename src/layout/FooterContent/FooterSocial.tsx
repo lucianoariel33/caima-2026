@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { content } from "@/content/useContent";
 
 export default function FooterSocial() {
@@ -9,10 +8,16 @@ export default function FooterSocial() {
       <h5>{socialTitle}</h5>
       <div className="social-area">
         {social.map((item) => (
-          <Link key={item.name} to={item.url} aria-label={item.name}>
+          <a
+            key={item.name}
+            href={item.url}
+            aria-label={item.name}
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className={item.icon}></i>
             <span>{item.name}</span>
-          </Link>
+          </a>
         ))}
       </div>
     </div>

@@ -164,6 +164,10 @@ body.project-detail-heading-visible {
       margin: 0 16px;
       position: relative;
 
+      &:last-child {
+        margin-right: 0;
+      }
+
       >a {
         display: inline-block;
         font-size: 15px;

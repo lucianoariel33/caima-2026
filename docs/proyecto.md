@@ -231,6 +231,43 @@ Parciales principales:
 
 Fuente principal actual: Space Grotesk importada desde Google Fonts en `_variables.scss`.
 
+## Criterios de diseño vigentes
+
+### Sistema tipografico global
+
+Toda la web debe respetar un sistema tipografico unico. No puede haber dos planteos de texto distintos conviviendo para el mismo rol visual.
+
+Roles permitidos en todo el sitio:
+
+- Titulos: `h1` a `h6` y titulos visuales de seccion usan la familia de titulos (`$font-title`), peso 400 y `letter-spacing: 0`.
+- Cuerpo editorial: parrafos y textos descriptivos usan la familia de cuerpo (`$font-body`), color secundario del contexto, tamano base 16/17px e interlineado cercano a `1.7`.
+- Metadata: etiquetas, chips, categorias, botones chicos, labels y datos tecnicos usan la familia de cuerpo (`$font-body`), uppercase cuando corresponda, `letter-spacing: 0` y escala menor.
+- Jerarquia por escala: puede cambiar el tamano segun el rol, pero no puede cambiar la familia/tone del mismo rol dentro de una misma pagina.
+- No se crean estilos locales nuevos para texto si ya existe un rol equivalente. Primero revisar `src/assets/scss/_typography.scss`.
+- `src/assets/scss/_typography.scss` debe importarse al final de `style.scss` para ordenar estilos legacy de secciones.
+
+### Detalle de proyecto
+
+La pagina de detalle de proyecto sigue el sistema global y agrega estas restricciones propias.
+
+Roles permitidos:
+
+- Titulo principal del hero: unica pieza de mayor escala en la pagina.
+- Titulo de barra superior fija: referencia maxima para los textos internos; ningun titulo o texto de contenido debe superarlo.
+- Titulos de seccion: `Ficha tecnica`, `Descripcion`, `Concepto`, `Resultado`, `Galeria` y `Mas proyectos` deben usar la misma tipografia de titulos, mismo color blanco, misma transformacion uppercase y mismo tamano base.
+- Cuerpo editorial: textos de `Descripcion`, `Concepto` y `Resultado` deben compartir exactamente el mismo color, tamano, interlineado y espaciado entre parrafos.
+- Metadata: datos de ficha tecnica y etiquetas/chips pueden tener un estilo propio, pero debe ser consistente entre todos los items del mismo grupo.
+
+Reglas de layout vigentes:
+
+- Hero de proyecto a pantalla completa: `100vh` / `100svh`.
+- Barra fija de proyecto aparece solo al superar el hero, deslizando desde arriba.
+- En la primera franja de contenido el orden desktop es: ficha tecnica izquierda, descripcion centro, foto derecha.
+- La franja usa proporcion 30 / 40 / 30.
+- La foto de esa franja no tiene padding ni margen interno; ocupa todo el alto y ancho disponible de su columna.
+- Ficha tecnica y descripcion si tienen padding interno.
+- El alto de la franja lo determina el contenido, no una altura minima arbitraria.
+
 ## Assets
 
 Imagenes publicas en:

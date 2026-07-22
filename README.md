@@ -27,6 +27,15 @@ npm run preview
 
 El archivo `vercel.json` ya incluye rewrites SPA para React Router.
 
+### Formulario de contacto
+
+El formulario envia las consultas a `info@caimarisarq.com.ar` usando la funcion `/api/contact`.
+Para activarlo en Vercel, agregar estas variables de entorno:
+
+- `RESEND_API_KEY`: API key privada de Resend.
+- `RESEND_FROM_EMAIL`: remitente verificado, por ejemplo `Caimaris [arq] <web@caimarisarq.com.ar>`.
+- `CONTACT_TO_EMAIL`: destino del formulario. Si se omite, usa `info@caimarisarq.com.ar`.
+
 ## Imágenes de estructura
 
 ```powershell

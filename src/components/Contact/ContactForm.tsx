@@ -17,8 +17,14 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ showTitle = true }: ContactFormProps) {
-  const { formTitle, placeholders, errors: errorMessages, successMessage } =
-    content.contact;
+  const {
+    formTitle,
+    placeholders,
+    errors: errorMessages,
+    successMessage,
+    sendingMessage,
+    submitErrorMessage,
+  } = content.contact;
   const { submitButton } = content.ui;
 
   const [formData, setFormData] = useState<ContactState>({
@@ -30,6 +36,8 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
 
   const [errors, setErrors] = useState<ContactErrors>({});
   const [success, setSuccess] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -41,6 +49,8 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
+
+    if (submitError) setSubmitError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,7 +60,7 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
     const newErrors: ContactErrors = {};
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{7,15}$/;
+    const phoneRegex = /^[0-9+\s().-]{7,30}$/;
 
     if (!name.trim()) newErrors.name = errorMessages.nameRequired;
     if (!email.trim()) newErrors.email = errorMessages.emailRequired;
@@ -63,10 +73,30 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       setSuccess(null);
+      setSubmitError(null);
       return;
     }
 
-    await new Promise((r) => setTimeout(r, 600));
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setSuccess(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("contact-submit-failed");
+      }
+    } catch {
+      setSubmitError(submitErrorMessage);
+      return;
+    } finally {
+      setIsSubmitting(false);
+    }
 
     setSuccess(successMessage);
 
@@ -144,12 +174,21 @@ export default function ContactForm({ showTitle = true }: ContactFormProps) {
           <p className="error-msg text-danger">{errors.message}</p>
         )}
 
-        <button type="submit" className="theme-btn w-100">
-          {submitButton}
+        <button type="submit" className="theme-btn w-100" disabled={isSubmitting}>
+          {isSubmitting ? sendingMessage : submitButton}
         </button>
       </form>
 
-      {success && <p className="success-msg text-success">{success}</p>}
+      {success && (
+        <p className="success-msg text-success" aria-live="polite">
+          {success}
+        </p>
+      )}
+      {submitError && (
+        <p className="error-msg text-danger" aria-live="polite">
+          {submitError}
+        </p>
+      )}
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { content } from "@/content/useContent";
 
 export default function ContactInfo() {
@@ -36,10 +35,16 @@ export default function ContactInfo() {
 
         <div className="social-area contact-social-links">
           {social.map((item) => (
-            <Link to={item.url} key={item.name} aria-label={item.name}>
+            <a
+              href={item.url}
+              key={item.name}
+              aria-label={item.name}
+              target="_blank"
+              rel="noreferrer"
+            >
               <i className={item.icon}></i>
               <span>{item.name}</span>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
