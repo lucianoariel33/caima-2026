@@ -162,11 +162,342 @@
 }
 
 .cad-projects-section--page {
+  padding: 56px 0 96px;
+  background: #050505;
+
   .cad-project-filter {
-    justify-content: flex-start;
-    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    justify-content: stretch;
+    width: 100%;
+    margin-top: 0;
+
+    &__pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 12px 10px;
+      white-space: normal;
+      text-align: center;
+    }
+
+    @media #{$lg} {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @media #{$xs} {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .cad-projects-section__grid {
+    margin-top: 34px;
   }
 }
+
+.cad-portfolio-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+  gap: 44px;
+  align-items: end;
+  padding-bottom: 34px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
+  h2 {
+    max-width: 600px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(30px, 3.9vw, 50px);
+    font-weight: 400;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  @media #{$md} {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 32px;
+  }
+
+  @media #{$xs} {
+    gap: 28px;
+    padding-bottom: 38px;
+  }
+}
+
+.cad-portfolio-intro__detail {
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+    line-height: 1.62;
+  }
+
+  ul {
+    display: grid;
+    gap: 0;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 12px;
+  }
+}
+
+.cad-portfolio-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.6fr);
+  gap: 24px;
+  margin-top: 34px;
+  margin-bottom: 62px;
+
+  @media #{$md} {
+    grid-template-columns: 1fr;
+    margin-bottom: 76px;
+  }
+
+  @media #{$xs} {
+    margin-top: 32px;
+    margin-bottom: 60px;
+  }
+}
+
+.cad-portfolio-featured__main {
+  position: relative;
+  display: block;
+  min-height: 500px;
+  overflow: hidden;
+  color: #fff;
+  isolation: isolate;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0.82) 100%),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.12) 62%);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    transform: scale(1.01);
+    transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover {
+    color: #fff;
+
+    img {
+      transform: scale(1.07);
+    }
+  }
+
+  @media #{$md} {
+    min-height: 430px;
+
+    img {
+      min-height: 430px;
+    }
+  }
+
+  @media #{$xs} {
+    min-height: 380px;
+
+    img {
+      min-height: 380px;
+    }
+  }
+}
+
+.cad-portfolio-featured__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  max-width: 760px;
+  padding: 42px;
+
+  span,
+  small {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 16px 0 18px;
+    color: #fff;
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  p {
+    max-width: 640px;
+    margin: 0 0 18px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  @media #{$xs} {
+    padding: 28px 22px;
+  }
+}
+
+.cad-portfolio-featured__side {
+  display: grid;
+  grid-template-rows: 0.8fr 1fr 1fr;
+  gap: 24px;
+}
+
+.cad-portfolio-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 150px;
+  padding: 28px;
+  background: #fff;
+  color: #050505;
+
+  span {
+    display: block;
+    margin-bottom: 16px;
+    color: #5f5f5f;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0;
+    color: #050505;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+.cad-portfolio-small-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  min-height: 210px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  background: #0c0c0c;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px;
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 11px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    margin: 14px 0 10px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.16;
+  }
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  &:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.28);
+
+    img {
+      transform: scale(1.06);
+    }
+  }
+
+  @media #{$xs} {
+    grid-template-columns: 1fr;
+
+    img {
+      height: 210px;
+    }
+  }
+}
+
+.cad-project-catalog {
+  padding-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.cad-project-catalog__header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.65fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 32px;
+
+  h3 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(36px, 4.6vw, 58px);
+    font-weight: 400;
+    line-height: 1.08;
+  }
+
+  > p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  @media #{$md} {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
 
 .cad-project-card {
   display: block;

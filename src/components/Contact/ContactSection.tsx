@@ -1,35 +1,36 @@
 import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
 import ContactText from "./ContactText";
-import GoogleMap from "./GoogleMap";
+import { content } from "@/content/useContent";
 
 export default function ContactSection() {
+  const { formTitle } = content.contact;
+
   return (
     <div className="contact-section section-padding pt-0">
       <div className="container">
-        <div className="row mt-60">
-          {/* Left Text */}
-          <div className="col-xl-5 col-lg-5">
-            <ContactText />
+        <div className="contact-intro-row">
+          <ContactText />
+        </div>
+
+        <div className="contact-form-panel">
+          <div className="contact-form-heading section-title">
+            <p>Consulta</p>
+            <h2>
+              {formTitle}
+              <span>
+                <i className="las la-arrow-right"></i>
+              </span>
+            </h2>
           </div>
 
-          {/* Contact Form */}
-          <div className="offset-xl-1 col-xl-6 offset-lg-1 col-lg-6">
-            <ContactForm />
+          <div className="contact-form-panel__form">
+            <ContactForm showTitle={false} />
           </div>
         </div>
 
-        {/* Bottom Info */}
         <div className="contact-info-wrap">
-          <div className="row mt-60">
-            <div className="col-xl-6">
-              <GoogleMap />
-            </div>
-
-            <div className="col-xl-6">
-              <ContactInfo />
-            </div>
-          </div>
+          <ContactInfo />
         </div>
       </div>
     </div>

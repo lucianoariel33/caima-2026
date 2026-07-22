@@ -12,7 +12,11 @@ interface ContactErrors {
   [key: string]: string;
 }
 
-export default function ContactForm() {
+interface ContactFormProps {
+  showTitle?: boolean;
+}
+
+export default function ContactForm({ showTitle = true }: ContactFormProps) {
   const { formTitle, placeholders, errors: errorMessages, successMessage } =
     content.contact;
   const { submitButton } = content.ui;
@@ -77,15 +81,17 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="subimit-form-wrap">
-      <div className="section-title">
-        <h2>
-          {formTitle}{" "}
-          <span>
-            <i className="las la-arrow-right"></i>
-          </span>
-        </h2>
-      </div>
+    <div className={`subimit-form-wrap ${showTitle ? "" : "subimit-form-wrap--bare"}`}>
+      {showTitle && (
+        <div className="section-title">
+          <h2>
+            {formTitle}{" "}
+            <span>
+              <i className="las la-arrow-right"></i>
+            </span>
+          </h2>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} noValidate>
         <input

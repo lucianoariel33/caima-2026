@@ -156,7 +156,10 @@
   },
   "about": {
     "breadcrumb": {
-      "title": "Nosotros",
+      "eyebrow": "Nosotros",
+      "title": "Experiencia aplicada a cada decisión de obra.",
+      "description": "Un estudio dirigido por el Arq. Gustavo Caimaris, con una forma de trabajo que integra diseño, documentación y dirección para que cada proyecto avance con claridad.",
+      "highlights": ["+30 años", "+45.000 m² construidos", "Residencial, comercial e industrial"],
       "background": "/ESTRUCTURA/breadcrumb_about_1920x480.jpg"
     },
     "story": {
@@ -177,7 +180,10 @@
   },
   "services": {
     "breadcrumb": {
-      "title": "Servicios",
+      "eyebrow": "Servicios",
+      "title": "Del anteproyecto a la obra terminada.",
+      "description": "Diseñamos, documentamos, dirigimos y coordinamos cada etapa con criterio técnico, mirada estética y seguimiento cercano.",
+      "highlights": ["Proyecto integral", "Dirección de obra", "Interiores y terminaciones"],
       "background": "/ESTRUCTURA/breadcrumb_servicios_1920x480.jpg"
     },
     "items": [
@@ -247,16 +253,36 @@
   },
   "projectsPage": {
     "breadcrumb": {
-      "title": "Proyectos",
+      "eyebrow": "Proyectos",
+      "title": "El perfil del estudio se lee en sus obras.",
+      "description": "Una selección de trabajos residenciales, comerciales, corporativos e industriales donde se ve cómo CAD resuelve diseño, documentación, dirección y gestión.",
+      "highlights": ["Vivienda, comercio e industria", "+30 años de recorrido", "Obras de distinta escala"],
       "background": "/ESTRUCTURA/breadcrumb_proyectos_1920x480.jpg"
-    }
+    },
+    "intro": {
+      "eyebrow": "Portfolio del estudio",
+      "title": "Obras que muestran una forma de pensar y construir.",
+      "description": "Cada proyecto reúne una lectura del sitio, un programa concreto y decisiones técnicas que ordenan la obra desde la idea inicial hasta la materialización.",
+      "principles": [
+        "Diseño con criterio de uso",
+        "Documentación clara",
+        "Seguimiento técnico de obra"
+      ]
+    },
+    "featuredNote": "La selección combina escalas y usos distintos para mostrar el criterio del estudio: ordenar el programa, resolver la obra y cuidar la experiencia final del espacio.",
+    "featuredLabel": "Obra destacada",
+    "catalogEyebrow": "Catálogo de obras",
+    "catalogLead": "Explorá proyectos por escala, uso y especialidad. Cada obra muestra una parte del recorrido profesional del estudio."
   },
   "contact": {
     "breadcrumb": {
-      "title": "Contacto",
+      "eyebrow": "Contacto",
+      "title": "Hablemos de tu próxima obra.",
+      "description": "Proyecto, documentación, dirección y gestión de obra para residencias, espacios comerciales, oficinas e industrias.",
+      "highlights": ["Buenos Aires, Argentina", "Proyecto y dirección", "info@cad-arquitectura.com"],
       "background": "/ESTRUCTURA/breadcrumb_contact_1920x480.jpg"
     },
-    "intro": "Contanos qué necesitás resolver: proyecto, dirección, documentación, interiores o seguimiento de obra. Te respondemos con una primera orientación concreta.",
+    "intro": "Contanos en qué etapa estás y qué necesitás resolver. Proyecto, dirección, documentación, interiores o seguimiento de obra: respondemos con una primera orientación clara.",
     "formTitle": "Enviá tu consulta",
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210146.68168877432!2d-58.57338320713459!3d-34.61580371739104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b027ef289%3A0xdf28f1c8f22c9603!2sBuenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar",
     "placeholders": {

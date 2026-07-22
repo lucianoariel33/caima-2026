@@ -168,9 +168,12 @@ body.dark {
 
     .contact-section {
 
+        .contact-form-panel,
+        .contact-form-heading,
+        .contact-info-inner,
         .subimit-form-wrap input,
         .subimit-form-wrap textarea {
-            border-bottom: 1px solid #333;
+            border-color: #333;
         }
 
         input[type=submit] {
@@ -184,6 +187,26 @@ body.dark {
 
         .social-area a {
             background: #333;
+        }
+
+        .contact-social-panel {
+            background: #fff;
+            color: #050505;
+
+            h3 {
+                color: #050505;
+            }
+        }
+
+        .contact-social-panel .contact-social-links a {
+            background: transparent;
+            border-color: rgba(5, 5, 5, 0.22);
+            color: #050505;
+
+            &:hover {
+                background: #050505;
+                color: #fff;
+            }
         }
     }
 

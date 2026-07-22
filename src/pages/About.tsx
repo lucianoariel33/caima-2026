@@ -16,7 +16,13 @@ export default function About() {
   return (
     <>
       <SectionMarker code="B1" name="About - Encabezado">
-        <Breadcrumb title={breadcrumb.title} bgImg={breadcrumb.background} />
+        <Breadcrumb
+          title={breadcrumb.title}
+          bgImg={breadcrumb.background}
+          eyebrow={breadcrumb.eyebrow}
+          description={breadcrumb.description}
+          highlights={breadcrumb.highlights}
+        />
       </SectionMarker>
       <SectionMarker code="B2" name="About - Nuestro estudio">
         <AboutSection />

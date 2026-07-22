@@ -9,7 +9,14 @@ export default function ProjectStandard() {
   return (
     <>
       <SectionMarker code="D1" name="Proyectos - Encabezado">
-        <Breadcrumb title={breadcrumb.title} bgImg={breadcrumb.background} />
+        <Breadcrumb
+          title={breadcrumb.title}
+          bgImg={breadcrumb.background}
+          eyebrow={breadcrumb.eyebrow}
+          description={breadcrumb.description}
+          highlights={breadcrumb.highlights}
+          className="breadcrumb-bg--portfolio"
+        />
       </SectionMarker>
       <SectionMarker code="D2" name="Proyectos - Listado">
         <ProjectStandardItem />

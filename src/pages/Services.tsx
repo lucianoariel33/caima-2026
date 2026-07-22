@@ -2,7 +2,6 @@ import Breadcrumb from "@components/Breadcrumb/Breadcrumb";
 import CoreFeature from "@components/Feature/CoreFeature";
 import FeatureLine from "@components/Feature/FeatureLine";
 import ServiceItem from "@components/Services/ServiceItem";
-import Testimonial from "@components/Testimonial/Testimonial";
 import SectionMarker from "@components/SectionMarker/SectionMarker";
 import { content } from "@/content/useContent";
 
@@ -16,7 +15,13 @@ export default function Services() {
   return (
     <>
       <SectionMarker code="C1" name="Services - Encabezado">
-        <Breadcrumb title={breadcrumb.title} bgImg={breadcrumb.background} />
+        <Breadcrumb
+          title={breadcrumb.title}
+          bgImg={breadcrumb.background}
+          eyebrow={breadcrumb.eyebrow}
+          description={breadcrumb.description}
+          highlights={breadcrumb.highlights}
+        />
       </SectionMarker>
       <SectionMarker code="C2" name="Services - Listado">
         <ServiceItem />
@@ -35,9 +40,6 @@ export default function Services() {
         <OurProcess styleTwo={true} />
       </SectionMarker>
       */}
-      <SectionMarker code="C7" name="Services - Testimonios">
-        <Testimonial />
-      </SectionMarker>
     </>
   );
 }
