@@ -22,6 +22,7 @@ export default function About() {
           eyebrow={breadcrumb.eyebrow}
           description={breadcrumb.description}
           highlights={breadcrumb.highlights}
+          collapseMobileInfo
         />
       </SectionMarker>
       <SectionMarker code="B2" name="About - Nuestro estudio">

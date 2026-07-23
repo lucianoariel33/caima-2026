@@ -1,12 +1,17 @@
 import BackgroundImgSet from "@components/BackgroundImgSet/BackgroundImgSet";
 import { content } from "@/content/useContent";
+import MobileInfoDisclosure from "@components/MobileInfoDisclosure/MobileInfoDisclosure";
 
 export default function FeatureLine() {
   const { featureLine } = content.home;
   const items = [...featureLine.items, ...featureLine.items];
 
   return (
-    <div className="feature_wrap">
+    <MobileInfoDisclosure
+      summary="Ver áreas"
+      desktopWrapperClassName="feature_wrap"
+      mobileClassName="mobile-info-disclosure--feature-line"
+    >
       <BackgroundImgSet className="feature_item_one" bgUrl={featureLine.background}>
         <div className="feature_scroller">
           <div className="scroller_track">
@@ -18,6 +23,6 @@ export default function FeatureLine() {
           </div>
         </div>
       </BackgroundImgSet>
-    </div>
+    </MobileInfoDisclosure>
   );
 }

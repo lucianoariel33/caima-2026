@@ -21,6 +21,7 @@ export default function Services() {
           eyebrow={breadcrumb.eyebrow}
           description={breadcrumb.description}
           highlights={breadcrumb.highlights}
+          collapseMobileInfo
         />
       </SectionMarker>
       <SectionMarker code="C2" name="Services - Listado">

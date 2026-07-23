@@ -1,4 +1,5 @@
 import { content } from "@/content/useContent";
+import MobileInfoDisclosure from "@components/MobileInfoDisclosure/MobileInfoDisclosure";
 
 export default function ContactInfo() {
   const { email, phone, address } = content.site;
@@ -18,36 +19,38 @@ export default function ContactInfo() {
         <h2>{contactInfoTitle}</h2>
       </div>
 
-      <div className="contact-info-inner">
-        {contactInfo.map((item) => (
-          <div className="single-contact-info" key={item.label}>
-            <p>{item.label}</p>
-            <h4>{item.value}</h4>
-          </div>
-        ))}
-      </div>
-
-      <div className="contact-social-panel">
-        <div>
-          <p>{socialTitle}</p>
-          <h3>Seguinos y conocé más obras del estudio.</h3>
-        </div>
-
-        <div className="social-area contact-social-links">
-          {social.map((item) => (
-            <a
-              href={item.url}
-              key={item.name}
-              aria-label={item.name}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className={item.icon}></i>
-              <span>{item.name}</span>
-            </a>
+      <MobileInfoDisclosure summary="Ver datos">
+        <div className="contact-info-inner">
+          {contactInfo.map((item) => (
+            <div className="single-contact-info" key={item.label}>
+              <p>{item.label}</p>
+              <h4>{item.value}</h4>
+            </div>
           ))}
         </div>
-      </div>
+
+        <div className="contact-social-panel">
+          <div>
+            <p>{socialTitle}</p>
+            <h3>Seguinos y conocé más obras del estudio.</h3>
+          </div>
+
+          <div className="social-area contact-social-links">
+            {social.map((item) => (
+              <a
+                href={item.url}
+                key={item.name}
+                aria-label={item.name}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className={item.icon}></i>
+                <span>{item.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </MobileInfoDisclosure>
     </div>
   );
 }

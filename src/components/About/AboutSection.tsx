@@ -1,4 +1,5 @@
 import { content } from "@/content/useContent";
+import MobileInfoDisclosure from "@components/MobileInfoDisclosure/MobileInfoDisclosure";
 
 export default function AboutSection() {
   const { story } = content.about;
@@ -14,12 +15,16 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="about-content-wrap wow fadeInUp" data-wow-delay=".3s">
+            <MobileInfoDisclosure
+              summary="Ver información"
+              desktopWrapperClassName="about-content-wrap wow fadeInUp"
+              mobileClassName="about-content-wrap"
+            >
               <h5>{story.paragraphs[0]}</h5>
               {story.paragraphs.slice(1).map((text) => (
                 <p key={text}>{text}</p>
               ))}
-            </div>
+            </MobileInfoDisclosure>
           </div>
 
           <div className="col-xl-6 col-lg-6 order-1 order-md-2">

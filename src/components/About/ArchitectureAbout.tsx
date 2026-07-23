@@ -1,5 +1,6 @@
 import AboutProgress from "./AboutProgress";
 import { content } from "@/content/useContent";
+import MobileInfoDisclosure from "@components/MobileInfoDisclosure/MobileInfoDisclosure";
 
 export default function ArchitectureAbout() {
   const { architecture } = content.about;
@@ -15,10 +16,14 @@ export default function ArchitectureAbout() {
                 <h2>{architecture.title}</h2>
               </div>
 
-              <div className="p-animation">
+              <MobileInfoDisclosure
+                summary="Ver enfoque"
+                desktopWrapperClassName="p-animation"
+                mobileClassName="p-animation"
+              >
                 <p>{architecture.description}</p>
-              </div>
-              <AboutProgress />
+                <AboutProgress />
+              </MobileInfoDisclosure>
             </div>
           </div>
 

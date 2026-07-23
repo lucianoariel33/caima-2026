@@ -1,4 +1,5 @@
 import { content } from "@/content/useContent";
+import MobileInfoDisclosure from "@components/MobileInfoDisclosure/MobileInfoDisclosure";
 
 export default function FeatureThree() {
   const { features } = content.home;
@@ -34,7 +35,9 @@ export default function FeatureThree() {
                         <h4>{feature.title}</h4>
                       </div>
                     </div>
-                    <p>{feature.description}</p>
+                    <MobileInfoDisclosure summary="Ver detalle">
+                      <p>{feature.description}</p>
+                    </MobileInfoDisclosure>
                   </div>
                 </div>
               ))}

@@ -15,6 +15,7 @@ export default function Contact() {
           eyebrow={breadcrumb.eyebrow}
           description={breadcrumb.description}
           highlights={breadcrumb.highlights}
+          collapseMobileInfo
         />
       </SectionMarker>
       <SectionMarker code="E2" name="Contact - Formulario e info">

@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import MobileInfoDisclosure from "@components/MobileInfoDisclosure/MobileInfoDisclosure";
 
 interface PageHeaderProps {
   title?: string;
@@ -7,6 +8,7 @@ interface PageHeaderProps {
   description?: string;
   highlights?: string[];
   className?: string;
+  collapseMobileInfo?: boolean;
   /** @deprecated El trail Inicio / pagina fue removido del sitio. */
   breadcrumbs?: unknown;
 }
@@ -18,6 +20,7 @@ export default function Breadcrumb({
   description,
   highlights = [],
   className = "",
+  collapseMobileInfo = false,
 }: PageHeaderProps) {
   if (!bgImg) {
     return null;
@@ -40,13 +43,28 @@ export default function Breadcrumb({
             <div className={`breadcrumb-title ${hasRichContent ? "breadcrumb-title--rich" : "image-text-panel"}`}>
               {eyebrow && <p className="breadcrumb-title__eyebrow">{eyebrow}</p>}
               <h1 className="visible-slowly-right">{title}</h1>
-              {description && <p className="breadcrumb-title__lead">{description}</p>}
-              {highlights.length > 0 && (
-                <ul className="breadcrumb-title__highlights" aria-label="Resumen">
-                  {highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
-                  ))}
-                </ul>
+              {collapseMobileInfo ? (
+                <MobileInfoDisclosure summary="Ver resumen" mobileClassName="mobile-info-disclosure--breadcrumb">
+                  {description && <p className="breadcrumb-title__lead">{description}</p>}
+                  {highlights.length > 0 && (
+                    <ul className="breadcrumb-title__highlights" aria-label="Resumen">
+                      {highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                  )}
+                </MobileInfoDisclosure>
+              ) : (
+                <>
+                  {description && <p className="breadcrumb-title__lead">{description}</p>}
+                  {highlights.length > 0 && (
+                    <ul className="breadcrumb-title__highlights" aria-label="Resumen">
+                      {highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                  )}
+                </>
               )}
             </div>
           </div>

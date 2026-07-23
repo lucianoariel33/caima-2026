@@ -1,4 +1,5 @@
 import { content } from "@/content/useContent";
+import MobileInfoDisclosure from "@components/MobileInfoDisclosure/MobileInfoDisclosure";
 
 export default function ServiceItem() {
   const services = content.services.items;
@@ -18,7 +19,9 @@ export default function ServiceItem() {
                   <i className={service.icon}></i>
                 </div>
                 <h4 className="service-title">{service.title}</h4>
-                <p className="service-content">{service.description}</p>
+                <MobileInfoDisclosure summary="Ver detalle">
+                  <p className="service-content">{service.description}</p>
+                </MobileInfoDisclosure>
               </div>
             </div>
           ))}

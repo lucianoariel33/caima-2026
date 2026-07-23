@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { content } from "@/content/useContent";
+import MobileInfoDisclosure from "@components/MobileInfoDisclosure/MobileInfoDisclosure";
 
 export default function MeetStudioAbout() {
   const { about } = content.home;
@@ -21,7 +22,11 @@ export default function MeetStudioAbout() {
             </div>
           </div>
           <div className="col-xl-7 col-lg-7">
-            <div className="about-content-wrap">
+            <MobileInfoDisclosure
+              summary="Ver información"
+              desktopWrapperClassName="about-content-wrap"
+              mobileClassName="about-content-wrap"
+            >
               <h3 className="visible-slowly-right p-xl ">{about.description}</h3>
               <div className="about-section--home-studio__highlights">
                 {highlights.map((item) => (
@@ -34,7 +39,7 @@ export default function MeetStudioAbout() {
               <Link to={about.linkTo} className="link-text about-section--home-studio__link">
                 {moreAboutLink} <i className="las la-arrow-right"></i>
               </Link>
-            </div>
+            </MobileInfoDisclosure>
           </div>
         </div>
       </div>

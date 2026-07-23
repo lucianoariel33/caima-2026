@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Parallax, Pagination } from "swiper/modules";
 import { content } from "@/content/useContent";
+import MobileInfoDisclosure from "@components/MobileInfoDisclosure/MobileInfoDisclosure";
 
 export default function HeroSlider() {
   const { hero } = content.home;
@@ -39,7 +40,9 @@ export default function HeroSlider() {
                         </p>
                         <h1 className="text-white">{slide.title}</h1>
                         <div className="hero-copy__rule"></div>
-                        <h3 className="text-white">{hero.slogan}</h3>
+                        <MobileInfoDisclosure summary="Ver resumen" mobileClassName="mobile-info-disclosure--hero">
+                          <h3 className="text-white">{hero.slogan}</h3>
+                        </MobileInfoDisclosure>
                       </div>
                     </div>
                   </div>
