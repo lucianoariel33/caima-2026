@@ -8,7 +8,6 @@
     "build": "tsc -b && vite build --configLoader native",
     "lint": "eslint .",
     "preview": "vite preview",
-    "setup:images": "node scripts/setup-placeholder-images.mjs",
     "setup:estructura": "node scripts/generate-estructura-from-slider.mjs && node scripts/apply-image-path-map.mjs"
   },
   "dependencies": {

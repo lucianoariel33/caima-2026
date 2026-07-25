@@ -46,7 +46,7 @@
       "Vivienda",
       "Multifamiliar",
       "Comercial",
-      "Oficinas",
+      "Oficina",
       "Industrial",
       "Interiores"
     ],
@@ -78,7 +78,7 @@
         { "image": "/media/slider/slide-07_1920x1080.jpg", "title": "Townhouse DWT", "year": "Vivienda" },
         { "image": "/media/slider/slide-08_1920x1080.jpg", "title": "Mendoza Puerto Madero", "year": "Interiorismo" },
         { "image": "/media/slider/slide-09_1920x1080.jpg", "title": "Parque Leloir", "year": "Vivienda unifamiliar" },
-        { "image": "/media/slider/slide-10_1920x1080.jpg", "title": "Serrano 706", "year": "Oficinas" }
+        { "image": "/media/slider/slide-10_1920x1080.jpg", "title": "Serrano 706", "year": "Oficina" }
       ]
     },
     "about": {
@@ -93,7 +93,7 @@
         "Viviendas unifamiliares",
         "Viviendas multifamiliares",
         "Espacios comerciales",
-        "Oficinas",
+        "Oficina",
         "Naves industriales",
         "Diseño interior",
         "Dirección de obra",
@@ -150,7 +150,7 @@
     "counters": [
       { "value": 30, "label": "Años de experiencia", "highlight": true },
       { "value": 45000, "label": "m² construidos" },
-      { "value": 42, "label": "Proyectos" },
+      { "value": 30, "label": "Proyectos" },
       { "value": 6, "label": "Especialidades" }
     ]
   },
@@ -306,7 +306,7 @@
   "projectCategories": [
     "Comercial",
     "Industrial",
-    "Oficinas",
+    "Oficina",
     "Vivienda Multifamiliar",
     "Vivienda Unifamiliar",
     "Diseño Integral"

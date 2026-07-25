@@ -26,10 +26,6 @@ export default function ProjectStandardItem() {
 
   const [mainProject, ...secondaryProjects] = orderedProjects.slice(0, 3);
   const activeTitle = activeFilter === "*" ? "Todos los proyectos" : activeFilter;
-  const catalogDescription =
-    activeFilter === "*"
-      ? catalogLead
-      : `Selección de obras dentro de ${activeFilter.toLowerCase()}, con foco en uso, materialidad y resolución técnica.`;
 
   return (
     <div id="project-standard" className="cad-projects-section cad-projects-section--page">
@@ -63,7 +59,7 @@ export default function ProjectStandardItem() {
               <div className="cad-portfolio-featured__overlay">
                 <span>{featuredLabel}</span>
                 <h3>{mainProject.title}</h3>
-                <p>{mainProject.summary}</p>
+                {mainProject.summary && <p>{mainProject.summary}</p>}
                 <small>
                   {mainProject.category}
                   {mainProject.location ? ` / ${mainProject.location}` : ""}
@@ -101,7 +97,7 @@ export default function ProjectStandardItem() {
               <p className="cad-projects-section__eyebrow">{catalogEyebrow}</p>
               <h3>{activeTitle}</h3>
             </div>
-            <p>{catalogDescription}</p>
+            {activeFilter === "*" && <p>{catalogLead}</p>}
           </div>
 
           <ProjectCategoryFilter

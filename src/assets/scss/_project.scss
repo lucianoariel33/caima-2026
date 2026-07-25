@@ -967,6 +967,10 @@ button.mfp-arrow {
   max-width: 820px;
 }
 
+.cad-project-detail__intro p {
+  min-height: 1.55em;
+}
+
 .cad-project-detail__intro span,
 .project-info-wrap__label,
 .cad-project-text-block h3,
@@ -1019,6 +1023,7 @@ button.mfp-arrow {
 
 .project-info p {
   margin: 0;
+  min-height: 1.45em;
   color: #fff;
   font-size: 15px;
   line-height: 1.45;

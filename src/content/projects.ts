@@ -1,143 +1,184 @@
 import { content } from "./useContent";
-import placeholderImages from "./placeholder-images.json";
+
+interface PortfolioManifestImage {
+  role?: string;
+  path: string;
+  source_upload_path?: string;
+  attachment_id?: number;
+  title?: string;
+  width?: number;
+  height?: number;
+}
+
+interface PortfolioManifestProject {
+  id: number;
+  title: string;
+  slug: string;
+  folder: string;
+  source_url?: string;
+  categories?: string[];
+  cover?: string;
+  images?: PortfolioManifestImage[];
+}
+
+interface PortfolioManifest {
+  project_count: number;
+  projects: PortfolioManifestProject[];
+}
+
+interface AdditionalDetail {
+  title?: string;
+  detail?: string;
+}
 
 interface ProjectMeta {
-  titulo?: string;
+  id?: number;
+  title?: string;
   slug?: string;
-  categoria?: string;
-  ubicacion?: string;
-  anio?: string;
-  cliente?: string;
-  arquitecto?: string;
-  superficie?: string;
-  estado?: string;
-  thumbnail?: string;
-  portada?: string;
-  destacada?: string;
-  imagen_destacada?: string;
-  imagenDestacada?: string;
-  galeria?: string[];
+  source_url?: string;
+  date?: string;
+  modified?: string;
+  status?: string;
+  categories?: string[];
+  category_slugs?: string[];
+  cover?: string;
+  image_count?: number;
+  images?: PortfolioManifestImage[];
+  additional_details?: AdditionalDetail[];
+}
+
+export interface ProjectInfoItem {
+  label: string;
+  value: string;
 }
 
 export interface ProjectContent {
   id: number;
+  sourceId: number;
   folder: string;
   slug: string;
   title: string;
   category: string;
+  categories: string[];
+  categorySlugs: string[];
   location: string;
   year: string;
   client: string;
   architect: string;
   surface: string;
   status: string;
+  sourceUrl: string;
+  publishedAt: string;
+  modifiedAt: string;
+  wordpressStatus: string;
   thumbnail: string;
   featuredImage: string;
   cover: string;
   gallery: string[];
+  imageCount: number;
+  additionalInfo: ProjectInfoItem[];
   summary: string;
   description: string[];
   concept: string[];
   result: string[];
 }
 
-const markdownFiles = import.meta.glob("../../PROYECTOS/*/proyecto.md", {
+const manifestFiles = import.meta.glob("../../portfolio_extraido/manifest.json", {
   eager: true,
   import: "default",
-  query: "?raw",
-}) as Record<string, string>;
+}) as Record<string, PortfolioManifest>;
+
+const markdownFiles = import.meta.glob(
+  "../../portfolio_extraido/projects/*/index.md",
+  {
+    eager: true,
+    import: "default",
+    query: "?raw",
+  }
+) as Record<string, string>;
 
 const projectImageFiles = import.meta.glob(
-  "../../PROYECTOS/*/fotos/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}",
+  "../../portfolio_extraido/projects/*/images/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}",
   {
     eager: true,
     import: "default",
   }
 ) as Record<string, string>;
 
-const projectPlaceholders = placeholderImages.proyectos;
+const manifest = manifestFiles["../../portfolio_extraido/manifest.json"];
 
-const genericCopy = {
-  summary:
-    "Proyecto desarrollado por el estudio con foco en funcionalidad, calidad constructiva y seguimiento técnico.",
-  description:
-    "Desarrollo integral que reúne diseño, documentación, coordinación y ejecución bajo criterios técnicos del estudio.",
-  concept:
-    "Concepto basado en decisiones claras, proporciones equilibradas y una lectura contemporánea del espacio.",
-  result:
-    "Resultado alineado con los objetivos del encargo, con soluciones constructivas eficientes y terminaciones cuidadas.",
-};
+export const PROJECT_CATEGORIES = content.projectCategories;
 
-const categoryCopy: Record<
-  string,
-  {
-    summary: string;
-    description: string;
-    concept: string;
-    result: string;
+function cleanYamlValue(rawValue: string) {
+  const trimmed = rawValue.trim();
+
+  if (!trimmed || trimmed === "{}" || trimmed === "[]") {
+    return "";
   }
-> = {
-  Comercial: {
-    summary: "Proyecto comercial resuelto con foco en identidad, operación diaria y experiencia de uso.",
-    description:
-      "Intervención orientada a ordenar el funcionamiento del espacio, reforzar la presencia de marca y resolver detalles constructivos con precisión.",
-    concept:
-      "La propuesta equilibra circulación, exposición, confort y materialidad para que el espacio trabaje a favor de la actividad.",
-    result:
-      "Un ámbito comercial claro y eficiente, pensado para recibir usuarios y sostener el uso cotidiano.",
-  },
-  Industrial: {
-    summary: "Proyecto industrial desarrollado con prioridad en eficiencia, operación y resolución técnica.",
-    description:
-      "Trabajo orientado a ordenar superficies, circulaciones, infraestructura y etapas de ejecución con criterios funcionales.",
-    concept:
-      "La arquitectura acompaña la lógica productiva: estructura clara, mantenimiento simple y decisiones constructivas eficientes.",
-    result:
-      "Un espacio robusto y operativo, alineado con las necesidades técnicas del encargo.",
-  },
-  Oficinas: {
-    summary: "Espacio de trabajo diseñado para mejorar operación, imagen institucional y confort de uso.",
-    description:
-      "Proyecto enfocado en distribuir áreas de trabajo, reunión y apoyo con una imagen profesional y una lectura espacial ordenada.",
-    concept:
-      "La propuesta busca equilibrio entre funcionalidad, representación y bienestar cotidiano.",
-    result:
-      "Oficinas claras, flexibles y coherentes con la dinámica de trabajo del cliente.",
-  },
-  "Vivienda Multifamiliar": {
-    summary: "Desarrollo residencial multifamiliar con foco en eficiencia espacial, calidad constructiva y valor de uso.",
-    description:
-      "Proyecto y seguimiento de obra orientados a resolver unidades habitacionales, áreas comunes y criterios técnicos de ejecución.",
-    concept:
-      "La propuesta trabaja proporciones, iluminación, circulación y materialidad para lograr viviendas funcionales y durables.",
-    result:
-      "Un desarrollo residencial ordenado, construido con criterios de calidad y una lectura contemporánea.",
-  },
-  "Vivienda Unifamiliar": {
-    summary: "Vivienda proyectada a partir del modo de habitar, el sitio y la calidad de sus espacios cotidianos.",
-    description:
-      "Diseño residencial que organiza programa, recorridos, luz natural y relación interior-exterior según las necesidades del cliente.",
-    concept:
-      "La casa se piensa desde el uso real: ambientes claros, buena escala y decisiones materiales consistentes.",
-    result:
-      "Una vivienda funcional y personal, resuelta con atención al detalle constructivo.",
-  },
-  "Diseño Integral": {
-    summary: "Diseño integral desarrollado para unificar materialidad, terminaciones, equipamiento y uso del espacio.",
-    description:
-      "Intervención enfocada en transformar la experiencia interior mediante decisiones coordinadas de diseño, obra y terminación.",
-    concept:
-      "Cada elemento se define como parte de un sistema: proporción, textura, iluminación y funcionalidad.",
-    result:
-      "Un espacio más coherente, cómodo y terminado con una identidad clara.",
-  },
-};
 
-function getFolder(path: string) {
-  const parts = path.split("/");
-  const projectsIndex = parts.findIndex((part) => part === "PROYECTOS");
+  return trimmed.replace(/^["']|["']$/g, "");
+}
 
-  return parts[projectsIndex + 1] ?? "Proyecto";
+function parseYamlValue(rawValue: string) {
+  const value = cleanYamlValue(rawValue);
+
+  if (/^-?\d+$/.test(value)) {
+    return Number(value);
+  }
+
+  return value;
+}
+
+function parseScalarList(lines: string[], startIndex: number) {
+  const values: string[] = [];
+  let index = startIndex + 1;
+
+  while (index < lines.length) {
+    const line = lines[index];
+
+    if (/^[a-zA-Z0-9_-]+:/.test(line)) {
+      break;
+    }
+
+    const itemMatch = line.match(/^\s*-\s*(.*)$/);
+
+    if (itemMatch) {
+      values.push(cleanYamlValue(itemMatch[1]));
+    }
+
+    index += 1;
+  }
+
+  return { values, index: index - 1 };
+}
+
+function parseObjectList(lines: string[], startIndex: number) {
+  const values: Record<string, string | number>[] = [];
+  let current: Record<string, string | number> | null = null;
+  let index = startIndex + 1;
+
+  while (index < lines.length) {
+    const line = lines[index];
+
+    if (/^[a-zA-Z0-9_-]+:/.test(line)) {
+      break;
+    }
+
+    const itemMatch = line.match(/^\s*-\s*([a-zA-Z0-9_-]+):\s*(.*)$/);
+    const propertyMatch = line.match(/^\s+([a-zA-Z0-9_-]+):\s*(.*)$/);
+
+    if (itemMatch) {
+      current = {};
+      current[itemMatch[1]] = parseYamlValue(itemMatch[2]);
+      values.push(current);
+    } else if (propertyMatch && current) {
+      current[propertyMatch[1]] = parseYamlValue(propertyMatch[2]);
+    }
+
+    index += 1;
+  }
+
+  return { values, index: index - 1 };
 }
 
 function parseFrontmatter(markdown: string): {
@@ -149,14 +190,15 @@ function parseFrontmatter(markdown: string): {
   }
 
   const end = markdown.indexOf("\n---", 3);
+
   if (end === -1) {
     return { meta: {}, body: markdown };
   }
 
   const block = markdown.slice(3, end).trim();
   const body = markdown.slice(end + 4).trim();
-  const meta: ProjectMeta = {};
   const lines = block.split(/\r?\n/);
+  const meta: Record<string, unknown> = {};
 
   for (let index = 0; index < lines.length; index += 1) {
     const line = lines[index];
@@ -166,199 +208,228 @@ function parseFrontmatter(markdown: string): {
       continue;
     }
 
-    const key = match[1] as keyof ProjectMeta;
-    const rawValue = match[2].trim();
+    const key = match[1];
+    const rawValue = match[2];
 
-    if (key === "galeria") {
-      const values: string[] = [];
-      let nextIndex = index + 1;
-
-      while (nextIndex < lines.length) {
-        const galleryMatch = lines[nextIndex].match(/^\s*-\s*(.*)$/);
-        if (!galleryMatch) {
-          break;
-        }
-
-        values.push(galleryMatch[1].trim().replace(/^["']|["']$/g, ""));
-        nextIndex += 1;
-      }
-
-      meta.galeria = values;
-      index = nextIndex - 1;
+    if (key === "categories" || key === "category_slugs") {
+      const parsed = parseScalarList(lines, index);
+      meta[key] = parsed.values;
+      index = parsed.index;
+    } else if (key === "images" || key === "additional_details") {
+      const parsed = parseObjectList(lines, index);
+      meta[key] = parsed.values;
+      index = parsed.index;
     } else {
-      meta[key] = rawValue.replace(/^["']|["']$/g, "") as never;
+      meta[key] = parseYamlValue(rawValue);
     }
   }
 
-  return { meta, body };
+  return { meta: meta as ProjectMeta, body };
 }
 
-function getPlaceholderCover(index: number) {
-  if (!projectPlaceholders.length) {
-    return "/media/proyectos/img-01.jpg";
-  }
-
-  return projectPlaceholders[index % projectPlaceholders.length];
-}
-
-function getPlaceholderGallery(index: number) {
-  if (!projectPlaceholders.length) {
-    return ["/media/proyectos/img-01.jpg"];
-  }
-
-  const length = projectPlaceholders.length;
-
-  return [
-    projectPlaceholders[index % length],
-    projectPlaceholders[(index + 1) % length],
-    projectPlaceholders[(index + 2) % length],
-  ];
-}
-
-function getAssetPath(projectMarkdownPath: string, assetPath?: string) {
-  if (!assetPath) {
-    return "";
-  }
-
-  if (/^(https?:)?\/\//.test(assetPath) || assetPath.startsWith("/")) {
-    return assetPath;
-  }
-
-  const basePath = projectMarkdownPath.replace(/\/proyecto\.md$/, "");
-  const cleanAssetPath = assetPath.replace(/^\.\//, "");
-  const lookupPath = `${basePath}/${cleanAssetPath}`;
-
-  return projectImageFiles[lookupPath] ?? "";
-}
-
-function getUniqueImages(images: string[]) {
-  return [...new Set(images.filter(Boolean))];
-}
-
-function formatProjectNumber(index: number) {
-  return String(index + 1).padStart(2, "0");
-}
-
-function humanizeFolder(folder: string) {
-  return folder.replace(/-/g, " ");
+function normalizeHeading(value: string) {
+  return value
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }
 
 function parseSections(body: string) {
-  const sections: Record<string, string[]> = {};
-  const blocks = body.split(/^##\s+/m).map((block) => block.trim()).filter(Boolean);
+  const sections: { title: string; content: string }[] = [];
+  const matches = [...body.matchAll(/^##\s+(.+)$/gm)];
 
-  blocks.forEach((block) => {
-    const [titleLine, ...rest] = block.split(/\r?\n/);
-    const key = titleLine.trim().toLowerCase();
-    const text = rest
-      .join("\n")
-      .split(/\n{2,}/)
-      .map((paragraph) => paragraph.replace(/\s+/g, " ").trim())
-      .filter(Boolean);
+  matches.forEach((match, index) => {
+    const nextMatch = matches[index + 1];
+    const start = match.index + match[0].length;
+    const end = nextMatch?.index ?? body.length;
 
-    if (key) {
-      sections[key] = text;
-    }
+    sections.push({
+      title: match[1].trim(),
+      content: body.slice(start, end).trim(),
+    });
   });
 
   return sections;
 }
 
-function isGenericParagraph(text: string) {
-  const normalized = text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+function isRenderableParagraph(paragraph: string) {
+  const trimmed = paragraph.trim();
 
   return (
-    normalized.length < 32 ||
-    normalized.includes("gestion y direccion de proyecto") ||
-    normalized.includes("proyecto desarrollado por el estudio") ||
-    normalized.includes("obra finalizada segun planificacion")
+    trimmed.length > 0 &&
+    !/^\[presto_player\b/i.test(trimmed) &&
+    !/^categorias?:/i.test(trimmed) &&
+    !/^-\s*`images\//i.test(trimmed)
   );
 }
 
-function getMeaningfulParagraphs(
-  sections: Record<string, string[]>,
-  key: string,
-  fallback: string[]
+function toParagraphs(rawContent: string) {
+  return rawContent
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.replace(/\s+/g, " ").trim())
+    .filter(isRenderableParagraph);
+}
+
+function getSectionParagraphs(
+  sections: { title: string; content: string }[],
+  title: string
 ) {
-  const paragraphs = sections[key] ?? [];
-  const useful = paragraphs.filter((paragraph) => !isGenericParagraph(paragraph));
-
-  return useful.length ? useful : fallback;
+  return sections
+    .filter((section) => normalizeHeading(section.title) === normalizeHeading(title))
+    .flatMap((section) => toParagraphs(section.content));
 }
 
-function buildProjectCopy(meta: ProjectMeta, body: string) {
-  const sections = parseSections(body);
-  const copy = categoryCopy[meta.categoria ?? ""] ?? genericCopy;
-  const title = meta.titulo ?? "Proyecto";
-  const summaryParts = [
-    copy.summary,
-    meta.ubicacion ? `Ubicación: ${meta.ubicacion}.` : "",
-    meta.estado ? `Estado: ${meta.estado}.` : "",
-  ].filter(Boolean);
-
-  return {
-    summary: getMeaningfulParagraphs(sections, "resumen", [summaryParts.join(" ")])[0],
-    description: getMeaningfulParagraphs(sections, "descripcion", [
-      `${title} forma parte del recorrido del estudio en ${meta.categoria ?? "arquitectura"}. ${copy.description}`,
-    ]),
-    concept: getMeaningfulParagraphs(sections, "concepto", [copy.concept]),
-    result: getMeaningfulParagraphs(sections, "resultado", [copy.result]),
-  };
+function getNarrativeDetails(details: AdditionalDetail[] = []) {
+  return details
+    .map((item) => cleanYamlValue(item.detail ?? ""))
+    .filter((detail) => detail.length > 0);
 }
 
-export const PROJECT_CATEGORIES = content.projectCategories;
+function splitDetailTitle(title: string) {
+  const separatorIndex = title.indexOf(":");
 
-const sortedProjectEntries = Object.entries(markdownFiles)
-  .filter(([path]) => !path.includes("/Ejemplo/"))
-  .sort(([pathA], [pathB]) =>
-    getFolder(pathA).localeCompare(getFolder(pathB), "es")
+  if (separatorIndex === -1) {
+    return null;
+  }
+
+  const label = title.slice(0, separatorIndex).trim();
+  const value = title.slice(separatorIndex + 1).trim();
+
+  if (!label || !value) {
+    return null;
+  }
+
+  return { label, value };
+}
+
+function getYearFromDetails(details: AdditionalDetail[] = []) {
+  for (const item of details) {
+    const split = splitDetailTitle(item.title ?? "");
+
+    if (split && normalizeHeading(split.label) === "ano") {
+      return split.value;
+    }
+  }
+
+  return "";
+}
+
+function getAdditionalInfo(details: AdditionalDetail[] = []) {
+  return details.reduce<ProjectInfoItem[]>((items, item) => {
+    const split = splitDetailTitle(item.title ?? "");
+
+    if (!split || normalizeHeading(split.label) === "tipo de proyecto") {
+      return items;
+    }
+
+    items.push(split);
+    return items;
+  }, []);
+}
+
+function getUniqueValues(values: string[]) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function getImageImportPath(projectFolder: string, imagePath?: string) {
+  if (!imagePath) {
+    return "";
+  }
+
+  if (/^(https?:)?\/\//.test(imagePath) || imagePath.startsWith("/")) {
+    return imagePath;
+  }
+
+  return projectImageFiles[
+    `../../portfolio_extraido/${projectFolder}/${imagePath}`.replace(/\\/g, "/")
+  ] ?? "";
+}
+
+function getMarkdownForProject(projectFolder: string) {
+  return (
+    markdownFiles[
+      `../../portfolio_extraido/${projectFolder}/index.md`.replace(/\\/g, "/")
+    ] ?? ""
   );
+}
 
-export const projects: ProjectContent[] = sortedProjectEntries.map(
-  ([path, markdown], index) => {
-    const folder = getFolder(path);
+function humanizeFolder(folder: string) {
+  return folder.split("/").pop()?.replace(/-/g, " ") ?? "Proyecto";
+}
+
+function getProjectDescription(meta: ProjectMeta, body: string) {
+  const sections = parseSections(body);
+  const paragraphs = getUniqueValues([
+    ...getSectionParagraphs(sections, "Descripcion"),
+    ...getSectionParagraphs(sections, "Detalles del Proyecto"),
+    ...getNarrativeDetails(meta.additional_details),
+  ]);
+
+  return paragraphs;
+}
+
+export const projects: ProjectContent[] = (manifest?.projects ?? []).map(
+  (manifestProject, index) => {
+    const markdown = getMarkdownForProject(manifestProject.folder);
     const { meta, body } = parseFrontmatter(markdown);
-    const number = formatProjectNumber(index);
-    const projectCopy = buildProjectCopy(meta, body);
-    const fallbackCover = getPlaceholderCover(index);
-    const fallbackGallery = getPlaceholderGallery(index);
-    const thumbnail = getAssetPath(path, meta.thumbnail) || fallbackCover;
-    const featuredImage =
-      getAssetPath(
-        path,
-        meta.destacada || meta.imagen_destacada || meta.imagenDestacada || meta.portada
-      ) || thumbnail;
-    const galleryFromMeta =
-      meta.galeria
-        ?.map((imagePath) => getAssetPath(path, imagePath))
-        .filter(Boolean) ?? [];
-    const gallery = getUniqueImages(
-      galleryFromMeta.length ? galleryFromMeta : fallbackGallery
+    const categories = meta.categories?.length
+      ? meta.categories
+      : manifestProject.categories ?? [];
+    const imageMeta = meta.images?.length
+      ? meta.images
+      : manifestProject.images ?? [];
+    const coverPath =
+      meta.cover ||
+      manifestProject.cover ||
+      imageMeta.find((image) => image.role === "cover")?.path ||
+      imageMeta[0]?.path ||
+      "";
+    const orderedImagePaths = getUniqueValues(
+      imageMeta.map((image) => image.path)
     );
+    const galleryPaths = orderedImagePaths.includes(coverPath)
+      ? orderedImagePaths
+      : [coverPath, ...orderedImagePaths].filter(Boolean);
+    const gallery = galleryPaths
+      .map((imagePath) => getImageImportPath(manifestProject.folder, imagePath))
+      .filter(Boolean);
+    const cover =
+      getImageImportPath(manifestProject.folder, coverPath) || gallery[0] || "";
+    const description = getProjectDescription(meta, body);
 
     return {
       id: index + 1,
-      folder,
-      slug: meta.slug || `proyecto-${number}`,
-      title: meta.titulo || humanizeFolder(folder),
-      category: meta.categoria || "Proyecto",
-      location: meta.ubicacion || "",
-      year: meta.anio || "",
-      client: meta.cliente || "",
-      architect: meta.arquitecto || content.site.director,
-      surface: meta.superficie || "",
-      status: meta.estado || "Referencia",
-      thumbnail,
-      featuredImage,
-      cover: thumbnail,
+      sourceId: meta.id || manifestProject.id,
+      folder: manifestProject.folder,
+      slug: meta.slug || manifestProject.slug || `proyecto-${index + 1}`,
+      title:
+        meta.title ||
+        manifestProject.title ||
+        humanizeFolder(manifestProject.folder),
+      category: categories[0] ?? "",
+      categories,
+      categorySlugs: meta.category_slugs ?? [],
+      location: "",
+      year: getYearFromDetails(meta.additional_details),
+      client: "",
+      architect: "",
+      surface: "",
+      status: "",
+      sourceUrl: meta.source_url || manifestProject.source_url || "",
+      publishedAt: meta.date || "",
+      modifiedAt: meta.modified || "",
+      wordpressStatus: meta.status || "",
+      thumbnail: cover,
+      featuredImage: cover,
+      cover,
       gallery,
-      summary: projectCopy.summary,
-      description: projectCopy.description,
-      concept: projectCopy.concept,
-      result: projectCopy.result,
+      imageCount: meta.image_count || gallery.length,
+      additionalInfo: getAdditionalInfo(meta.additional_details),
+      summary: description[0] ?? "",
+      description,
+      concept: [],
+      result: [],
     };
   }
 );

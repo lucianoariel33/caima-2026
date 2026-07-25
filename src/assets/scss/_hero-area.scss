@@ -115,6 +115,36 @@
     }
   }
 
+  .hero-copy__project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    width: auto;
+    min-height: 34px;
+    margin-top: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.54);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+    i {
+      font-size: 14px;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      color: #fff;
+      border-color: #fff;
+
+      i {
+        transform: translateX(4px);
+      }
+    }
+  }
+
   .swiper-pagination {
     left: calc((100vw - min(1230px, calc(100vw - 30px))) / 2 + 15px);
     right: auto;

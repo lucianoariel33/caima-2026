@@ -3,10 +3,6 @@ interface InfoItem {
   value: string;
 }
 export default function InfoSidebar({ info }: { info: InfoItem[] }) {
-  if (!info.length) {
-    return null;
-  }
-
   return (
     <div className="project-info-wrap">
       <span className="project-info-wrap__label">Ficha técnica</span>

@@ -16,7 +16,6 @@ export default defineConfig({
       ignored: [
         '**/font/**',
         '**/imagen ejemplos/**',
-        '**/PROYECTOS/**',
       ],
     },
   },

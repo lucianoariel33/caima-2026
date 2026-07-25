@@ -30,15 +30,16 @@ export default function ProjectDetailsWrapper({
   const overviewParagraphs = project.description.length
     ? project.description
     : [project.summary].filter(Boolean);
-  const detailImage = project.gallery[0] || project.featuredImage;
+  const detailImage =
+    project.gallery.find((image) => image !== project.featuredImage) ||
+    project.gallery[0] ||
+    project.featuredImage;
   const info: InfoItem[] = [
     { label: "Año", value: project.year },
-    { label: "Arquitecto", value: project.architect },
     { label: "Ubicación", value: project.location },
-    { label: "Estado", value: project.status },
     { label: "Superficie", value: project.surface },
-    { label: "Cliente", value: project.client },
-  ].filter((item) => item.value);
+    { label: "Estado", value: project.status },
+  ];
   const concept: ParagraphSection = {
     title: "Concepto",
     paragraphs: project.concept,
@@ -179,7 +180,7 @@ export default function ProjectDetailsWrapper({
             <div className="cad-project-detail__summary-cell cad-project-detail__summary-cell--description">
               <div className="cad-project-detail__intro">
                 <span>Descripción</span>
-                {overviewParagraphs.map((paragraph, index) => (
+                {(overviewParagraphs.length ? overviewParagraphs : [""]).map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
